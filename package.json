@@ -2,6 +2,7 @@
   "name": "lwc-garden",
   "private": true,
   "version": "1.0.0",
+  "website": "https://lwc.garden",
   "description": "Lightning Web Component Local Dev Server",
   "type": "module",
   "scripts": {

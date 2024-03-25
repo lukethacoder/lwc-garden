@@ -131,7 +131,7 @@ For more information, check out the [Official Documentation](https://lwc.garden)
 Only the `@lwc-garden/core` package should be published to npm (for now).
 
 ```bash
-pnpm publish --filter @lwc-garden/core
+pnpm publish --filter @lwc-garden/core --access public
 ```
 
 <!-- LICENSE -->
