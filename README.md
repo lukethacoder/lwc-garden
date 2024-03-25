@@ -126,6 +126,14 @@ For more information, check out the [Official Documentation](https://lwc.garden)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
+## Publishing
+
+Only the `@lwc-garden/core` package should be published to npm (for now).
+
+```bash
+pnpm publish --filter @lwc-garden/core
+```
+
 <!-- LICENSE -->
 
 ## License
