@@ -1,5 +1,5 @@
 {
-  "name": "@lwc-garden/core",
+  "name": "lwc-garden",
   "private": true,
   "version": "1.0.0",
   "description": "Lightning Web Component Local Dev Server",
