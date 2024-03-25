@@ -6,6 +6,32 @@ export default defineConfig({
   integrations: [
     starlight({
       title: 'LWC Garden',
+      head: [
+        {
+          tag: 'script',
+          attrs: {
+            async: true,
+            'data-goatcounter': `https://www.googletagmanager.com/gtag/js?id=${process.env.PUBLIC_GA_CODE}`,
+            src: '//gc.zgo.at/count.js',
+          },
+        },
+        {
+          tag: 'script',
+          content: `window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', '${process.env.PUBLIC_GA_CODE}');`,
+        },
+        {
+          tag: 'script',
+          attrs: {
+            'data-goatcounter': process.env.PUBLIC_GOAT_COUNTER_URL,
+            async: true,
+            src: '//gc.zgo.at/count.js',
+          },
+        },
+      ],
       editLink: {
         baseUrl:
           'https://github.com/lukethacoder/lwc-garden/edit/main/packages/web/',
