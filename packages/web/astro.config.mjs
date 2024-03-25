@@ -31,6 +31,27 @@ export default defineConfig({
             src: '//gc.zgo.at/count.js',
           },
         },
+        {
+          tag: 'meta',
+          attrs: {
+            property: 'og:image',
+            content: '/open-graph.jpg',
+          },
+        },
+        {
+          tag: 'meta',
+          attrs: {
+            property: 'twitter:image',
+            content: '/open-graph.jpg',
+          },
+        },
+        {
+          tag: 'meta',
+          attrs: {
+            property: 'twitter:card',
+            content: 'summary_large_image',
+          },
+        },
       ],
       editLink: {
         baseUrl:
