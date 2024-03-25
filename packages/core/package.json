@@ -1,7 +1,6 @@
 {
   "name": "@lwc-garden/core",
-  "private": true,
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "Main LWC Garden package",
   "type": "module",
   "scripts": {
