@@ -1,0 +1,17 @@
+<template>
+  <section>
+    <h3>Imperative Apex Method</h3>
+    <button onclick={handleGetCurrentTimeFromApex}>Call apex method</button>
+    <pre>
+      {responsePayload}
+    </pre>
+  </section>
+  
+  <section>
+    <h3>Wire Apex Method</h3>
+    <input type="text" placeholder="Enter an accountId" maxlength="15" oninput={handleOnInput}/>
+    <pre>
+      {responsePayloadWire}
+    </pre>
+  </section>
+</template>

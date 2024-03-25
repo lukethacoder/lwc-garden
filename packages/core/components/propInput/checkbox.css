@@ -1,0 +1,31 @@
+@import './propInputShared.css';
+
+[role='fieldset']  {
+  border: none;
+  padding: 0;
+  margin: 0;
+}
+
+.options {
+  display: flex;
+}
+[data-type='checkbox'] .options {
+  flex-direction: column;
+}
+[data-type='inline-checkbox'] .options {
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.options label {
+  padding: 4px 0;
+  display: flex;
+  cursor: pointer;
+}
+.options > span {
+  display: flex;
+}
+
+[data-type='inline-checkbox'] .options label {
+  padding: 0 4px;
+}

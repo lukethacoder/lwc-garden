@@ -1,0 +1,13 @@
+:host {
+  background-color: hsl(var(--_garden-container-background));
+  font-family: var(--_garden-font-family);
+}
+
+.container {
+  padding: 24px;
+}
+
+p {
+  text-align: center;
+  padding: 24vh 0;
+}

@@ -1,0 +1,46 @@
+{
+  "name": "@lwc-garden/core",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Main LWC Garden package",
+  "type": "module",
+  "scripts": {
+    "dev": "node ./bin/run.js"
+  },
+  "bin": {
+    "dev": "./bin/run.js"
+  },
+  "devDependencies": {
+    "@babel/preset-typescript": "^7.24.1",
+    "@lukethacoder/lwc-webpack-plugin": "^4.2.0",
+    "@lwc/babel-plugin-component": "^6.3.4",
+    "@lwc/compiler": "^6.3.4",
+    "@lwc/engine-dom": "^6.3.4",
+    "@lwc/engine-server": "^6.3.4",
+    "@lwc/synthetic-shadow": "^6.3.4",
+    "@types/webpack": "^5.28.5",
+    "babel-loader": "^9.1.3",
+    "chokidar": "^3.6.0",
+    "eslint": "^8.57.0",
+    "html-webpack-plugin": "^5.6.0",
+    "minimatch": "^9.0.3",
+    "prettier": "^3.2.5",
+    "serve": "^14.2.1",
+    "tsx": "^4.7.1",
+    "typescript": "^5.4.3",
+    "webpack": "^5.91.0",
+    "webpack-dev-server": "^5.0.4"
+  },
+  "peerDependencies": {
+    "lwc": "^6.0.0",
+    "lwr": "^0.11.0"
+  },
+  "lint-staged": {
+    "**/*.{css,html,js,json,md,yaml,yml}": [
+      "prettier --write"
+    ],
+    "**/lwc/**/*.js": [
+      "eslint --cache --fix"
+    ]
+  }
+}

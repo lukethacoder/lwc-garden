@@ -1,0 +1,10 @@
+<template>
+  <span class="field">
+    <label class="label" for={name}>{label}</label>
+    <select id={name} oninput={handleOnInput}>
+      <template for:each={optionsToRender} for:item="item">
+        <option key={item.value} value={item.value}>{item.label}</option>
+      </template>
+    </select>
+  </span>
+</template>

@@ -1,0 +1,88 @@
+---
+title: Fast and Efficient LWC Development
+description: LWC development doesn't need to be slow and painful. Build your Lightning Web Components locally.
+template: splash
+hero:
+  tagline: LWC development doesn't need to be slow and painful.<br/>Build your Lightning Web Components locally.
+  image:
+    file: ../../assets/icon.svg
+  actions:
+    - text: Get started
+      link: /getting-started/introduction
+      icon: right-arrow
+      variant: primary
+    - text: View on Github
+      link: https://github.com/lukethacoder/lwc-garden
+      icon: external
+---
+
+import {
+  Card,
+  CardGrid,
+  Steps,
+  Tabs,
+  TabItem,
+} from '@astrojs/starlight/components'
+import Footer from '../../components/Footer.astro'
+import InstallSteps from '../../components/installSteps.mdx'
+import './index.css'
+
+## Features
+
+<CardGrid>
+  <Card title='Local First Development' icon='rocket'>
+    Build the way front end developers should, local first.
+    {``}
+    [Get Started](/getting-started/introduction)
+  </Card>
+  <Card title='Slot Placeholders' icon='add-document'>
+    Pre-fill `<slot />` elements during development.
+    {``}
+    [Learn more](/guides/slot-configuration)
+  </Card>
+  <Card title='API Editor' icon='open-book'>
+    Configure your `@api` properties and test locally using `argTypes`.
+    {``}
+    [Learn more](/guides/arg-types)
+  </Card>
+  <Card title='Mock Anything' icon='puzzle'>
+    Apex methods, AppExchange Packages or any On-Platform imports.
+    {``}
+    [Learn more](/guides/mocking)
+  </Card>
+</CardGrid>
+
+## Get Started
+
+<Steps>
+
+1. Install LWC Garden:
+   {/* prettier-ignore */}
+
+   <InstallSteps />
+
+2. Create a `garden.config.js` file
+
+   ```js
+   import lwcConfig from './lwc.config.json' assert { type: 'json' }
+
+   /**
+    * @type {import('@lwc-garden/core/types').GardenConfig}
+    */
+   const CONFIG = {
+     // lwc.config.json modules type
+     modules: [...lwcConfig.modules],
+   }
+
+   export default CONFIG
+   ```
+
+3. Run the local dev server
+
+   ```sh
+   npx @lwc-garden/core dev
+   ```
+
+</Steps>
+
+<Footer />

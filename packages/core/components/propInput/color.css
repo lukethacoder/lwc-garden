@@ -1,0 +1,35 @@
+@import './propInputShared.css';
+
+input {
+  border-color: hsl(var(--_garden-input));
+  border-width: var(--_garden-input-border-width);
+  border-style: solid;
+  border-radius: var(--_garden-input-border-radius);
+  appearance: none;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  background: none;
+  cursor: pointer;
+  padding: 0;
+  height: var(--_garden-input-height);
+  width: calc(var(--_garden-input-height) * 3);
+  max-width: 100%;
+}
+
+input::-webkit-color-swatch-wrapper {
+  padding: 2px;
+}
+
+input::-webkit-color-swatch {
+  border: 0;
+  border-radius: calc(var(--_garden-input-border-radius) - 2px);
+}
+
+input::-moz-color-swatch,
+input::-moz-focus-inner {
+  border: 0;
+}
+
+input::-moz-focus-inner {
+  padding: 0;
+}

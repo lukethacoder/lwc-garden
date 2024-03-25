@@ -1,0 +1,15 @@
+.card {
+  padding: 24px;
+}
+
+.card[data-variant='grid'] {
+  background-size: 16px 16px;
+  background-image:
+    linear-gradient(to right, var(--background-accent-color) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--background-accent-color) 1px, transparent 1px);
+}
+
+.card[data-variant='dotted'] {
+  background-image: radial-gradient(circle at 1px 1px, var(--background-accent-color) 1px, transparent 0);
+  background-size: 16px 16px;
+}

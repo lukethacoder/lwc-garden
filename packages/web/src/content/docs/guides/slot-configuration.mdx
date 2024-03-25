@@ -1,0 +1,51 @@
+---
+title: Slot Configuration
+description: Configure custom components to be used in slots.
+---
+
+import { Aside } from '@astrojs/starlight/components'
+
+One of the handy features of LWC Garden is the ability to fill your `slot`s while you are building.
+
+This can be configured in two different places:
+
+1. Global `garden.config.js` file
+2. Component level `garden.config.js` file
+
+<Aside>Component level config always takes priority over global config.</Aside>
+
+### Global Configuration
+
+```js
+/**
+ * @type {import('@lwc-garden/core/types').GardenConfig}
+ */
+export default {
+  placeholder: true,
+  slots: {
+    default: () => import('example/button'),
+    slot1: () => import('example/clock'),
+    slot2: () => import('example/button'),
+  },
+}
+```
+
+Read more on the [Configuration Page](/reference/configuration#slots)
+
+### Component Configuration
+
+```js
+/**
+ * @type {import('@lwc-garden/core/types').GardenComponentModule}
+ */
+export default {
+  name: 'Slot Component Example',
+  slotComponents: {
+    default: () => import('example/button'),
+    slot1: () => import('example/clock'),
+    slot2: () => import('example/button'),
+  },
+}
+```
+
+Read more on the [Component Configuration Page](/reference/component-configuration#slotcomponents)

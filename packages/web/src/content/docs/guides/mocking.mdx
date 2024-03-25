@@ -1,0 +1,296 @@
+---
+title: Mocking
+description: Configure mocking for Apex Methods, 3rd Party LWCs and On Platform imports.
+---
+
+import {
+  Aside,
+  Code,
+  FileTree,
+  Tabs,
+  TabItem,
+} from '@astrojs/starlight/components'
+
+Building LWCs locally that point to Apex Methods, 3rd Party AppExchange packages and On Platform specific JavaScript imports prevent local development from being feasible without considerable effort.
+
+### Example (via `lwc.config.json`)
+
+LWC Garden utalises the `lwc.config.json` file as a base for mocking locally.
+
+{/* prettier-ignore */}
+<FileTree>
+  - \_\_mocks\_\_
+    - @salesforce
+      - community
+        - basePath.js
+      - apex
+        - ExampleController.getCurrentTime.js
+        - ExampleController.getAccount.js
+      - …
+    - …
+  - force-app
+    - main
+      - default
+        - lwc
+          - exampleComponent
+            - garden.config.js
+            - exampleComponent.css
+            - exampleComponent.html
+            - exampleComponent.js
+          - …
+  - lwc.config.json
+</FileTree>
+
+#### `lwc.config.json`
+
+```json
+{
+  "modules": [
+    {
+      "dir": "./.garden/components",
+      "namespace": "garden"
+    },
+    {
+      "dir": "./components",
+      "namespace": "component"
+    },
+    {
+      "name": "@salesforce/community/basePath",
+      "path": "./__mocks__/@salesforce/community/basePath.js"
+    },
+    {
+      "name": "@salesforce/apex/ExampleController.getCurrentTime",
+      "path": "./__mocks__/apex/ExampleController.getCurrentTime.js"
+    },
+    {
+      "name": "@salesforce/apex/ExampleController.getAccount",
+      "path": "./__mocks__/apex/ExampleController.getAccount.js"
+    }
+  ]
+}
+```
+
+#### `exampleComponent.js`
+
+```js
+import { LightningElement, wire } from 'lwc'
+
+import basePath from '@salesforce/community/basePath'
+
+import apex_getCurrentTime from '@salesforce/apex/ExampleController.getCurrentTime'
+import apex_getAccount from '@salesforce/apex/ExampleController.getAccount'
+
+export default class SalesforceImports extends LightningElement {
+  basePath = basePath
+  accountId
+
+  @wire(apex_getAccount, {
+    accountId: '$accountId',
+  })
+  wiredGetById({ error, data }) {
+    if (error) {
+      // TODO: handle error
+    } else if (data) {
+      // TODO: handle data
+    }
+  }
+
+  handleGetCurrentTimeFromApex = async () => {
+    const response = await apex_getCurrentTime()
+    // TODO: handle response
+  }
+}
+```
+
+## Imperative Apex
+
+Imperative Apex mocks are super simple. The file should `export default` a single method. You may choose to run custom logic here to make your local development "more dynamic" or choose to return a hardcoded response.
+
+## Wire Apex
+
+Wire Apex mocks are a bit more complex. To build these successfully, you must follow wire adapter structure.
+
+```js
+export default class getAccount {
+  connected = false
+  accountId
+
+  constructor(dataCallback) {
+    this.dataCallback = dataCallback
+  }
+
+  connect() {
+    this.connected = true
+    this.runMethod()
+  }
+
+  disconnect() {
+    this.connected = false
+  }
+
+  update(config) {
+    // if any of the wire values have changed
+    if (
+      this.isDiff(config, 'accountId') ||
+      this.isDiff(config, 'publishStatus')
+    ) {
+      this.accountId = config.accountId
+
+      this.runMethod()
+    }
+  }
+
+  isDiff = (config, key) => this[key] !== config[key]
+
+  runMethod() {
+    const { connected, accountId } = this
+
+    if (connected && !!accountId) {
+      // pass back mock for "valid" accountId values
+      // '001' is how all accountIds start - using for testing here
+      if (accountId.startsWith('001')) {
+        this.dataCallback({
+          data: {
+            Id: accountId,
+            Name: 'LWC Garden Account',
+          },
+          error: undefined,
+        })
+      } else {
+        this.dataCallback({
+          data: undefined,
+          error: {
+            message: 'Invalid accountId. AccountIds start with "001"',
+          },
+        })
+      }
+    }
+  }
+}
+```
+
+> Check out <a href='https://lwc.dev/guide/wire_adapter#wire-adapters' target='_blank' ref='nofollow noreferrer'>lwc.dev/guide/wire_adapter</a> for more information on wire adapters.
+
+## On Platform Imports
+
+Imports like the following are the straight forward to mock. They require returning a single value, not functions, no `@wire` adapter boilerplate.
+
+- `@salesforce/client/formFactor` -> `export default 'Small'`
+- `@salesforce/community/basePath` -> `export default 'community-path'`
+- `@salesforce/community/Id` -> `export default '09a300012345678ABC'`
+- `@salesforce/user/Id` -> `export default '005300012345678DEF'`
+
+Given the simplicity of these imports, you may return function responses here too, again if you wish to make your imports more dynamic.
+
+Here is a mock of the `@salesforce/client/formFactor` import. Here we return either `Small` or `Large` based on the `window.innerWidth` size to better mimic the on-platform functionality.
+
+```js
+const formFactor = () => (window.innerWidth < 768 ? 'Small' : 'Large')
+export default formFactor()
+```
+
+<Aside type='caution'>
+  Your imports are not reactive and will not update based on components changes.
+  e.g. `window` width adjustment.
+</Aside>
+
+## Components and Third Party Packages
+
+A common third party package to use when building on the Salesforce platform is OmniStudio. OmniStudio allows you to build custom LWCs on the OmniScript platform. These can be either standalone LWCs or LWCs that extend OmniScript base components.
+
+Building on top of OmniScript components can cause issues when developing locally. LWC Garden allows you to mock these components locally and not have to worry about the components not being present in your local environment.
+
+## Example with OmniScript
+
+In this example we'll be mocking the OmniScript Card so we can build our own extension of the component locally.
+
+Before we dive in, lets have a quick look at the folder structure:
+
+{/* prettier-ignore */}
+<FileTree>
+  - \_\_mocks\_\_
+    - omniscript
+      - omniscriptBlock
+        - omniscriptBlock.html
+        - omniscriptBlock.js
+      - …
+    - …
+  - force-app
+    - main
+      - default
+        - lwc
+          - customOmniCard
+            - garden.config.js
+            - customOmniCard.css
+            - customOmniCard.html
+            - customOmniCard.js
+          - …
+  - lwc.config.json
+</FileTree>
+
+Configure your `lwc.config.json` file to point to the `__mocks__/omniscript` folder.
+
+export const exampleCode = `{
+  "modules": [
+    {
+      "dir": "./.garden/components",
+      "namespace": "garden"
+    },
+    {
+      "dir": "./local",
+      "namespace": "local"
+    },
+    {
+      "dir": "./__mocks__/omnistudio",
+      "namespace": "omnistudio"
+    }
+  ]
+}`
+export const fileName = 'lwc.config.json'
+export const highlights = [
+  '"dir": "./__mocks__/omnistudio",',
+  '"namespace": "omnistudio"',
+]
+
+<Code code={exampleCode} lang='js' ins={[11, 12, 13, 14]} title={fileName} />
+
+### OmniscriptBlock LWC (Mock)
+
+<Tabs>
+  <TabItem label="omniscriptBlock.js">
+   ```js
+   import { LightningElement } from 'lwc'
+   import html_template from './omniscriptBlock.html'
+   
+   export default class OmniscriptBlock extends LightningElement {
+     render() {
+       return html_template
+     }
+   }
+   ```
+  </TabItem>
+  <TabItem label="omniscriptBlock.html">
+   ```html
+   <template>
+     <div>
+       <slot></slot>
+     </div>
+   </template>
+   ```
+  </TabItem>
+</Tabs>
+
+### CustomOmniCard (Implementation)
+
+This is our custom LWC that extends the `OmniscriptBlock` imported from the `omnistudio` namespace. With our above config, this will resolve to our local `./__mocks__/omnistudio/omniscriptBlock` LWC.
+
+```js
+import OmniscriptBlock from 'omnistudio/omniscriptBlock'
+import html_template from './customOmniCard.html'
+
+export default class CustomOmniCard extends OmniscriptBlock {
+  render() {
+    return html_template
+  }
+}
+```

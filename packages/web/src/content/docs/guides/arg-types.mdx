@@ -1,0 +1,164 @@
+---
+title: ArgTypes
+description: Configure individual LWC API properties.
+---
+
+import { Aside, FileTree, Tabs, TabItem } from '@astrojs/starlight/components'
+
+Before continuing it is recommended to checkout the [`GardenArgTypes`](/reference/component-configuration#argtypes) API Reference.
+
+ArgTypes **must** have a matching `@api` property exposed on the LWC component as they are designed to map to these values.
+
+ArgTypes are defined in your LWC specific `garden.config.js` file.
+
+{/* prettier-ignore */}
+<FileTree>
+  - lwc
+    - helloWorldLwc
+      - **garden.config.js**
+      - helloWorldLwc.css
+      - helloWorldLwc.html
+      - helloWorldLwc.js
+    - …
+</FileTree>
+
+Arg types define the `@api` values for your LWC. These can be configured in a similar way to <a href="https://storybook.js.org/docs/api/arg-types" target="_blank">Storybooks ArgTypes</a>.
+
+### ArgTypes Table
+
+| Data Type   | Control Type      | Description                                                                                                                    |
+| ----------- | ----------------- | ------------------------------------------------------------------------------------------------------------------------------ |
+| **boolean** | `boolean`         | Provides a single checkbox to toggle between `true` (checked) and `false` (un-checked).                                        |
+| **enum**    | `checkbox`        | Provides a set of stacked checkboxes for selecting multiple options. Values are stored as a semi-colon (`;`) separated string. |
+|             | `checkbox-inline` | Provides a set of inlined checkboxes for selecting multiple options. Values are stored as a semi-colon (`;`) separated string. |
+|             | `radio`           | Provides a set of stacked radio buttons for selecting a single option.                                                         |
+|             | `radio-inline`    | Provides a set of inlined radio buttons for selecting a single option.                                                         |
+|             | `select`          | Provides a select to choose a single value from the options.                                                                   |
+| **number**  | `number`          | Provides a numeric input to allow any numeric value to be set.                                                                 |
+|             | `range`           | Provides a range slider to include restrict the numeric value between two values.                                              |
+| **string**  | `text`            | Provides a freeform text input.                                                                                                |
+|             | `color`           | Provides a color picker to choose color values.                                                                                |
+
+For more information, checkout the [`GardenArgTypes`](/reference/component-configuration#argtypes) API reference.
+
+### Example
+
+Lets have a look at an example of using ArgTypes for a basic button component.
+
+{/* prettier-ignore */}
+<FileTree>
+  - lwc
+    - button
+      - **garden.config.js**
+      - button.css
+      - button.html
+      - button.js
+    - …
+</FileTree>
+
+<Tabs>
+  <TabItem label='garden.config.js'>
+    ```js
+    /**
+    * @type {import('@lwc-garden/core/types').GardenConfig}
+    */
+    export default {
+      name: 'My Custom Button',
+      argTypes: [
+        {
+          name: 'label',
+          type: 'text',
+        },
+        {
+          name: 'color',
+          type: 'color',
+        },
+        {
+          name: 'backgroundColor',
+          type: 'color',
+        },
+        {
+          name: 'borderRadius',
+          type: 'select',
+          options: [
+            {
+              label: '0px',
+              value: '0px',
+            },
+            {
+              label: '4px',
+              value: '4px',
+            },
+            {
+              label: '12px',
+              value: '12px',
+            },
+            {
+              label: 'full',
+              value: '999px',
+            },
+          ],
+        },
+      ],
+    }
+    ```
+  </TabItem>
+  <TabItem label='button.js'>
+    ```js
+    import { LightningElement } from 'lwc'
+    
+    export default class Button extends LightningElement {
+      /**
+      * Label for the button
+      * @type {string}
+      */
+      @api label = 'Button Label'
+
+      /**
+      * Background color
+      * @type {string}
+      */
+      @api color = '#fff'
+
+      /**
+      * Background color
+      * @type {string}
+      */
+      @api backgroundColor = 'burlywood'
+
+      /**
+      * Background color
+      * @type {string}
+      */
+      @api borderRadius = '0px'
+
+      get computedStyle() {
+        return `
+          color: ${this.color || '#fff'};
+          background-color: ${this.backgroundColor || 'burlywood'};
+          border-radius: ${this.borderRadius || '0px'};
+        `
+      }
+    }
+    ```
+
+  </TabItem>
+  <TabItem label='button.html'>
+    {/* prettier-ignore */}
+    ```html
+    <template>
+      <button style={computedStyle}>{label}</button>
+    </template>
+    ```
+  </TabItem>
+  <TabItem label='button.css'>
+    ```css
+    button {
+      border-radius: 8px;
+      border: none;
+      padding: 8px 12px;
+      cursor: pointer;
+    }
+    ```
+  </TabItem>
+</Tabs>

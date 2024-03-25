@@ -1,0 +1,9 @@
+<template>
+  <ul>
+    <template for:each={colors} for:item="item">
+      <li key={item.label} style={item.style}>
+        {item.label}
+      </li>
+    </template>
+  </ul>
+</template>

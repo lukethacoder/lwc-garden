@@ -1,0 +1,14 @@
+import THEME_ROSE from '@lwc-garden/core/themes/rose.js'
+
+import lwcConfig from './lwc.config.json' assert { type: 'json' }
+
+/**
+ * @type {import('@lwc-garden/core/types').GardenConfig}
+ */
+const CONFIG = {
+  // lwc.config.json modules type
+  modules: [...lwcConfig.modules],
+  theme: THEME_ROSE,
+}
+
+export default CONFIG

@@ -1,0 +1,144 @@
+---
+title: Component Configuration
+description: LWC Garden Configuration File for specific LWCs.
+---
+
+import { Aside } from '@astrojs/starlight/components'
+
+Each LWC may choose to bring its own custom `garden.config.js` file. This should be placed in the LWC folder.
+
+<Aside type='note'>
+  You may wish to add `garden.config.js` to your `.forceignore` file if you do
+  not wish to push your configuration files. It is advised to keep these files
+  backed up in `git` to share with your fellow developers.
+</Aside>
+
+```js
+// garden.config.js
+/**
+ * @type {import('@lwc-garden/core/types').GardenComponentModule}
+ */
+export default {
+  name: 'Component Name',
+  argTypes: [
+    {
+      name: 'label',
+      type: 'text',
+    },
+  ],
+}
+```
+
+### `argTypes`
+
+**type:** [`GardenArgType`](#gardenargtype)
+
+Arg types define the `@api` values for your LWC. These can be configured in a similar way to <a href="https://storybook.js.org/docs/api/arg-types" target="_blank">Storybooks ArgTypes</a>.
+
+| Data Type   | Control Type      | Description                                                                                                                    |
+| ----------- | ----------------- | ------------------------------------------------------------------------------------------------------------------------------ |
+| **boolean** | `boolean`         | Provides a single checkbox to toggle between `true` (checked) and `false` (un-checked).                                        |
+| **enum**    | `checkbox`        | Provides a set of stacked checkboxes for selecting multiple options. Values are stored as a semi-colon (`;`) separated string. |
+|             | `checkbox-inline` | Provides a set of inlined checkboxes for selecting multiple options. Values are stored as a semi-colon (`;`) separated string. |
+|             | `radio`           | Provides a set of stacked radio buttons for selecting a single option.                                                         |
+|             | `radio-inline`    | Provides a set of inlined radio buttons for selecting a single option.                                                         |
+|             | `select`          | Provides a select to choose a single value from the options.                                                                   |
+| **number**  | `number`          | Provides a numeric input to allow any numeric value to be set.                                                                 |
+|             | `range`           | Provides a range slider to include restrict the numeric value between two values.                                              |
+| **string**  | `text`            | Provides a freeform text input.                                                                                                |
+|             | `color`           | Provides a color picker to choose color values.                                                                                |
+
+##### `min`
+
+**type:** `number`
+
+When type is `number` or `range`, sets the minimum allowed value.
+
+##### `max`
+
+**type:** `number`
+
+When type is `number` or `range`, sets the maximum allowed value.
+
+##### `step`
+
+**type:** `number`
+
+When type is `number` or `range`, sets the granularity allowed when
+
+##### `options`
+
+**type:** [`GardenOption[]`](#gardenoption)
+
+When data type is **enum** (`checkbox`, `checkbox-inline`, `radio`, `radio-inline`, `select`), sets the options to select from.
+
+```js
+const options = [
+  {
+    label: 'One',
+    value: 1,
+  },
+  {
+    label: 'Two',
+    value: 2,
+  },
+  {
+    label: 'Three',
+    value: 3,
+  },
+]
+```
+
+#### `GardenArgType`
+
+```ts
+export interface GardenArgType {
+  name: string
+  type: GardenArgTypes
+  min?: number
+  max?: number
+  step?: number
+  options?: GardenOption[]
+}
+
+export type GardenArgTypes =
+  | 'text'
+  | 'color'
+  | 'boolean'
+  | 'number'
+  | 'range'
+  | 'select'
+  | 'radio'
+  | 'inline-radio'
+  | 'checkbox'
+  | 'inline-checkbox'
+```
+
+#### `GardenOption`
+
+```ts
+export type GardenOption = {
+  label: string
+  value: string | boolean | number
+}
+```
+
+### `slots`
+
+**type:** `string[]`
+
+Array of slot names the component has. `default` should be used for default (non-named) slots. This is an optional configuration. If not provided, your HTML file will be analyzed for slot names.
+
+### `slotComponents`
+
+**type:** `{ [key: string]: () => Promise<any> }`
+
+Configuration object of components to use for their respective slot names. e.g.
+
+```js
+const components = {
+  default: () => import('example/button'),
+  slot1: () => import('example/clock'),
+  slot2: () => import('example/button'),
+}
+```

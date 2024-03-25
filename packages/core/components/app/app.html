@@ -1,0 +1,43 @@
+<template>
+  <aside>
+    <div class="resize_target_el">
+      <template lwc:if={MODULES}>
+        <garden-sidebar
+          modules={MODULES}
+          module={moduleMetadata}
+          onmoduleselect={handleClickModule}
+          ongardensearchclick={handleSearchClick}
+        ></garden-sidebar>
+      </template>
+    </div>
+    <div class="resize_slider_el"></div>
+  </aside>
+
+  <main>
+    <garden-container module={moduleMetadata}>
+      <template lwc:if={moduleLwc}>
+        <lwc:component
+          lwc:is={moduleLwc}
+          lwc:spread={moduleLwcProps}
+        ></lwc:component>
+      </template>
+    </garden-container>
+
+    <section class="props-container">
+      <div class="resize_props_slider_el"></div>
+      <garden-props
+        class="resize_props_target_el"
+        module={moduleMetadata}
+        prop-values={moduleLwcProps}
+        ongardenpropschange={handlePropsChange}
+        ongardenpropsclear={handlePropsClear}
+      ></garden-props>
+    </section>
+  </main>
+
+  <garden-command-palette
+    lwc:ref="commandPaletteRef"
+    modules={MODULES}
+    onmoduleselect={handleClickModule}
+  ></garden-command-palette>
+</template>

@@ -1,0 +1,6 @@
+@import './propInputShared.css';
+
+.field span {
+  display: flex;
+  align-items: flex-start;
+}

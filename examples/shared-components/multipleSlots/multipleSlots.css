@@ -1,0 +1,17 @@
+div {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+slot {
+  display: flex;
+  padding: 8px;
+  border: 1px solid burlywood;
+}
+
+.slot-container {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}

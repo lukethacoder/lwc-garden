@@ -1,0 +1,52 @@
+---
+title: Setup
+description: Setup and Configure LWC Garden.
+---
+
+import { Steps, Tabs, TabItem } from '@astrojs/starlight/components'
+import InstallSteps from '../../../components/installSteps.mdx'
+
+## Prerequisites
+
+To follow this guide, it is expected you have [`node`](https://nodejs.org/en), [`pnpm`](https://pnpm.io/) and [`sfdx`](https://developer.salesforce.com/tools/salesforcecli) installed as well as a <a href="https://developer.salesforce.com/docs/atlas.en-us.sfdx_dev.meta/sfdx_dev/sfdx_dev_ws_create_new.htm" target="_blank" rel="nofollow noreferrer">SFDX Project</a> setup with a valid `lwc.config.json` file.
+
+<Steps>
+
+1. Install the package
+
+   Run the following command in your terminal from the root of your SFDX Project to install LWC Garden:
+   {/* prettier-ignore */}
+
+   <InstallSteps />
+
+2. Create a `garden.config.js` file
+
+   ```js
+   import lwcConfig from './lwc.config.json' assert { type: 'json' }
+
+   /**
+    * @type {import('@lwc-garden/core/types').GardenConfig}
+    */
+   const CONFIG = {
+     // lwc.config.json modules type
+     modules: [...lwcConfig.modules],
+   }
+
+   export default CONFIG
+   ```
+
+   This is the bare minimum configuration required to get LWC Garden working. This imports your module configuration from your existing `lwc.config.json` file.
+
+3. Run the local dev server
+
+   When working locally, the development server lets you preview your work and automatically refreshes your browser when you make changes.
+
+   Run the following from the root of your SFDX Project:
+
+   ```sh
+   npx @lwc-garden/core dev
+   ```
+
+   This will log a message to your terminal with the URL of your local preview. Open this URL to start browsing your LWCs.
+
+</Steps>

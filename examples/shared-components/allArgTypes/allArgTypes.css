@@ -1,0 +1,16 @@
+:host {
+  display: flex;
+  width: 100%;
+}
+
+pre {
+  display: flex;
+  background-color: #121212;
+  color: #fff;
+  width: 100%;
+  max-height: 100%;
+  overflow: auto;
+  padding: 12px;
+  border-width: 2px;
+  border-style: solid;
+}

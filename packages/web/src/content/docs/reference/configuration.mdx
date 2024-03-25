@@ -1,0 +1,170 @@
+---
+title: Configuration
+description: LWC Garden Configuration File.
+---
+
+The following is a reference of all available values for the `garden.config.js` file.
+
+If you are looking for component level configuration, checkout [Component Configuration](/reference/component-configuration).
+
+```js
+// garden.config.js
+import lwcConfig from './lwc.config.json' assert { type: 'json' }
+
+/**
+ * @type {import('@lwc-garden/core/types').GardenConfig}
+ */
+const CONFIG = {
+  // lwc.config.json modules type
+  modules: [...lwcConfig.modules],
+}
+
+export default CONFIG
+```
+
+### `modules`
+
+**type:** <a href="https://github.com/salesforce/lwc/blob/master/packages/%40lwc/module-resolver/src/types.ts#L42" target="_blank">`ModuleRecord[]`</a>
+
+Module records, usually pulled from your `lwc.config.json` file.
+
+### `rootDir`
+
+**type:** `string`
+
+Define the root directory to run your project. Optional, will default to `process.cwd()` (current directory).
+
+### `ignore`
+
+**type:** `string[]`
+
+Array of [minimatch](https://github.com/isaacs/minimatch) strings to exclude from the LWC Garden local dev server.
+
+### `theme`
+
+**type:** [`GardenTheme`](#gardentheme)
+
+Configuration to adjust the theme. You may choose to [bring your own theme](/guides/themes) or use one of the default themes.
+
+Themes can be imported from:
+
+```js
+import THEME_ROSE from '@lwc-garden/core/themes/THEME_NAME.js'
+```
+
+Available default themes:
+
+- `green` (default)
+- `blue`
+- `orange`
+- `rose`
+- `yellow`
+- `zinc`
+
+#### `GardenTheme`
+
+```ts
+export interface GardenTheme {
+  light?: GardenThemeProperties
+  dark?: GardenThemeProperties
+}
+
+export interface GardenThemeProperties {
+  'font-family'?: string
+  'container-background'?: string
+  background?: string
+  foreground?: string
+  card?: string
+  'card-foreground'?: string
+  popover?: string
+  'popover-foreground'?: string
+  primary?: string
+  'primary-foreground'?: string
+  secondary?: string
+  'secondary-foreground'?: string
+  muted?: string
+  'muted-foreground'?: string
+  accent?: string
+  'accent-foreground'?: string
+  destructive?: string
+  'destructive-foreground'?: string
+  border?: string
+  input?: string
+  ring?: string
+  radius?: string
+  'dialog-background'?: string
+  'dialog-background-alpha'?: string
+}
+```
+
+### `args`
+
+**type:** [`GardenArgsConfig`](#gardenargsconfig)
+
+Args currently only contains one property, `cache`.
+
+When enabled, arg values that are set on components will be cached to `localStorage`. This is `true` by default, but can be disabled by passing `args.cache = false`.
+
+#### `GardenArgsConfig`
+
+```ts
+interface GardenArgsConfig {
+  cache?: boolean
+}
+```
+
+### `slots`
+
+**type:** [`GardenSlotsConfig`](#gardenslotsconfig)
+
+##### `placeholder`
+
+When `true`, will set children on `<slot/>`s when found in the HTML markup of your LWCs. Mark as `false` to disable.
+
+##### `components`
+
+Configuration object of components to use for their respective slot names. e.g.
+
+```js
+const components = {
+  default: () => import('example/button'),
+  slot1: () => import('example/clock'),
+  slot2: () => import('example/button'),
+}
+```
+
+> NOTE: `default` is used to fill non-named slots.
+
+#### `GardenSlotsConfig`
+
+```ts
+export interface GardenSlotsConfig {
+  /**
+   * @type {Boolean}[true] - Should slots have their children set
+   */
+  placeholder?: boolean
+  /**
+   * Key/value object of slot names and dynamic imports to fill the slots.
+   * @example {
+   *  default: () => import('test/button'),
+   *  slot1: () => import('test/clock'),
+   *  slot2: () => import('test/button'),
+   * }
+   */
+  components?: {
+    [key: string]: () => Promise<any>
+  }
+}
+```
+
+### `webpack`
+
+**type:** <a href="https://github.com/webpack/webpack/blob/main/types.d.ts#L2420" target="_blank">`Configuration`</a>
+
+Define a custom webpack configuration. This is for advanced users. You may break things if configured incorrectly.
+
+Types are imported from:
+
+```ts
+import { Configuration } from 'webpack'
+```

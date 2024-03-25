@@ -1,0 +1,37 @@
+{
+  "name": "@lwc-garden/core",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Lightning Web Component Local Dev Server",
+  "type": "module",
+  "scripts": {
+    "preinstall": "npx only-allow pnpm",
+    "prepare": "husky install",
+    "core:dev": "pnpm --filter=@lwc-garden/core dev",
+    "web:dev": "pnpm --filter=@lwc-garden/web dev",
+    "examples:custom-theme": "pnpm --filter=@lwc-garden/custom-theme dev",
+    "examples:custom-webpack-config": "pnpm --filter=@lwc-garden/example-custom-webpack-config dev",
+    "examples:faux-showcase": "pnpm --filter=@lwc-garden/example-faux-showcase dev",
+    "examples:minimal-config": "pnpm --filter=@lwc-garden/example-minimal-config dev",
+    "examples:mocking": "pnpm --filter=@lwc-garden/example-mocking dev",
+    "examples:showcase": "pnpm --filter=@lwc-garden/example-showcase dev",
+    "examples:stress-test": "pnpm --filter=@lwc-garden/example-stress-test dev",
+    "examples:stress-test:generate": "pnpm --filter=@lwc-garden/example-stress-test generate",
+    "examples:copy": "node ./examples/copy.js"
+  },
+  "devDependencies": {
+    "eslint": "^8.57.0",
+    "husky": "^9.0.11",
+    "lint-staged": "^15.2.2",
+    "prettier": "^3.2.5",
+    "typescript": "^5.4.2"
+  },
+  "lint-staged": {
+    "**/*.{css,html,js,json,md,yaml,yml}": [
+      "prettier --write"
+    ],
+    "**/lwc/**/*.js": [
+      "eslint --cache --fix"
+    ]
+  }
+}

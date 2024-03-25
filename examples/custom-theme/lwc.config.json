@@ -1,0 +1,12 @@
+{
+  "modules": [
+    {
+      "dir": "./.garden/components",
+      "namespace": "garden"
+    },
+    {
+      "dir": "./.shared-components",
+      "namespace": "example"
+    }
+  ]
+}

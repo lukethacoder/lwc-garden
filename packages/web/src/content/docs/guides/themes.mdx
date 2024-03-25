@@ -1,0 +1,92 @@
+---
+title: Themes
+description: Custom theming for the UI of LWC Garden
+---
+
+import { Aside } from '@astrojs/starlight/components'
+
+Don't like green, no problem, you can easily customise the theme of LWC Garden.
+
+You can use one of the built in themes or configure your own custom theme.
+
+Built in themes can be imported from:
+
+```js
+import THEME_ROSE from '@lwc-garden/core/themes/THEME_NAME.js'
+```
+
+Available default themes:
+
+- `green` (default)
+- `blue`
+- `orange`
+- `rose`
+- `yellow`
+- `zinc`
+
+### Build your own theme
+
+You can build your own theme using the [`GardenTheme`](/reference/configuration#gardentheme) interface.
+
+<Aside>
+  Color values are HSL values. Passing any other value type will result in a
+  broken theme.
+</Aside>
+
+Here is an example theme:
+
+```js
+/**
+ * @type {import('./types').GardenTheme}
+ */
+export default {
+  light: {
+    'font-family': 'Gantari',
+    background: '0 0% 100%',
+    foreground: '240 10% 3.9%',
+    card: '0 0% 100%',
+    'card-foreground': '240 10% 3.9%',
+    popover: '0 0% 100%',
+    'popover-foreground': '240 10% 3.9%',
+    primary: '142.1 76.2% 36.3%',
+    'primary-foreground': '355.7 100% 97.3%',
+    secondary: '240 4.8% 95.9%',
+    'secondary-foreground': '240 5.9% 10%',
+    muted: '240 4.8% 95.9%',
+    'muted-foreground': '240 3.8% 46.1%',
+    accent: '240 4.8% 95.9%',
+    'accent-foreground': '240 5.9% 10%',
+    destructive: '0 84.2% 60.2%',
+    'destructive-foreground': '0 0% 98%',
+    border: '240 5.9% 90%',
+    input: '240 5.9% 90%',
+    ring: '142.1 76.2% 36.3%',
+    radius: '0.5rem',
+    'container-background': '240 4.8% 95.9%',
+    'dialog-background': '20 14.3% 4.1%',
+    'dialog-background-alpha': '0.5',
+  },
+  dark: {
+    background: '20 14.3% 4.1%',
+    foreground: '0 0% 95%',
+    card: '24 9.8% 10%',
+    'card-foreground': '0 0% 95%',
+    popover: '0 0% 9%',
+    'popover-foreground': '0 0% 95%',
+    primary: '142.1 70.6% 45.3%',
+    'primary-foreground': '144.9 80.4% 10%',
+    secondary: '240 3.7% 15.9%',
+    'secondary-foreground': '0 0% 98%',
+    muted: '0 0% 15%',
+    'muted-foreground': '240 5% 64.9%',
+    accent: '12 6.5% 15.1%',
+    'accent-foreground': '0 0% 98%',
+    destructive: '0 62.8% 30.6%',
+    'destructive-foreground': '0 85.7% 97.3%',
+    border: '240 3.7% 15.9%',
+    input: '240 3.7% 15.9%',
+    ring: '142.4 71.8% 29.2%',
+    'container-background': '0 0% 15%',
+  },
+}
+```

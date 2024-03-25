@@ -1,0 +1,9 @@
+# LWC Garden Cache Folder
+.garden
+
+# Symlinked Shared Components
+shared-components
+
+# Keep Components Folder, ignore auto generated components
+/components/*
+!/components/.gitkeep

@@ -1,0 +1,124 @@
+@import 'garden/sharedGlobalCss';
+
+dialog {
+  margin: 10vh auto;
+  max-width: 90vw;
+  width: 448px;
+  background-color: transparent;
+  padding: 0;
+  border: none;
+}
+
+@media (min-width: 768px) {
+  dialog {
+    width: 512px;
+  }
+}
+@media (min-width: 1024px) {
+  dialog {
+    width: 640px;
+  }
+}
+@media (min-width: 1280px) {
+  dialog {
+    width: 720px;
+  }
+}
+
+dialog::backdrop {
+  background-color: hsl(
+    var(--garden-dialog-background, 20 14.3% 4.1%) / var(--garden-dialog-background-alpha, 0.5)
+  );
+}
+
+.container {
+  max-height: 100%;
+}
+
+input {
+  width: 100%;
+  background-color: hsl(var(--_garden-background));
+  color: hsl(var(--_garden-foreground));
+  border: 1px solid hsl(var(--_garden-input));
+  font-size: 16px;
+  padding: 8px 12px;
+  border-radius: 4px 4px 0 0;
+  appearance: none;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+}
+input:focus-visible {
+  outline: none;
+}
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-results-button,
+input[type="search"]::-webkit-search-results-decoration {
+  display: none;
+}
+
+ul, 
+li {
+  display: flex;
+  padding: 0;
+  margin: 0;
+}
+ul {
+  background-color: hsl(var(--_garden-background));
+  border-radius: 0 0 4px 4px;
+  border: 1px solid hsl(var(--_garden-input));
+  padding: 4px;
+  flex-direction: column;
+}
+ul:empty {
+  padding: 0 4px;
+  border: 1px solid transparent;
+}
+
+a {
+  display: inline-flex;
+  width: 100%;
+  text-decoration: none;
+  color: hsl(var(--_garden-foreground));
+  padding: 6px 2px 6px 14px;
+  background-color: transparent;
+  font-size: 14px;
+  font-family: var(--_garden-font-family);
+  border-radius: 4px;
+  user-select: none;
+  outline: none;
+  gap: 4px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  /* display: inline-block; */
+}
+a:focus-visible,
+a:hover {
+  background-color: hsl(var(--_garden-primary) / 0.2);
+  outline: none;
+}
+
+a > span:not(:last-of-type) {
+  color: hsl(var(--_garden-muted-foreground));
+}
+
+a[data-is-active='true'] {
+  background-color: hsl(var(--_garden-primary));
+  color: hsl(var(--_garden-primary-foreground));
+}
+
+a > span:last-of-type,
+.category {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: inline-block;
+}
+
+a > span:last-of-type {
+  max-width: 80%;
+}
+.category {
+  max-width: 40%;
+}

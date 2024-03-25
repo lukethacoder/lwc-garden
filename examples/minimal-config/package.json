@@ -1,0 +1,27 @@
+{
+  "name": "@lwc-garden/example-minimal-config",
+  "private": true,
+  "version": "1.0.0",
+  "description": "minimal-config",
+  "type": "module",
+  "scripts": {
+    "dev": "npx @lwc-garden/core dev"
+  },
+  "devDependencies": {
+    "eslint": "^8.57.0",
+    "lwc": "^6.3.4",
+    "prettier": "^3.2.5",
+    "typescript": "^5.4.3"
+  },
+  "dependencies": {
+    "@lwc-garden/core": "workspace:*"
+  },
+  "lint-staged": {
+    "**/*.{css,html,js,json,md,yaml,yml}": [
+      "prettier --write"
+    ],
+    "**/lwc/**/*.js": [
+      "eslint --cache --fix"
+    ]
+  }
+}

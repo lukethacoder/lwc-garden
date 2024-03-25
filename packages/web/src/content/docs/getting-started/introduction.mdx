@@ -1,0 +1,37 @@
+---
+title: Introduction
+description: Local LWC development made easy.
+---
+
+import { FileTree, Tabs, TabItem } from '@astrojs/starlight/components'
+
+LWC Garden aims to be a replacement for the official Salesforce [`@salesforce/lwc-dev-server`](https://www.npmjs.com/package/@salesforce/lwc-dev-server), which has not received an update since 2021.
+
+LWC Garden brings an array of new features and customisation so you can develop how you want to, locally.
+
+LWC Garden provides two places for configuration:
+
+1. [Global Configuration](/reference/configuration): `garden.config.js` at the root of your project.
+2. [Component Configuration](/reference/component-configuration): LWC specific `garden.config.js` that lives in your LWC folder.
+
+{/* prettier-ignore */}
+<FileTree>
+  - force-app
+    - main
+      - default
+        - lwc
+          - helloWorldLwc
+            - **garden.config.js** Component Configuration
+            - helloWorldLwc.css
+            - helloWorldLwc.html
+            - helloWorldLwc.js
+          - …
+  - **garden.config.js** Global Configuration
+  - lwc.config.json
+</FileTree>
+
+## Next steps
+
+- [Setup](/getting-started/setup): Get up and running in two commands
+- [Configuration](/reference/configuration): Learn more about the global `garden.config.js` configuration
+- [Component Configuration](/reference/component-configuration): Learn more about the LWC specific `garden.config.js` configuration

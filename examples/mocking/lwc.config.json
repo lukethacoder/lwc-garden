@@ -1,0 +1,44 @@
+{
+  "modules": [
+    {
+      "dir": "./.garden/components",
+      "namespace": "garden"
+    },
+    {
+      "dir": "./local",
+      "namespace": "local"
+    },
+    {
+      "dir": "./__mocks__/omnistudio",
+      "namespace": "omnistudio"
+    },
+    {
+      "name": "@salesforce/client/formFactor",
+      "path": "./__mocks__/@salesforce/client/formFactor.js"
+    },
+    {
+      "name": "@salesforce/community/basePath",
+      "path": "./__mocks__/@salesforce/community/basePath.js"
+    },
+    {
+      "name": "@salesforce/community/Id",
+      "path": "./__mocks__/@salesforce/community/Id.js"
+    },
+    {
+      "name": "@salesforce/user/Id",
+      "path": "./__mocks__/@salesforce/user/Id.js"
+    },
+    {
+      "name": "@salesforce/apex/ExampleController.getCurrentTime",
+      "path": "./__mocks__/apex/ExampleController.getCurrentTime.js"
+    },
+    {
+      "name": "@salesforce/apex/ExampleController.getAccount",
+      "path": "./__mocks__/apex/ExampleController.getAccount.js"
+    },
+    {
+      "name": "@salesforce/apex",
+      "path": "./__mocks__/apex/refreshApex.js"
+    }
+  ]
+}

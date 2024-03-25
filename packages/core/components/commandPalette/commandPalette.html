@@ -1,0 +1,34 @@
+<template>
+  <dialog lwc:ref="dialogEl">
+    <span>
+      <label for="command-search" class="sr-only">Search</label>
+      <input
+        lwc:ref="inputEl"
+        type="search"
+        id="command-search"
+        value={filterValue}
+        oninput={handleOnInput}
+      />
+    </span>
+    <ul>
+      <template for:each={filteredModules} for:item="item">
+        <li key={item.name}>
+          <a
+            href={item.href}
+            tabindex="-1"
+            data-name={item.name}
+            title={item.name}
+            onclick={handleClickModule}
+          >
+            <span class="category">
+              <template lwc:if={item.category}> {item.category} </template>
+              <template lwc:else> Uncategorised </template>
+            </span>
+            <span>/</span>
+            <span> {item.label}</span>
+          </a>
+        </li>
+      </template>
+    </ul>
+  </dialog>
+</template>

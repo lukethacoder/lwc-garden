@@ -1,0 +1,16 @@
+@import './propInputShared.css';
+
+input {
+  background-color: transparent;
+  color: hsl(var(--_garden-foreground));
+  border-color: hsl(var(--_garden-input));
+  border-width: var(--_garden-input-border-width);
+  border-style: solid;
+  border-radius: var(--_garden-input-border-radius);
+  padding: var(--_garden-input-padding);
+  line-height: var(--_garden-input-line-height);
+  height: var(--_garden-input-height);
+  font-size: var(--_garden-input-font-size);
+  padding-block: 0;
+  padding-inline: var(--_garden-input-padding-inline);
+}

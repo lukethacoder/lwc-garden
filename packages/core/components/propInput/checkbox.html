@@ -1,0 +1,21 @@
+<template>
+  <div role="fieldset" class="field" data-type={type}>
+    <legend class="label">{label}</legend>
+    <span class="options">
+      <template for:each={optionsToRender} for:item="item">
+        <span key={item.value}>
+          <label>
+            <input 
+              type="checkbox" 
+              value={item.value} 
+              checked={item.checked}
+              name={name}
+              oninput={handleOnInput}
+            ></input>
+            {item.label}
+          </label>
+        </span>
+      </template>
+    </span>
+  </div>
+</template>

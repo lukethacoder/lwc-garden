@@ -1,0 +1,24 @@
+
+.badge {
+  background-color: #fff;
+  padding: 4px 12px;
+  font-size: 14px;
+  border-radius: 6px;
+}
+
+.badge[data-variant='default'] {
+  color: #27272a;
+}
+
+.badge[data-variant='secondary'] {
+  background-color: #27272a;
+}
+
+.badge[data-variant='outline'] {
+  background-color: transparent;
+  border: 1px solid #fff;
+}
+
+.badge[data-variant='destructive'] {
+  background-color: #7f1d1d;
+}

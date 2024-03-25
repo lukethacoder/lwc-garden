@@ -1,0 +1,46 @@
+<template>
+  <ul>
+    <template lwc:if={props}>
+      <li class="header">
+        <span>Name</span>
+        <span>
+          Value
+          <button aria-label="Clear values" title="Clear values" onclick={handleClearValues}>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+              <path d="M9 14l-4 -4l4 -4" />
+              <path d="M5 10h11a4 4 0 1 1 0 8h-1" />
+            </svg>
+          </button>
+        </span>
+      </li>
+      <template for:each={props} for:item="item">
+        <li key={item.name}>
+          <garden-prop-input
+            label={item.name}
+            type={item.type}
+            value={item.value}
+            name={item.name}
+            min={item.min}
+            max={item.max}
+            step={item.step}
+            options={item.options}
+          ></garden-prop-input>
+        </li>
+      </template>
+    </template>
+    <template lwc:else>
+      <li>No props configured</li>
+    </template>
+  </ul>
+</template>

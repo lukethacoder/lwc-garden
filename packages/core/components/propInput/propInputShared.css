@@ -1,0 +1,38 @@
+:host {
+  width: 100%;
+
+  --_garden-input-height: 36px;
+  --_garden-input-padding-block: 4px;
+  --_garden-input-padding-inline: 12px;
+  --_garden-input-border-radius: calc(var(--_garden-radius) - 2px);
+  --_garden-input-border-width: 1px;
+  --_garden-input-line-height: 20;
+  --_garden-input-font-size: 14px;
+}
+
+.field {
+  display: grid;
+  grid-template-columns: var(--_garden-props-grid-template-columns);
+  color: hsl(var(--_garden-foreground));
+  gap: 6px;
+}
+@media (min-width: 768px) {
+  .field {
+    gap: 0px;
+  }
+}
+
+label,
+.label {
+  font-size: 14px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+:is(input, select):focus-visible {
+  outline: 2px solid hsl(var(--_garden-ring));
+}
+
+input {
+  accent-color: hsl(var(--_garden-primary));
+}

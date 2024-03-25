@@ -1,0 +1,14 @@
+<template>
+  <span class="field">
+    <label for={name}>{label}</label>
+    <input
+      type="range"
+      id={name}
+      name={name}
+      min={min}
+      max={max}
+      step={step}
+      oninput={handleOnInput}
+    />
+  </span>
+</template>
