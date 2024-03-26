@@ -126,6 +126,28 @@ async function handleLwcComponentMetadataFromFiles(
   }
 }
 
+/**
+ * Valid LWCs should contain a .html file and a .js file that matches the parent folders names
+ * @param {Object[]} files
+ * @returns {boolean}
+ */
+function validateLwcFromFiles(files) {
+  const hasHtmlFile = files.find(
+    (item) =>
+      item.entryPath.split(
+        `${item.parentFolderName}/${item.parentFolderName}`
+      )[1] === '.html'
+  )
+  const hasJsFile = files.find(
+    (item) =>
+      item.entryPath.split(
+        `${item.parentFolderName}/${item.parentFolderName}`
+      )[1] === '.js'
+  )
+
+  return hasHtmlFile && hasJsFile
+}
+
 async function checkFolders(gardenConfig, folderPaths, modules) {
   let components = []
 
@@ -153,20 +175,26 @@ async function checkFolders(gardenConfig, folderPaths, modules) {
             parentFolderName === baseName ||
             entry === COMPONENT_CONFIG_FILE_NAME
           ) {
-            files.push(entryPath)
+            files.push({
+              parentFolderName,
+              baseName,
+              entryPath,
+            })
           }
         }
       }
 
+      const isValidLwcFromFiles = validateLwcFromFiles(files)
+
       /**
        * Only attempt to render LWCs with at least a componentName.js and a componentName.html file
        */
-      if (files.length > 0) {
+      if (files.length > 0 && isValidLwcFromFiles) {
         components.push(
           await handleLwcComponentMetadataFromFiles(
             gardenConfig,
             modules,
-            files
+            files.map((item) => item.entryPath)
           )
         )
       }
