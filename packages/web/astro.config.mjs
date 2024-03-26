@@ -113,6 +113,7 @@ export default defineConfig({
               label: 'Component Configuration',
               link: '/reference/component-configuration',
             },
+            { label: 'FAQs', link: '/reference/faqs/' },
           ],
         },
       ],

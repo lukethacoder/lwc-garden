@@ -17,6 +17,7 @@ hero:
 ---
 
 import {
+  Code,
   Card,
   CardGrid,
   Steps,
@@ -26,6 +27,20 @@ import {
 import Footer from '../../components/Footer.astro'
 import InstallSteps from '../../components/installSteps.mdx'
 import './index.css'
+
+export const gardenAppConfigCode = `{
+   "modules": [
+      {
+         "dir": "./.garden/components",
+         "namespace": "garden"
+      },
+      {
+         "dir": "./force-app/main/default/lwc",
+         "namespace": "c"
+      }
+   ]
+}`
+export const fileName = 'lwc.config.json'
 
 ## Features
 
@@ -79,6 +94,15 @@ import './index.css'
 
    export default CONFIG
    ```
+
+   > Don't forget to add the `garden` config to your `lwc.config.json` file:
+   >
+   > <Code
+   >   code={gardenAppConfigCode}
+   >   lang='json'
+   >   ins={[3, 4, 5, 6]}
+   >   title={fileName}
+   > />
 
 3. Run the local dev server
 

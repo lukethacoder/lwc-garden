@@ -13,9 +13,7 @@ export interface GardenConfig {
     cache?: boolean
   }
   slots?: GardenSlotsConfig
-  lwc?: {
-    disableSyntheticShadowSupport?: boolean
-  }
+  lwc?: GardenLwcConfig
   webpack?: Configuration
 }
 
@@ -84,6 +82,13 @@ export interface GardenSlotsConfig {
   components?: {
     [key: string]: () => Promise<any>
   }
+}
+
+export interface GardenLwcConfig {
+  /**
+   * @type {Boolean}[false] - Should '@lwc/synthetic-shadow' be disabled
+   */
+  disableSyntheticShadowSupport?: boolean
 }
 
 export interface GardenTheme {

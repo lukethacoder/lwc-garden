@@ -1,0 +1,38 @@
+---
+title: FAQs
+description: Frequently Asked questions
+---
+
+import { Code } from '@astrojs/starlight/components'
+
+### Module not found: Error: Can't resolve '@lwc/synthetic-shadow'
+
+You have two options here:
+
+1. Install `@lwc/synthetic-shadow` if you wish to use the Synthetic shadow
+2. Set the `lwc.disableSyntheticShadowSupport` value to `true` in your `garden.config.js` file
+
+### Module not found: Error: Can't resolve 'garden/app'
+
+Make sure you have added the `garden` config to your `lwc.config.json` file.
+
+export const gardenAppConfigCode = `{
+  "modules": [
+    {
+      "dir": "./.garden/components",
+      "namespace": "garden"
+    },
+    {
+      "dir": "./force-app/main/default/lwc",
+      "namespace": "c"
+    }
+  ]
+}`
+export const fileName = 'lwc.config.json'
+
+<Code
+  code={gardenAppConfigCode}
+  lang='json'
+  ins={[3, 4, 5, 6]}
+  title={fileName}
+/>
