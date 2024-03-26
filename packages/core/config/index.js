@@ -3,7 +3,7 @@
  * the synthetic shadow (to mimic on platform functionality)
  */
 // sort-imports-ignore
-import '@lwc/synthetic-shadow' // import 'lwc/synthetic-shadow'
+import '@lwc/synthetic-shadow'
 
 import App from 'garden/app'
 

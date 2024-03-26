@@ -13,6 +13,9 @@ export interface GardenConfig {
     cache?: boolean
   }
   slots?: GardenSlotsConfig
+  lwc?: {
+    disableSyntheticShadowSupport?: boolean
+  }
   webpack?: Configuration
 }
 

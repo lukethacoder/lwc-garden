@@ -13,6 +13,9 @@ import { __filename, __dirname, CONFIG_LWC_PATH } from '../constants.js'
 
 import readFiles from './readFiles.js'
 
+/**
+ * @type {import('../types').GardenConfig}
+ */
 const GardenConfig = await loadConfig(`${process.cwd()}/garden.config.js`)
 const webpackConfig = await getWebpackConfig(GardenConfig)
 
@@ -36,12 +39,18 @@ if (isUsingDefaultWebpackConfig) {
     GardenConfig.theme
   )
 
-  const jsSource = await fs.promises.readFile(
-    path.join(configSource, 'index.js')
+  let jsString = await fs.promises.readFile(
+    path.join(configSource, 'index.js'),
+    'utf-8'
   )
 
+  // if synthetic shadow has been disbaled, remove it from the .html config file
+  if (GardenConfig.lwc.disableSyntheticShadowSupport === true) {
+    jsString = jsString.replace(`import '@lwc/synthetic-shadow'`, '')
+  }
+
   await writeStringToFile(path.join(destination, 'index.html'), htmlString)
-  await writeStringToFile(path.join(destination, 'index.js'), jsSource)
+  await writeStringToFile(path.join(destination, 'index.js'), jsString)
 }
 // else -> ignore as the user is bringing their own config files
 
