@@ -11,8 +11,7 @@ export default defineConfig({
           tag: 'script',
           attrs: {
             async: true,
-            'data-goatcounter': `https://www.googletagmanager.com/gtag/js?id=${process.env.PUBLIC_GA_CODE}`,
-            src: '//gc.zgo.at/count.js',
+            src: `https://www.googletagmanager.com/gtag/js?id=${process.env.PUBLIC_GA_CODE}`,
           },
         },
         {
