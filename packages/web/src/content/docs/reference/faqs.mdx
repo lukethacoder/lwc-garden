@@ -34,5 +34,32 @@ export const fileName = 'lwc.config.json'
   code={gardenAppConfigCode}
   lang='json'
   ins={[3, 4, 5, 6]}
-  title={fileName}
+  title='lwc.config.json'
 />
+
+### SyntaxError: Cannot use import statement outside a module
+
+Add `"type": "module"` to your `package.json` file:
+
+export const packageJsonModuleConfig = `{
+  "name": "sfdx-starter",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {},
+  "devDependencies": {}
+}`
+
+<Code
+  code={packageJsonModuleConfig}
+  lang='json'
+  ins={[4]}
+  title='package.json'
+/>
+
+### Error: [LWC error]: LWC WARNING: current engine is v6.0.0, but template was compiled with v5.0.0.
+
+> Error: [LWC error]: LWC WARNING: current engine is v6.0.0, but template was compiled with v5.0.0.
+> Please update your compiled code or LWC engine so that the versions match.
+> No further warnings will appear.
+
+Update your `lwc` package to match the "current
