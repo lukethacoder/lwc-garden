@@ -3,6 +3,9 @@ import starlight from '@astrojs/starlight'
 
 // https://astro.build/config
 export default defineConfig({
+  redirects: {
+    '/utm_campaign=linkedin': '/?utm_campaign=linkedin',
+  },
   integrations: [
     starlight({
       title: 'LWC Garden',
