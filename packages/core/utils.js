@@ -13,6 +13,9 @@ export const __dirname = path.dirname(__filename)
 const CACHE_FOLDER = '.garden'
 
 export async function loadConfig(pathToConfig) {
+  /**
+   * @type {import('./types').GardenConfig}
+   */
   const GardenConfigFromFile = await checkAndReadFile(pathToConfig)
 
   const gardenConfig = GardenConfigFromFile.default
@@ -34,7 +37,10 @@ export async function loadConfig(pathToConfig) {
     },
   }
 
-  return {
+  /**
+   * @type {import('./types').GardenConfig}
+   */
+  const _gardenConfig = {
     ...gardenConfig,
     rootDir,
     cacheDir: path.join(rootDir, CACHE_FOLDER),
@@ -52,7 +58,13 @@ export async function loadConfig(pathToConfig) {
         ...gardenConfig?.slots?.components,
       },
     },
+    lwc: {
+      disableSyntheticShadowSupport: false,
+      ...gardenConfig.lwc,
+    },
   }
+
+  return _gardenConfig
 }
 
 export async function getWebpackConfig(gardenConfig) {
