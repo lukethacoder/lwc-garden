@@ -21,7 +21,6 @@
   },
   "dependencies": {
     "@lwc-garden/core": "workspace:*",
-    "@lwc-garden/mocks": "workspace:*",
     "lightning-base-components": "1.21.9-alpha"
   },
   "lint-staged": {
