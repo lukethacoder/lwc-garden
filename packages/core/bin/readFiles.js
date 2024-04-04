@@ -150,6 +150,7 @@ function validateLwcFromFiles(files) {
 
 async function checkFolders(gardenConfig, folderPaths, modules) {
   let components = []
+  const { ignore } = gardenConfig
 
   for (const folderPath of folderPaths) {
     try {
@@ -159,13 +160,22 @@ async function checkFolders(gardenConfig, folderPaths, modules) {
       for (const entry of dirEntries) {
         const entryPath = `${folderPath}/${entry}`
         const stats = await fs.stat(entryPath)
+
+        if (!isFileMatch(entryPath, ignore)) {
+          return
+        }
+
         if (stats.isDirectory()) {
+          // Recursive call with array
           const _components = await checkFolders(
             gardenConfig,
             [entryPath],
             modules
-          ) // Recursive call with array
-          components = components.concat(_components)
+          )
+
+          if (_components) {
+            components = components.concat(_components)
+          }
         } else {
           const parentFolderName = folderPath.split('/').at(-1)
           const baseName = entry.split('.')[0]
@@ -233,10 +243,12 @@ export const MODULES: GardenModule[] = ${removeQuotesFromLWC(metadataString)}`
 }
 
 function isFileMatch(filePath, ignorePatterns) {
-  for (const pattern of ignorePatterns) {
-    if (minimatch(filePath, pattern)) {
-      // Path is ignored, stop iterating patterns
-      return false
+  if (ignorePatterns && ignorePatterns.length > 0) {
+    for (const pattern of ignorePatterns) {
+      if (minimatch(filePath, pattern)) {
+        // Path is ignored, stop iterating patterns
+        return false
+      }
     }
   }
   // No match in any pattern, path is included
