@@ -1,7 +1,7 @@
 {
   "name": "@lwc-garden/core",
-  "version": "0.0.4",
-  "description": "Main LWC Garden package",
+  "version": "0.0.5",
+  "description": "🍃 LWC Garden Core Package - lwc-local-dev-server",
   "homepage": "https://lwc.garden",
   "type": "module",
   "scripts": {
@@ -12,8 +12,8 @@
   },
   "dependencies": {
     "@babel/preset-typescript": "^7.24.1",
-    "@lukethacoder/lwc-module-resolver": "^4.0.1",
-    "@lukethacoder/lwc-webpack-plugin": "^4.2.0",
+    "@lukethacoder/lwc-module-resolver": "^6.5.0",
+    "@lukethacoder/lwc-webpack-plugin": "^4.3.0",
     "@lwc/babel-plugin-component": "^6.3.4",
     "@lwc/compiler": "^6.3.4",
     "@lwc/engine-dom": "^6.3.4",
