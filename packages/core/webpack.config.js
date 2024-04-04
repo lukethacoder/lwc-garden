@@ -39,6 +39,7 @@ const webpackConfig = (gardenConfig) => ({
   },
   devServer: {
     hot: true,
+    allowedHosts: 'all',
     client: {
       logging: 'error',
     },
