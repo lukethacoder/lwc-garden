@@ -1,0 +1,12 @@
+<template>
+  <lightning-select
+    name="tickets"
+    label="How many tickets?"
+    value={value}
+    options={options}
+    onchange={handleChange}
+    required
+  ></lightning-select>
+
+  <p>Number of tickets: {value}</p>
+</template>

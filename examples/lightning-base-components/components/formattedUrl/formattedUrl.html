@@ -1,0 +1,73 @@
+<template>
+  <div class="slds-m-top_medium slds-m-bottom_x-large">
+    <h2 class="slds-text-heading_small">
+      Absolute URLs are created if the value doesn't begin with /
+    </h2>
+    <div class="slds-p-around_medium">
+      <p>
+        <lightning-formatted-url
+          value="my/path"
+          tooltip="Omit leading slash"
+          target="_blank"
+        ></lightning-formatted-url>
+      </p>
+      <p>
+        <lightning-formatted-url
+          value="www.salesforce.com"
+          tooltip="Use full domain name"
+          target="_blank"
+        ></lightning-formatted-url>
+      </p>
+      <p>
+        <lightning-formatted-url
+          value="https://salesforce.com"
+          tooltip="Use https://domain-name"
+          label="Visit salesforce.com"
+          target="_blank"
+        ></lightning-formatted-url>
+      </p>
+    </div>
+  </div>
+
+  <div class="slds-m-top_medium slds-m-bottom_x-large">
+    <h2 class="slds-text-heading_small">
+      Relative URLs are created if the value begins with /
+    </h2>
+    <div class="slds-p-around_medium">
+      <p>
+        <lightning-formatted-url
+          value="/my/path"
+          tooltip="Include leading slash"
+          target="_blank"
+        ></lightning-formatted-url>
+      </p>
+      <p>
+        <lightning-formatted-url
+          value="/my/path"
+          label="Visit /my/path on this website"
+          target="_blank"
+        ></lightning-formatted-url>
+      </p>
+    </div>
+  </div>
+
+  <div class="slds-m-top_medium slds-m-bottom_x-large">
+    <h2 class="slds-text-heading_small">
+      Only http, https, and ftp protocols are supported.
+    </h2>
+    <div class="slds-p-around_medium">
+      <p>
+        <lightning-formatted-url
+          value="https://www.salesforce.com"
+          target="_blank"
+        ></lightning-formatted-url>
+      </p>
+      <p>
+        <lightning-formatted-url
+          value="ftp://public.ftp-servers.example.com/path/to/myfile.txt"
+          target="_blank"
+        ></lightning-formatted-url>
+      </p>
+    </div>
+  </div>
+</template>

@@ -39,6 +39,7 @@ const WEBPACK_CONFIG = {
   },
   devServer: {
     hot: true,
+    allowedHosts: 'all',
     client: {
       logging: 'error',
     },
@@ -100,7 +101,7 @@ const WEBPACK_CONFIG = {
 const CONFIG = {
   // rootDir: './',
   // uses minimatch
-  ignore: ['./__mocks__/**'],
+  ignore: ['./**/__mocks__/**'],
   // lwc.config.json modules type
   modules: lwcConfig.modules,
   theme: THEME,

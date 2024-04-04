@@ -1,0 +1,36 @@
+<template>
+  <div>
+    <p>
+      <lightning-formatted-rich-text
+        value="Plain boring text"
+      ></lightning-formatted-rich-text>
+    </p>
+    <p>
+      <lightning-formatted-rich-text
+        value="This &lt;em&gt;is&lt;/em&gt; some simple rich text. &lt;strong&gt;Hello!&lt;/strong&gt;"
+      ></lightning-formatted-rich-text>
+    </p>
+    <p>
+      <lightning-formatted-rich-text
+        value='This is a link to &lt;a href="http://www.salesforce.com"&gt;Salesforce&lt;/a&gt;'
+      ></lightning-formatted-rich-text>
+    </p>
+    <p>
+      <lightning-formatted-rich-text
+        value={svgRichText}
+      ></lightning-formatted-rich-text>
+    </p>
+    <p>
+      <lightning-formatted-rich-text
+        value={listRichText}
+        class="slds-text-body_small"
+      ></lightning-formatted-rich-text>
+    </p>
+    <p>
+      <lightning-formatted-rich-text
+        value={linkifyRichText}
+        class="slds-text-body_small"
+      ></lightning-formatted-rich-text>
+    </p>
+  </div>
+</template>

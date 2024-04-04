@@ -1,0 +1,41 @@
+<template>
+  <p>This example creates a simple layout with field headers.</p>
+  <div class="c-container">
+    <lightning-layout>
+      <lightning-layout-item padding="around-small">
+        <div class="header-column">
+          <p class="field-title" title="Field 1">Field 1</p>
+          <p>Name</p>
+        </div>
+      </lightning-layout-item>
+      <lightning-layout-item padding="around-small">
+        <div class="header-column">
+          <p class="field-title" title="Field2 (3)">
+            Field 2 (3)
+            <lightning-button-icon
+              icon-name="utility:down"
+              variant="border-filled"
+              size="small"
+              alternative-text="More Actions"
+            ></lightning-button-icon>
+          </p>
+          <p>Eligibility</p>
+        </div>
+      </lightning-layout-item>
+      <lightning-layout-item padding="around-small">
+        <div class="header-column">
+          <p class="field-title" title="Field 3">Field 3</p>
+          <a href="#">Website</a>
+        </div>
+      </lightning-layout-item>
+      <lightning-layout-item padding="around-small">
+        <div class="header-column">
+          <p class="field-title" title="Field 4">Field 4</p>
+          <p>
+            <span title="">Address</span>
+          </p>
+        </div>
+      </lightning-layout-item>
+    </lightning-layout>
+  </div>
+</template>

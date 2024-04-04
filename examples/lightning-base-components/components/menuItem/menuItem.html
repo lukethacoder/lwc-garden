@@ -1,0 +1,135 @@
+<template>
+  <div class="slds-m-top_medium slds-m-bottom_x-large">
+    <h2 class="slds-text-heading_small slds-m-bottom_medium">
+      Button menu with some <code>lightning-menu-item</code> components
+      disabled.
+    </h2>
+
+    <!-- Disabled -->
+    <div class="slds-p-around_medium lgc-bg">
+      <lightning-button-menu alternative-text="Show menu" menu-alignment="auto">
+        <lightning-menu-item
+          value="MenuItemOne"
+          label="Menu Item One"
+        ></lightning-menu-item>
+        <lightning-menu-item
+          value="MenuItemTwo"
+          label="Menu Item Two"
+          disabled
+        ></lightning-menu-item>
+        <lightning-menu-item
+          value="MenuItemThree"
+          label="Menu Item Three"
+          disabled
+        ></lightning-menu-item>
+        <lightning-menu-item
+          value="MenuItemFour"
+          label="Menu Item Four"
+        ></lightning-menu-item>
+      </lightning-button-menu>
+    </div>
+  </div>
+
+  <div class="slds-m-top_medium slds-m-bottom_x-large">
+    <h2 class="slds-text-heading_small slds-m-bottom_medium">
+      Button menu with <code>lightning-menu-item</code> components that use the
+      <code>icon-name</code> attribute.
+    </h2>
+
+    <!-- With icon-name -->
+    <div class="slds-p-around_medium lgc-bg">
+      <lightning-button-menu alternative-text="Show menu" menu-alignment="auto">
+        <lightning-menu-item
+          value="MenuItemOne"
+          label="Menu Item One"
+          icon-name="utility:description"
+        ></lightning-menu-item>
+        <lightning-menu-item
+          value="MenuItemTwo"
+          label="Menu Item Two"
+          icon-name="utility:date_input"
+        ></lightning-menu-item>
+        <lightning-menu-item
+          value="MenuItemThree"
+          label="Menu Item Three"
+          icon-name="utility:custom_apps"
+        ></lightning-menu-item>
+        <lightning-menu-item
+          value="MenuItemFour"
+          label="Menu Item Four"
+          icon-name="utility:metrics"
+        ></lightning-menu-item>
+      </lightning-button-menu>
+    </div>
+  </div>
+
+  <div class="slds-m-top_medium slds-m-bottom_x-large">
+    <h2 class="slds-text-heading_small slds-m-bottom_medium">
+      Button menu with <code>lightning-menu-item</code> components that use the
+      <code>prefix-icon-name</code> attribute.
+    </h2>
+
+    <!-- With icon-name -->
+    <div class="slds-p-around_medium lgc-bg">
+      <lightning-button-menu alternative-text="Show menu" menu-alignment="auto">
+        <lightning-menu-item
+          value="MenuItemOne"
+          label="Menu Item One"
+          prefix-icon-name="utility:bookmark"
+        ></lightning-menu-item>
+        <lightning-menu-item
+          value="MenuItemTwo"
+          label="Menu Item Two"
+          prefix-icon-name="utility:send"
+        ></lightning-menu-item>
+        <lightning-menu-item
+          value="MenuItemThree"
+          label="Menu Item Three"
+          prefix-icon-name="utility:connected_apps"
+        ></lightning-menu-item>
+        <lightning-menu-item
+          value="MenuItemFour"
+          label="Menu Item Four"
+          prefix-icon-name="utility:italic"
+        ></lightning-menu-item>
+      </lightning-button-menu>
+    </div>
+  </div>
+
+  <div class="slds-m-top_medium slds-m-bottom_x-large">
+    <h2 class="slds-text-heading_small slds-m-bottom_medium">
+      Button menu with <code>lightning-menu-item</code> components that use
+      <code>prefix-icon-name</code> and <code>icon-name</code> attributes.
+    </h2>
+
+    <!-- With icon-name -->
+    <div class="slds-p-around_medium lgc-bg">
+      <lightning-button-menu alternative-text="Show menu" menu-alignment="auto">
+        <lightning-menu-item
+          value="MenuItemOne"
+          label="Menu Item One"
+          prefix-icon-name="utility:bookmark"
+          icon-name="utility:description"
+        ></lightning-menu-item>
+        <lightning-menu-item
+          value="MenuItemTwo"
+          label="Menu Item Two"
+          prefix-icon-name="utility:send"
+          icon-name="utility:date_input"
+        ></lightning-menu-item>
+        <lightning-menu-item
+          value="MenuItemThree"
+          label="Menu Item Three"
+          prefix-icon-name="utility:connected_apps"
+          icon-name="utility:custom_apps"
+        ></lightning-menu-item>
+        <lightning-menu-item
+          value="MenuItemFour"
+          label="Menu Item Four"
+          prefix-icon-name="utility:italic"
+          icon-name="utility:metrics"
+        ></lightning-menu-item>
+      </lightning-button-menu>
+    </div>
+  </div>
+</template>

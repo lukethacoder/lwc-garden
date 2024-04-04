@@ -1,0 +1,35 @@
+<template>
+  <div class="slds-m-vertical_medium">
+    <h1 class="slds-text-heading_small">Basic Vertical Navigation</h1>
+    <p class="slds-text-body_regular">
+      A basic Vertical Navigation with one section.
+    </p>
+  </div>
+
+  <div style="width: 320px">
+    <lightning-vertical-navigation>
+      <lightning-vertical-navigation-section label="Reports">
+        <lightning-vertical-navigation-item
+          label="Recent"
+          name="recent"
+        ></lightning-vertical-navigation-item>
+        <lightning-vertical-navigation-item
+          label="Created by Me"
+          name="created"
+        ></lightning-vertical-navigation-item>
+        <lightning-vertical-navigation-item
+          label="Private Reports"
+          name="private"
+        ></lightning-vertical-navigation-item>
+        <lightning-vertical-navigation-item
+          label="Public Reports"
+          name="public"
+        ></lightning-vertical-navigation-item>
+        <lightning-vertical-navigation-item
+          label="All Reports"
+          name="all"
+        ></lightning-vertical-navigation-item>
+      </lightning-vertical-navigation-section>
+    </lightning-vertical-navigation>
+  </div>
+</template>

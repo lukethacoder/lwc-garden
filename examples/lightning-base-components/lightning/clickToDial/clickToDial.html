@@ -1,0 +1,27 @@
+<template>
+  <template lwc:if={enabled}>
+    <a href="javascript:void(0)" onclick={handleClick}>
+      <template lwc:if={value}>
+        <span class="slds-icon_container slds-icon-utility-call" title={i18n.clickToDial}>
+          <lightning-icon
+            icon-name="utility:call"
+            size="xx-small"
+          ></lightning-icon>
+        </span>
+        <span>
+          {formattedPhoneNumber}
+        </span>
+      </template>
+    </a>
+  </template>
+  <template lwc:else>
+    <template lwc:if={value}>
+      <lightning-icon
+        icon-name="utility:end_call"
+        size="xx-small"
+      ></lightning-icon>
+      <span>{formattedPhoneNumber}</span>
+    </template>
+  </template>
+
+</template>

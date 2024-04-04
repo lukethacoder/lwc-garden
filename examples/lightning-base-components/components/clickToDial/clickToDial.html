@@ -1,0 +1,25 @@
+<template>
+  <!-- <p>unsupported by lightning-base-components</p> -->
+  <div class="slds-m-around_medium">
+    <h1 class="slds-text-heading_small">Basic click-to-dial Component</h1>
+    <p class="slds-text-body_regular">
+      A lightning-click-to-dial component renders a formatted phone number as
+      click-to-dial enabled or disabled for Open CTI and Voice. This example
+      creates three click-to-dial enabled phone numbers.
+    </p>
+  </div>
+  <p><lightning-click-to-dial value="14155555551"></lightning-click-to-dial></p>
+  <p>
+    <lightning-click-to-dial
+      value="14155555552"
+      record-id="5003000000D9duF"
+    ></lightning-click-to-dial>
+  </p>
+  <p>
+    <lightning-click-to-dial
+      value="14155555553"
+      record-id="5003000000D8cuI"
+      params="accountSid=xxx, sourceId=xxx, apiVersion=123"
+    ></lightning-click-to-dial>
+  </p>
+</template>

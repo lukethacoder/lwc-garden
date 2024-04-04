@@ -1,0 +1,59 @@
+<template>
+  <div class="slds-m-vertical_medium">
+    <h1 class="slds-text-heading_small">Various Textarea Examples</h1>
+    <p class="slds-text-body_regular">
+      The following examples show various ways to create a textarea component.
+    </p>
+  </div>
+
+  <div class="row">
+    <h2 class="header">Basic Examples</h2>
+    <lightning-textarea
+      name="input1"
+      label="Enter some text"
+    ></lightning-textarea>
+    <lightning-textarea
+      name="input2"
+      label="Textarea field with a predefined value"
+      value="initial value"
+    ></lightning-textarea>
+    <lightning-textarea
+      name="input3"
+      label="Textarea field with a placeholder"
+      placeholder="type here..."
+    ></lightning-textarea>
+  </div>
+
+  <div class="row">
+    <h2 class="header">Advanced Examples</h2>
+    <lightning-textarea
+      name="input4"
+      readonly
+      value="initial value"
+      label="Read-only textarea field"
+    ></lightning-textarea>
+    <lightning-textarea
+      name="input5"
+      disabled
+      value="initial value"
+      label="Disabled textarea field"
+    ></lightning-textarea>
+    <lightning-textarea
+      name="input6"
+      required
+      value="initial value"
+      label="Required textarea field with a maximum length of 60 characters"
+      maxlength="60"
+    ></lightning-textarea>
+    <lightning-textarea
+      name="input7"
+      required
+      value=""
+      placeholder="compose your tweet"
+      label="Required textarea field with a maximum length of 140 characters"
+      maxlength="140"
+      message-when-too-long="A maximum of 140 characters are allowed in a tweet."
+      message-when-value-missing="An empty tweet cannot be posted."
+    ></lightning-textarea>
+  </div>
+</template>

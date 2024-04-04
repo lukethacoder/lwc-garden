@@ -1,0 +1,9 @@
+<template>
+  <lightning-tabset variant="scoped">
+    <template for:each={tabs} for:item="tab">
+      <lightning-tab label={tab.label} key={tab.value} value={tab.value}>
+        {tab.content}
+      </lightning-tab>
+    </template>
+  </lightning-tabset>
+</template>

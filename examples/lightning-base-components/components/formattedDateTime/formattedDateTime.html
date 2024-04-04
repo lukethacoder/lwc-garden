@@ -1,0 +1,63 @@
+<template>
+  <div class="slds-box">
+    <h2 class="header">Date Formatting</h2>
+    <p>
+      <lightning-formatted-date-time
+        value="1547250828000"
+      ></lightning-formatted-date-time>
+    </p>
+    <p>
+      <lightning-formatted-date-time
+        value="1547250828000"
+        year="2-digit"
+        month="short"
+        day="2-digit"
+        weekday="narrow"
+      ></lightning-formatted-date-time>
+    </p>
+    <p>
+      <lightning-formatted-date-time
+        value="1547250828000"
+        year="2-digit"
+        month="short"
+        day="2-digit"
+        weekday="long"
+      ></lightning-formatted-date-time>
+    </p>
+  </div>
+  <div class="slds-box">
+    <h2 class="header">Time Formatting</h2>
+    <p>
+      <lightning-formatted-date-time
+        value="1547250828000"
+        hour="numeric"
+      ></lightning-formatted-date-time>
+    </p>
+    <p>
+      <lightning-formatted-date-time
+        value="1547250828000"
+        hour="2-digit"
+        second="2-digit"
+      ></lightning-formatted-date-time>
+    </p>
+    <p>
+      <lightning-formatted-date-time
+        value="1547250828000"
+        hour="2-digit"
+        minute="2-digit"
+        time-zone="UTC"
+        time-zone-name="short"
+      ></lightning-formatted-date-time>
+    </p>
+    <p>
+      <lightning-formatted-date-time
+        value="1547250828000"
+        hour="2-digit"
+        minute="2-digit"
+        second="2-digit"
+        hour12={ampm}
+        time-zone-name="long"
+      ></lightning-formatted-date-time>
+    </p>
+  </div>
+</template>

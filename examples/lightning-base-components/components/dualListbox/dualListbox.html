@@ -1,0 +1,14 @@
+<template>
+  <lightning-dual-listbox
+    name="languages"
+    label="Select Languages"
+    source-label="Available"
+    selected-label="Selected"
+    field-level-help="Select your preferred languages"
+    options={options}
+    onchange={handleChange}
+  ></lightning-dual-listbox>
+  <div class="slds-box">
+    <p>Selected values are: {selected}</p>
+  </div>
+</template>

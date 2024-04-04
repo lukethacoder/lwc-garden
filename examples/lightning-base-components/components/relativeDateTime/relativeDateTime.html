@@ -1,0 +1,46 @@
+<template>
+  <div class="slds-m-around_medium">
+    <h1 class="slds-text-heading_small">Format Dates Relative To now</h1>
+    <p class="slds-text-body_regular">
+      The lightning-relative-date-time component displays relative time that
+      shows how much time has passed or how much time is left until a given
+      time. It formats the relative time for the current locale following the
+      rules from Unicode CLDR. The date to format is passed via the value
+      attribute.
+    </p>
+  </div>
+
+  <div class="slds-m-vertical_small">
+    Day SFDC was born - February 1999:
+    <strong
+      ><lightning-relative-date-time
+        value={SfdcDay}
+      ></lightning-relative-date-time
+    ></strong>
+  </div>
+
+  <div class="slds-m-vertical_small">
+    Today 9:00 AM:
+    <strong
+      ><lightning-relative-date-time
+        value={today9AM}
+      ></lightning-relative-date-time
+    ></strong>
+  </div>
+
+  <div class="slds-m-vertical_small">
+    Right now:
+    <strong
+      ><lightning-relative-date-time value={now}></lightning-relative-date-time
+    ></strong>
+  </div>
+
+  <div class="slds-m-vertical_small">
+    Future - January 2050:
+    <strong
+      ><lightning-relative-date-time
+        value={future20500104}
+      ></lightning-relative-date-time
+    ></strong>
+  </div>
+</template>

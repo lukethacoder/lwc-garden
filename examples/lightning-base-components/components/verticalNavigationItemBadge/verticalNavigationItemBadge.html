@@ -1,0 +1,37 @@
+<template>
+  <div class="slds-m-vertical_medium">
+    <h1 class="slds-text-heading_small">Items With Badges</h1>
+    <p class="slds-text-body_regular">
+      A Vertical Navigation with item badges. Badges contain small amounts of
+      information, such as the number of unread messages.
+    </p>
+  </div>
+
+  <div style="width: 320px">
+    <lightning-vertical-navigation selected-item="recent">
+      <lightning-vertical-navigation-section label="Reports">
+        <lightning-vertical-navigation-item-badge
+          label="Recent"
+          name="recent"
+          badge-count="3"
+        ></lightning-vertical-navigation-item-badge>
+        <lightning-vertical-navigation-item
+          label="Created by Me"
+          name="usercreated"
+        ></lightning-vertical-navigation-item>
+        <lightning-vertical-navigation-item
+          label="Private Reports"
+          name="private"
+        ></lightning-vertical-navigation-item>
+        <lightning-vertical-navigation-item
+          label="Public Reports"
+          name="public"
+        ></lightning-vertical-navigation-item>
+        <lightning-vertical-navigation-item
+          label="All Reports"
+          name="all"
+        ></lightning-vertical-navigation-item>
+      </lightning-vertical-navigation-section>
+    </lightning-vertical-navigation>
+  </div>
+</template>

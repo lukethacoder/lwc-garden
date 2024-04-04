@@ -1,0 +1,42 @@
+<template>
+  <lightning-accordion class="example-accordion" active-section-name="B">
+    <lightning-accordion-section name="A" label="Accordion Title A">
+      <lightning-button-menu
+        slot="actions"
+        alternative-text="Show menu"
+        icon-size="x-small"
+        menu-alignment="right"
+      >
+        <lightning-menu-item
+          value="New"
+          label="Menu Item One"
+        ></lightning-menu-item>
+        <lightning-menu-item
+          value="Edit"
+          label="Menu Item Two"
+        ></lightning-menu-item>
+      </lightning-button-menu>
+      <p>This is the content area for section A.</p>
+      <p>.</p>
+      <p>.</p>
+      <p>.</p>
+      <p>The section height expands to fit your content.</p>
+    </lightning-accordion-section>
+
+    <lightning-accordion-section name="B" label="Accordion Title B">
+      <p>This is the content area for section B.</p>
+      <p>.</p>
+      <p>.</p>
+      <p>.</p>
+      <p>The section height expands to fit your content.</p>
+    </lightning-accordion-section>
+
+    <lightning-accordion-section name="C" label="Accordion Title C">
+      <p>This is the content area for section C.</p>
+      <p>.</p>
+      <p>.</p>
+      <p>.</p>
+      <p>The section height expands to fit your content.</p>
+    </lightning-accordion-section>
+  </lightning-accordion>
+</template>

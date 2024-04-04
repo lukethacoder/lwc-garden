@@ -1,0 +1,37 @@
+<template>
+  <div class="slds-m-top_medium slds-m-bottom_x-large">
+    <h2 class="slds-text-heading_medium slds-m-bottom_medium">
+      Helptext example using a default icon. Mouse over or focus on the icon to
+      view the helptext content.
+    </h2>
+
+    <p class="slds-m-bottom_medium">
+      The tooltip displays on the lower left of the icon or above the icon if
+      space is available. It automatically adjusts its position according to the
+      viewport.
+    </p>
+
+    <!-- Simple -->
+    <div class="slds-p-around_medium lgc-bg">
+      Subscribe
+      <lightning-helptext
+        content="You'll receive weekly updates"
+      ></lightning-helptext>
+    </div>
+  </div>
+
+  <div class="slds-m-top_medium slds-m-bottom_x-large">
+    <h2 class="slds-text-heading_medium slds-m-bottom_medium">
+      Helptext example with an alternative icon.
+    </h2>
+
+    <!-- Simple -->
+    <div class="slds-p-around_medium lgc-bg">
+      Short Text
+      <lightning-helptext
+        icon-name="utility:salesforce1"
+        content="Full text explanation of feature"
+      ></lightning-helptext>
+    </div>
+  </div>
+</template>

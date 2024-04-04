@@ -1,0 +1,59 @@
+<template>
+  <div class="slds-m-top_medium slds-m-bottom_x-large">
+    <h2 class="slds-text-heading_small slds-m-bottom_medium">
+      Button menu with only <code>lightning-menu-item</code> elements.
+    </h2>
+
+    <!-- Simple -->
+    <div class="slds-p-around_medium lgc-bg">
+      <lightning-button-menu alternative-text="Show menu">
+        <lightning-menu-item
+          value="MenuItemOne"
+          label="Menu Item One"
+        ></lightning-menu-item>
+        <lightning-menu-item
+          value="MenuItemTwo"
+          label="Menu Item Two"
+        ></lightning-menu-item>
+        <lightning-menu-item
+          value="MenuItemThree"
+          label="Menu Item Three"
+        ></lightning-menu-item>
+        <lightning-menu-item
+          value="MenuItemFour"
+          label="Menu Item Four"
+        ></lightning-menu-item>
+      </lightning-button-menu>
+    </div>
+  </div>
+
+  <div class="slds-m-top_medium slds-m-bottom_x-large">
+    <h2 class="slds-text-heading_small slds-m-bottom_medium">
+      Button menu with some <code>lightning-menu-item</code> elements disabled.
+    </h2>
+
+    <!-- Simple -->
+    <div class="slds-p-around_medium lgc-bg">
+      <lightning-button-menu alternative-text="Show menu">
+        <lightning-menu-item
+          value="MenuItemOne"
+          label="Menu Item One"
+        ></lightning-menu-item>
+        <lightning-menu-item
+          value="MenuItemTwo"
+          label="Menu Item Two"
+          disabled
+        ></lightning-menu-item>
+        <lightning-menu-item
+          value="MenuItemThree"
+          label="Menu Item Three"
+          disabled
+        ></lightning-menu-item>
+        <lightning-menu-item
+          value="MenuItemFour"
+          label="Menu Item Four"
+        ></lightning-menu-item>
+      </lightning-button-menu>
+    </div>
+  </div>
+</template>
