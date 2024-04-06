@@ -4,6 +4,8 @@ This example showcase how you can work with standard `lightning` components.
 
 > NOTE: currently the supported list aligns with the [`lightning-base-components`](https://www.npmjs.com/package/lightning-base-components) package. In the future we may extend support to components outside of the ones listed in the official documentation.
 
+![Screen capture of LWC Garden in action using lightning-base-components](../../docs/lwc-garden-lighting-base-components.gif 'LWC Garden: lightning-base-components in action')
+
 ## Mocking
 
 Mocking is done from two different folders:
