@@ -2,24 +2,20 @@
 
 import fs from 'fs'
 import path from 'path'
+import chalk from 'chalk'
+import { createServer } from 'lwr'
 
-// import chokidar from 'chokidar'
-
-import { loadConfig, getWebpackConfig, writeStringToFile } from '../utils.js'
+import readFiles from './readFiles.js'
+import { loadConfig, writeStringToFile } from '../utils.js'
 import { syncToLwc } from './config.js'
-import { startWebpack } from './webpack.js'
 import { setStyleToHtmlString } from './style.js'
 import { __filename, __dirname, CONFIG_LWC_PATH } from '../constants.js'
 
-import readFiles from './readFiles.js'
-
 /**
+ * Load the users garden.config.js file
  * @type {import('../types').GardenConfig}
  */
 const GardenConfig = await loadConfig(`${process.cwd()}/garden.config.js`)
-const webpackConfig = await getWebpackConfig(GardenConfig)
-
-const isUsingDefaultWebpackConfig = !GardenConfig.webpack
 
 // save garden.config.js to the `garden-config` LWC
 await syncToLwc(
@@ -27,32 +23,13 @@ await syncToLwc(
   GardenConfig
 )
 
-// copy /config folder + set themes (if not using custom webpack config)
-if (isUsingDefaultWebpackConfig) {
-  // copy config/ folder as the user is not bringing their own
-  const configSource = path.join(__dirname, './config')
-  const destination = path.join(GardenConfig.cacheDir, './config')
-
-  // set the Theme CSS Variables to the index.html before we copy it over
-  const htmlString = await setStyleToHtmlString(
-    path.join(configSource, 'index.html'),
-    GardenConfig.theme
-  )
-
-  let jsString = await fs.promises.readFile(
-    path.join(configSource, 'index.js'),
-    'utf-8'
-  )
-
-  // if synthetic shadow has been disbaled, remove it from the .html config file
-  if (GardenConfig.lwc.disableSyntheticShadowSupport === true) {
-    jsString = jsString.replace(`import '@lwc/synthetic-shadow'`, '')
-  }
-
-  await writeStringToFile(path.join(destination, 'index.html'), htmlString)
-  await writeStringToFile(path.join(destination, 'index.js'), jsString)
+/**
+ * @param {import('@lwrjs/types').LwrGlobalConfig} config
+ * @returns {Promise<LwrApp | undefined>}
+ */
+async function createApp(config) {
+  return await createServer(config)
 }
-// else -> ignore as the user is bringing their own config files
 
 // app <garden-*> LWCs copied to the users `.garden/*` cache folder
 async function copyComponents() {
@@ -64,45 +41,52 @@ async function copyComponents() {
   })
 }
 
+// app <garden-*> LWCs copied to the users `.garden/*` cache folder
+async function copyLayouts() {
+  const componentsSource = path.join(__dirname, './layouts')
+  const destinationComponents = path.join(GardenConfig.cacheDir, './layouts')
+
+  await fs.promises.cp(componentsSource, destinationComponents, {
+    recursive: true,
+  })
+}
+
+async function setLayoutTheme() {
+  // check if files exists
+  const layoutMain = path.join(GardenConfig.cacheDir, './layouts', 'index.html')
+  if (layoutMain) {
+    const newHtmlString = await setStyleToHtmlString(
+      layoutMain,
+      GardenConfig.theme
+    )
+
+    await writeStringToFile(layoutMain, newHtmlString)
+  }
+}
+
+// copy layouts and set the theme
+await copyLayouts()
+await setLayoutTheme()
+
+// copy LWC Garden Source LWCs
 await copyComponents()
 
-// attempt to read LWC components before spooling up the webpack server
+// attempt to read LWC components before spooling up the local dev server
 await readFiles(GardenConfig)
 
-// start the webpack server
-await startWebpack(webpackConfig)
-
-/**
- *
- * @param {WatchOptions} options
- */
-// function watchFolder(options) {
-//   const { folderPath, callback } = options
-
-//   // One-liner for current directory
-//   chokidar
-//     .watch(folderPath)
-//     .on('change', (path) => {
-//       callback({ type: 'change', path })
-//     })
-//     .on('rename', (path) => {
-//       callback({ type: 'rename', path })
-//     })
-// }
-
-// function myCallback({ type, path }) {
-//   console.log(`Folder contents ${type}! - ${path}`)
-//   // TODO: Do something when folder contents change
-// }
-
-// const foldersToWatch = lwcConfig.modules.reduce((acc, item) => {
-//   if (item.dir) {
-//     acc.push(item.dir)
-//   } else if (item.path) {
-//     acc.push(item.path)
-//   }
-
-//   return acc
-// }, [])
-
-// watchFolder({ folderPath: foldersToWatch, callback: myCallback })
+try {
+  const lwrApp = await createApp({
+    serverType: 'koa',
+    serverMode: 'dev',
+    port: 3333,
+  })
+  lwrApp.listen((lwrAppResponse) => {
+    const { port } = lwrAppResponse
+    console.log(
+      `\n🍃 LWC Garden running at ${chalk.green(`http://localhost:${port}`)}\n`
+    )
+  })
+} catch (err) {
+  console.error(err)
+  process.exit(1)
+}

@@ -44,7 +44,14 @@ export async function calculateTheme(gardenTheme) {
 export async function setStyleToHtmlString(htmlFile, gardenTheme) {
   const themeCss = await calculateTheme(gardenTheme)
   const indexHtml = await fs.promises.readFile(htmlFile, 'utf-8')
-  const indexHtmlNew = indexHtml.replace('@layer base {}', themeCss)
+  const indexHtmlNew = indexHtml
+    // adjust the favicon color
+    .replace(
+      'stroke="%2322c55e"',
+      `stroke="hsl(${encodeURIComponent(gardenTheme.light.primary)})"`
+    )
+    // adjust the style tag CSS Variables
+    .replace('@layer base {}', themeCss)
 
   return indexHtmlNew
 }

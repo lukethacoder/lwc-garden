@@ -1,7 +1,3 @@
-/**
- * File doesn't seem to like being set as a .ts file.
- * Doing so breaks the lwc:dynamic functionality for some reason.
- */
 import { LightningElement, track } from 'lwc'
 
 import { MODULES } from 'garden/modules'
@@ -16,17 +12,17 @@ export default class App extends LightningElement {
    */
   MODULES = MODULES
 
+  isFirstRender = true
+
   /**
    * LWC instance of the currently selected module
    */
-  moduleLwc
+  @track moduleLwc
 
   /**
    * Metadata of the currently selected module
    */
-  moduleMetadata
-
-  isFirstRender = true
+  @track moduleMetadata
 
   @track moduleLwcProps = {}
 
@@ -71,17 +67,22 @@ export default class App extends LightningElement {
   }
 
   handleSetModuleByName = async (moduleName) => {
-    this.moduleMetadata = this.MODULES.find(
+    this.moduleLwcProps = {}
+
+    const moduleMetadata = this.MODULES.find(
       (module) => module.name === moduleName
     )
-    if (!this.moduleMetadata) {
+    if (!moduleMetadata) {
       this.moduleLwc = undefined
       return
     }
 
+    this.moduleLwc = (await moduleMetadata.LWC()).default
+    this.moduleMetadata = moduleMetadata
+
     // attempt to load prop values from localStorage if args cache is enabled
     if (CONFIG.args.cache === true) {
-      const propsFromCache = localStorage.getItem(this.moduleMetadata.id)
+      const propsFromCache = localStorage.getItem(moduleMetadata.id)
 
       if (propsFromCache) {
         try {
@@ -91,8 +92,6 @@ export default class App extends LightningElement {
         }
       }
     }
-
-    this.moduleLwc = (await this.moduleMetadata.LWC()).default
   }
 
   handleSearchClick() {

@@ -24,14 +24,20 @@
   --_garden-input: var(--garden-input, 240 3.7% 15.9%);
   --_garden-ring: var(--garden-ring, 142.4 71.8% 29.2%);
 
-  background-color: hsl(var(--_garden-background));
-  color: hsl(var(--_garden-foreground));
-  font-family: var(--_garden-font-family);
   display: flex;
   flex: 1 0;
 }
 ::backdrop {
   --_garden-background: var(--garden-background, 20 14.3% 4.1%);
+}
+
+/* don't assign to the `garden-container` as this is user LWC territory */
+aside,
+.props-container,
+garden-command-palette {
+  background-color: hsl(var(--_garden-background));
+  color: hsl(var(--_garden-foreground));
+  font-family: var(--_garden-font-family);
 }
 
 aside {

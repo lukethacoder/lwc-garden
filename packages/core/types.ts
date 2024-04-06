@@ -1,5 +1,4 @@
 import { ModuleRecord } from './module-types'
-import { Configuration } from 'webpack'
 
 // Garden Config
 export interface GardenConfig {
@@ -14,7 +13,6 @@ export interface GardenConfig {
   }
   slots?: GardenSlotsConfig
   lwc?: GardenLwcConfig
-  webpack?: Configuration
 }
 
 export type GardenArgTypes =
