@@ -8,7 +8,7 @@ import { createServer } from 'lwr'
 import readFiles from './readFiles.js'
 import { loadConfig, writeStringToFile } from '../utils.js'
 import { syncToLwc } from './config.js'
-import { setStyleToHtmlString } from './style.js'
+import { setHtmlLayout } from './style.js'
 import { __filename, __dirname, CONFIG_LWC_PATH } from '../constants.js'
 
 /**
@@ -55,10 +55,7 @@ async function setLayoutTheme() {
   // check if files exists
   const layoutMain = path.join(GardenConfig.cacheDir, './layouts', 'index.html')
   if (layoutMain) {
-    const newHtmlString = await setStyleToHtmlString(
-      layoutMain,
-      GardenConfig.theme
-    )
+    const newHtmlString = await setHtmlLayout(layoutMain, GardenConfig)
 
     await writeStringToFile(layoutMain, newHtmlString)
   }
@@ -87,6 +84,6 @@ try {
     )
   })
 } catch (err) {
-  console.error(err)
+  logger.error(err)
   process.exit(1)
 }

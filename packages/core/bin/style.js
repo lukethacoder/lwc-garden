@@ -41,17 +41,37 @@ export async function calculateTheme(gardenTheme) {
   `
 }
 
-export async function setStyleToHtmlString(htmlFile, gardenTheme) {
-  const themeCss = await calculateTheme(gardenTheme)
-  const indexHtml = await fs.promises.readFile(htmlFile, 'utf-8')
-  const indexHtmlNew = indexHtml
-    // adjust the favicon color
-    .replace(
-      'stroke="%2322c55e"',
-      `stroke="hsl(${encodeURIComponent(gardenTheme.light.primary)})"`
-    )
-    // adjust the style tag CSS Variables
-    .replace('@layer base {}', themeCss)
+/**
+ * Convert a Theme config to valid CSS
+ * @param {string} htmlFile
+ * @param {import('../types').GardenConfig} gardenConfig
+ */
+export async function setHtmlLayout(htmlFile, gardenConfig) {
+  let indexHtmlNew = await fs.promises.readFile(htmlFile, 'utf-8')
+
+  const { theme } = gardenConfig
+  if (theme) {
+    const themeCss = await calculateTheme(theme)
+
+    if (themeCss) {
+      indexHtmlNew = indexHtmlNew
+        // adjust the favicon color
+        .replace(
+          'stroke="%2322c55e"',
+          `stroke="hsl(${encodeURIComponent(theme.light.primary)})"`
+        )
+        // adjust the style tag CSS Variables
+        .replace('@layer base {}', themeCss)
+    }
+  }
+
+  const enableSlds = gardenConfig?.lwc?.enableSlds || false
+  if (enableSlds === true) {
+    const DESIGN_SYSTEM_PACKAGE_VERSION = '2.23.2'
+    const SLDS_IMPORT = `<link href="https://unpkg.com/@salesforce-ux/design-system@${DESIGN_SYSTEM_PACKAGE_VERSION}/assets/styles/salesforce-lightning-design-system.min.css" rel="stylesheet" />`
+
+    return indexHtmlNew.replace('</head>', `${SLDS_IMPORT}\n</head>`)
+  }
 
   return indexHtmlNew
 }

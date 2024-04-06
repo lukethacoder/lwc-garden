@@ -59,6 +59,10 @@ export const CONFIG = {
       'container-background': "0 0% 15%",
     },
   },
+  lwc: {
+    disableSyntheticShadowSupport: false,
+    enableSlds: true,
+  },
   rootDir: "C:\\gitless\\lwc-garden-with-iframe",
   cacheDir: "C:\\gitless\\lwc-garden-with-iframe\\.garden",
   args: {
@@ -69,8 +73,5 @@ export const CONFIG = {
     components: {
       default: () => import('garden/placeholder'),
     },
-  },
-  lwc: {
-    disableSyntheticShadowSupport: false,
   },
 }

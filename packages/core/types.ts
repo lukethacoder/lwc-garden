@@ -84,9 +84,17 @@ export interface GardenSlotsConfig {
 
 export interface GardenLwcConfig {
   /**
+   * @deprecated - No longer required. Set this as a part of your lwr.config.json instead
    * @type {Boolean}[false] - Should '@lwc/synthetic-shadow' be disabled
    */
   disableSyntheticShadowSupport?: boolean
+
+  /**
+   * TODO: actually configure and setup
+   * When enabled, will load SLDS
+   * @type {Boolean}[false] - Should '@salesforce-ux/design-system' assets be loaded
+   */
+  enableSlds?: boolean
 }
 
 export interface GardenTheme {
