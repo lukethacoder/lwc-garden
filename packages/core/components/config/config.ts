@@ -65,6 +65,7 @@ export const CONFIG = {
   },
   rootDir: "C:\\gitless\\lwc-garden-with-iframe",
   cacheDir: "C:\\gitless\\lwc-garden-with-iframe\\.garden",
+  port: 3333,
   args: {
     cache: true,
   },

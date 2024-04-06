@@ -291,6 +291,12 @@ function isFileMatch(filePath, ignorePatterns) {
 async function main(gardenConfig) {
   const { ignore, modules, cacheDir } = gardenConfig
 
+  if (!modules || modules.length === 0) {
+    logger.warn(
+      'No modules configured. Please pass an array of modules in your garden.config.js'
+    )
+  }
+
   const foldersToWatch = modules.reduce((acc, item) => {
     // ignore garden LWCs
     if (item.dir && !item.dir.includes('garden')) {

@@ -6,8 +6,9 @@ export interface GardenConfig {
   rootDir?: string
   ignore?: string[]
   modules: ModuleRecord[]
-  // TODO:
   theme?: GardenTheme
+  // defaults to 3333
+  port?: number
   args?: {
     cache?: boolean
   }

@@ -67,8 +67,7 @@ export async function setHtmlLayout(htmlFile, gardenConfig) {
 
   const enableSlds = gardenConfig?.lwc?.enableSlds || false
   if (enableSlds === true) {
-    const DESIGN_SYSTEM_PACKAGE_VERSION = '2.23.2'
-    const SLDS_IMPORT = `<link href="https://unpkg.com/@salesforce-ux/design-system@${DESIGN_SYSTEM_PACKAGE_VERSION}/assets/styles/salesforce-lightning-design-system.min.css" rel="stylesheet" />`
+    const SLDS_IMPORT = `<link rel="stylesheet" href="./slds/styles/salesforce-lightning-design-system.css" />`
 
     return indexHtmlNew.replace('</head>', `${SLDS_IMPORT}\n</head>`)
   }

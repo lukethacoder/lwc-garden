@@ -48,6 +48,7 @@ export async function loadConfig(pathToConfig) {
     rootDir,
     cacheDir: path.join(rootDir, CACHE_FOLDER),
     theme,
+    port: gardenConfig.port || 3333,
     args: {
       cache: true,
       ...gardenConfig?.args,
@@ -68,6 +69,16 @@ export async function loadConfig(pathToConfig) {
   }
 
   return _gardenConfig
+}
+
+export async function loadLwrConfig(pathToConfig) {
+  const LwrConfigFromFile = await checkAndReadFile(pathToConfig)
+  if (!LwrConfigFromFile) {
+    logger.error('Please create a lwr.config.json file')
+    process.exit(1)
+  }
+
+  return LwrConfigFromFile.default
 }
 
 export async function checkAndReadFile(filePath) {

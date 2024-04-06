@@ -22,6 +22,7 @@
     "typescript": "^5.4.3"
   },
   "devDependencies": {
+    "@lwrjs/core": "^0.12.2",
     "eslint": "^8.57.0",
     "prettier": "^3.2.5"
   },
@@ -34,6 +35,7 @@
     "@lwrjs/o11y": ">= 0.11.x",
     "@lwrjs/router": ">= 0.11.x",
     "@lwrjs/types": ">=0.11.x",
+    "@salesforce-ux/design-system": "^2.23.2",
     "lwc": ">= 6.x",
     "lwr": ">= 0.11.x"
   },
