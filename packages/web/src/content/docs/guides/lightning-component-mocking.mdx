@@ -1,0 +1,43 @@
+---
+title: Lightning Component Mocking
+description: How to mock currently unsupported on-platform components locally
+---
+
+import { Aside, Code } from '@astrojs/starlight/components'
+
+export const lwrConfigJsWithLightningBaseComponentsV2 = `{
+  "lwc": {
+    "modules": [
+      { "dirs": "lightning-base-components" },
+      {
+        "dirs": [
+          "./lightning",
+          "./node_modules/lightning-base-components/src/lightning"
+        ],
+        "namespace": "lightning"
+      },
+    ]
+  },
+  "moduleProviders": [],
+  "assets": [],
+  "routes": []
+}`
+
+
+If you havn't already, make sure to checkout [Lightning Base Components (LWC Garden)](/guides/lightning-base-components/) as the components you wish to use locally may already be supported. This section is for building your own `lightning-*` components that are not currently officially supported by Salesforce for local development.
+
+Before jumping into building `lightning` components, we need to edit our `modules` configuration in our `lwr.config.json` file.
+
+<Code
+  code={lwrConfigJsWithLightningBaseComponentsV2}
+  lang='json'
+  del={[4]}
+  ins={[5,6,7,8,9,10,11]}
+  title='lwr.config.json'
+/>
+
+<Aside>
+  This is using [`@lukethacoder/lwc-module-resolver`](https://www.npmjs.com/package/@lukethacoder/lwc-module-resolver) and [`@lukethacoder/lwrjs-lwc-module-provider`](https://www.npmjs.com/package/@lukethacoder/lwrjs-lwc-module-provider) under the hood to add multi-directory and namespace support. You can read more [here](https://github.com/lukethacoder/lwc-module-resolver).
+</Aside>
+
+Adding an array of `dirs` allows us to provide a set of components with the same (lightning) namespace.

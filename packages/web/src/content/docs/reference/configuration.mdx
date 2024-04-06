@@ -9,14 +9,14 @@ If you are looking for component level configuration, checkout [Component Config
 
 ```js
 // garden.config.js
-import lwcConfig from './lwc.config.json' assert { type: 'json' }
+import lwrConfig from './lwr.config.json' assert { type: 'json' }
 
 /**
  * @type {import('@lwc-garden/core/types').GardenConfig}
  */
 const CONFIG = {
-  // lwc.config.json modules type
-  modules: [...lwcConfig.modules],
+  // lwr.config.json modules type
+  modules: [...lwrConfig.lwc.modules],
 }
 
 export default CONFIG
@@ -157,6 +157,12 @@ export interface GardenSlotsConfig {
 }
 ```
 
+### `port`
+
+**type:** `number`
+
+Port to run the local dev server on. Defaults to `3333`
+
 ### `lwc`
 
 **type:** [`GardenLwcConfig`](#gardenlwcconfig)
@@ -166,20 +172,9 @@ export interface GardenSlotsConfig {
 ```ts
 export interface GardenLwcConfig {
   /**
-   * @type {Boolean}[false] - Should '@lwc/synthetic-shadow' be disabled
+   * When enabled, will load SLDS
+   * @type {Boolean}[false] - Should '@salesforce-ux/design-system' assets be loaded
    */
-  disableSyntheticShadowSupport?: boolean
+  enableSlds?: boolean
 }
-```
-
-### `webpack`
-
-**type:** <a href="https://github.com/webpack/webpack/blob/main/types.d.ts#L2420" target="_blank">`Configuration`</a>
-
-Define a custom webpack configuration. This is for advanced users. You may break things if configured incorrectly.
-
-Types are imported from:
-
-```ts
-import { Configuration } from 'webpack'
 ```
