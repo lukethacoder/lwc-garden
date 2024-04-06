@@ -81,7 +81,7 @@ LWC Garden brings an array of new features and customisation so you can develop 
 - 🥧 `<slot/>` Placeholders
 - 💅 SLDS Support OOTB
 - ✏️ API Editor via Storybook-like `argTypes`
-- 💅 Custom Theming API
+- 🎨 Custom Theming API
 - ⚙️ Config as much or as little as your like
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
