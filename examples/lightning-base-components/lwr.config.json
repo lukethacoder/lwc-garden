@@ -1,0 +1,208 @@
+{
+  "lwc": {
+    "modules": [
+      {
+        "dir": "./.garden/components",
+        "namespace": "garden"
+      },
+      {
+        "dir": "./components",
+        "namespace": "components"
+      },
+      {
+        "dirs": [
+          "./lightning",
+          "./node_modules/lightning-base-components/src/lightning"
+        ],
+        "namespace": "lightning"
+      },
+      {
+        "path": "./__mocks__/@salesforce/client/formFactor.js",
+        "name": "@salesforce/client/formFactor"
+      },
+      {
+        "path": "./node_modules/lightning-base-components/scopedImports/@salesforce-i18n-lang.js",
+        "name": "@salesforce/i18n/lang"
+      },
+      {
+        "path": "./__mocks__/@salesforce/i18n/dir.js",
+        "name": "@salesforce/i18n/dir"
+      },
+      {
+        "path": "./__mocks__/@salesforce/i18n/locale.js",
+        "name": "@salesforce/i18n/locale"
+      },
+      {
+        "path": "./__mocks__/@salesforce/i18n/defaultCalendar.js",
+        "name": "@salesforce/i18n/defaultCalendar"
+      },
+      {
+        "path": "./__mocks__/@salesforce/i18n/defaultNumberingSystem.js",
+        "name": "@salesforce/i18n/defaultNumberingSystem"
+      },
+      {
+        "path": "./__mocks__/@salesforce/i18n/calendarData.js",
+        "name": "@salesforce/i18n/calendarData"
+      },
+      {
+        "path": "./__mocks__/@salesforce/i18n/currency.js",
+        "name": "@salesforce/i18n/currency"
+      },
+      {
+        "path": "./__mocks__/@salesforce/i18n/firstDayOfWeek.js",
+        "name": "@salesforce/i18n/firstDayOfWeek"
+      },
+      {
+        "path": "./__mocks__/@salesforce/i18n/common.calendarData.js",
+        "name": "@salesforce/i18n/common.calendarData"
+      },
+      {
+        "path": "./__mocks__/@salesforce/i18n/common.digits.js",
+        "name": "@salesforce/i18n/common.digits"
+      },
+      {
+        "path": "./__mocks__/@salesforce/i18n/dateTime.shortDateFormat.js",
+        "name": "@salesforce/i18n/dateTime.shortDateFormat"
+      },
+      {
+        "path": "./__mocks__/@salesforce/i18n/dateTime.mediumDateFormat.js",
+        "name": "@salesforce/i18n/dateTime.mediumDateFormat"
+      },
+      {
+        "path": "./__mocks__/@salesforce/i18n/dateTime.mediumTimeFormat.js",
+        "name": "@salesforce/i18n/dateTime.mediumTimeFormat"
+      },
+      {
+        "path": "./__mocks__/@salesforce/i18n/dateTime.longDateFormat.js",
+        "name": "@salesforce/i18n/dateTime.longDateFormat"
+      },
+      {
+        "path": "./__mocks__/@salesforce/i18n/dateTime.shortDateTimeFormat.js",
+        "name": "@salesforce/i18n/dateTime.shortDateTimeFormat"
+      },
+      {
+        "path": "./__mocks__/@salesforce/i18n/dateTime.mediumDateTimeFormat.js",
+        "name": "@salesforce/i18n/dateTime.mediumDateTimeFormat"
+      },
+      {
+        "path": "./__mocks__/@salesforce/i18n/dateTime.longDateTimeFormat.js",
+        "name": "@salesforce/i18n/dateTime.longDateTimeFormat"
+      },
+      {
+        "path": "./__mocks__/@salesforce/i18n/dateTime.shortTimeFormat.js",
+        "name": "@salesforce/i18n/dateTime.shortTimeFormat"
+      },
+      {
+        "path": "./__mocks__/@salesforce/i18n/dateTime.longTimeFormat.js",
+        "name": "@salesforce/i18n/dateTime.longTimeFormat"
+      },
+      {
+        "path": "./__mocks__/@salesforce/i18n/number.currencyFormat.js",
+        "name": "@salesforce/i18n/number.currencyFormat"
+      },
+      {
+        "path": "./__mocks__/@salesforce/i18n/number.currencySymbol.js",
+        "name": "@salesforce/i18n/number.currencySymbol"
+      },
+      {
+        "path": "./__mocks__/@salesforce/i18n/number.decimalSeparator.js",
+        "name": "@salesforce/i18n/number.decimalSeparator"
+      },
+      {
+        "path": "./__mocks__/@salesforce/i18n/number.exponentialSign.js",
+        "name": "@salesforce/i18n/number.exponentialSign"
+      },
+      {
+        "path": "./__mocks__/@salesforce/i18n/number.groupingSeparator.js",
+        "name": "@salesforce/i18n/number.groupingSeparator"
+      },
+      {
+        "path": "./__mocks__/@salesforce/i18n/number.infinity.js",
+        "name": "@salesforce/i18n/number.infinity"
+      },
+      {
+        "path": "./__mocks__/@salesforce/i18n/number.minusSign.js",
+        "name": "@salesforce/i18n/number.minusSign"
+      },
+      {
+        "path": "./__mocks__/@salesforce/i18n/number.nan.js",
+        "name": "@salesforce/i18n/number.nan"
+      },
+      {
+        "path": "./__mocks__/@salesforce/i18n/number.numberFormat.js",
+        "name": "@salesforce/i18n/number.numberFormat"
+      },
+      {
+        "path": "./__mocks__/@salesforce/i18n/number.perMilleSign.js",
+        "name": "@salesforce/i18n/number.perMilleSign"
+      },
+      {
+        "path": "./__mocks__/@salesforce/i18n/number.percentFormat.js",
+        "name": "@salesforce/i18n/number.percentFormat"
+      },
+      {
+        "path": "./__mocks__/@salesforce/i18n/number.percentSign.js",
+        "name": "@salesforce/i18n/number.percentSign"
+      },
+      {
+        "path": "./__mocks__/@salesforce/i18n/number.plusSign.js",
+        "name": "@salesforce/i18n/number.plusSign"
+      },
+      {
+        "path": "./__mocks__/@salesforce/i18n/number.superscriptExponentSign.js",
+        "name": "@salesforce/i18n/number.superscriptExponentSign"
+      },
+      {
+        "path": "./__mocks__/@salesforce/i18n/number.superscriptingExponentSign.js",
+        "name": "@salesforce/i18n/number.superscriptingExponentSign"
+      },
+      {
+        "path": "./__mocks__/@salesforce/i18n/showJapaneseCalendar.js",
+        "name": "@salesforce/i18n/showJapaneseCalendar"
+      },
+      {
+        "path": "./__mocks__/@salesforce/i18n/timeZone.js",
+        "name": "@salesforce/i18n/timeZone"
+      },
+      {
+        "name": "@salesforce/internal/core.appVersion",
+        "path": "./__mocks__/@salesforce/internal/core.appVersion.js"
+      },
+      {
+        "name": "@salesforce/internal/core.securePort",
+        "path": "./__mocks__/@salesforce/internal/core.securePort.js"
+      },
+      {
+        "name": "@salesforce/internal/core.untrustedContentDomain",
+        "path": "./__mocks__/@salesforce/internal/core.untrustedContentDomain.js"
+      }
+    ]
+  },
+  "moduleProviders": [
+    "@lwrjs/label-module-provider",
+    "@lwrjs/app-service/moduleProvider",
+    "@lukethacoder/lwrjs-lwc-module-provider",
+    "@lwrjs/npm-module-provider"
+  ],
+  "assets": [
+    {
+      "dir": "./.garden/slds",
+      "urlPath": "/slds"
+    },
+    {
+      "dir": "./assets",
+      "urlPath": "/assets"
+    }
+  ],
+  "routes": [
+    {
+      "id": "app",
+      "path": "/",
+      "rootComponent": "garden/app",
+      "layoutTemplate": "./.garden/layouts/index.html",
+      "bootstrap": {
+        "syntheticShadow": true
+      }
+    }
+  ]
+}

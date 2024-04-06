@@ -1,0 +1,31 @@
+{
+  "lwc": {
+    "modules": [
+      {
+        "dir": "./.garden/components",
+        "namespace": "garden"
+      },
+      {
+        "dir": "./components",
+        "namespace": "stress"
+      }
+    ]
+  },
+  "moduleProviders": [
+    "@lwrjs/label-module-provider",
+    "@lwrjs/app-service/moduleProvider",
+    "@lukethacoder/lwrjs-lwc-module-provider",
+    "@lwrjs/npm-module-provider"
+  ],
+  "routes": [
+    {
+      "id": "app",
+      "path": "/",
+      "rootComponent": "garden/app",
+      "layoutTemplate": "./.garden/layouts/index.html",
+      "bootstrap": {
+        "syntheticShadow": true
+      }
+    }
+  ]
+}

@@ -1,0 +1,8 @@
+function stylesheet(token, useActualHostSelector, useNativeDirPseudoclass) {
+  var shadowSelector = token ? ("[" + token + "]") : "";
+  var hostSelector = token ? ("[" + token + "-host]") : "";
+  var suffixToken = token ? ("-" + token) : "";
+  return ((useActualHostSelector ? ":host {" : hostSelector + " {")) + "overflow: auto;--_garden-props-grid-template-columns: 1fr;}@media (min-width: 768px) {" + ((useActualHostSelector ? ":host {" : hostSelector + " {")) + "--_garden-props-grid-template-columns: 25% 1fr;}}ul" + shadowSelector + " {background-color: hsl(var(--_garden-background));margin: 0;padding: 0;list-style: none;}li" + shadowSelector + " {padding: 8px 16px;border-bottom: 0.5px solid hsl(var(--_garden-muted));}li.header" + shadowSelector + " {display: none;grid-template-columns: var(--_garden-props-grid-template-columns);}@media (min-width: 768px) {li.header" + shadowSelector + " {display: grid;}}.header" + shadowSelector + " span" + shadowSelector + " {display: flex;align-items: center;font-size: 14px;font-weight: 600;color: hsl(var(--garden-muted-foreground))}.header" + shadowSelector + " span:last-of-type" + shadowSelector + " {justify-content: space-between;}.header" + shadowSelector + " button" + shadowSelector + " {height: 24px;width: 24px;padding: 4px;display: flex;align-items: center;justify-content: center;margin: 0;border: none;background-color: transparent;cursor: pointer;color: hsl(var(--_garden-foreground));border-radius: 2px;}.header" + shadowSelector + " button:hover" + shadowSelector + " {background-color: hsl(var(--_garden-muted));}input" + shadowSelector + " {width: auto;}";
+  /*LWC compiler v6.5.0*/
+}
+export default [stylesheet];
