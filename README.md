@@ -76,9 +76,10 @@ LWC Garden brings an array of new features and customisation so you can develop 
 
 ### Features
 
-- 🚀 Local First Development
+- 🚀 Local First Development (feat. Speedy HMR)
 - 🧪 Mock Anything (Apex, OmniScript, 3rd Party Packages and on-platform imports)
 - 🥧 `<slot/>` Placeholders
+- 💅 SLDS Support OOTB
 - ✏️ API Editor via Storybook-like `argTypes`
 - 💅 Custom Theming API
 - ⚙️ Config as much or as little as your like
