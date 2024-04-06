@@ -3,26 +3,45 @@ title: Setup
 description: Setup and Configure LWC Garden.
 ---
 
-import { Code, Steps, Tabs, TabItem } from '@astrojs/starlight/components'
+import { Aside, Code, Steps, Tabs, TabItem } from '@astrojs/starlight/components'
 import InstallSteps from '../../../components/installSteps.mdx'
 
 ## Prerequisites
 
 To follow this guide, it is expected you have [`node`](https://nodejs.org/en), [`pnpm`](https://pnpm.io/) and [`sfdx`](https://developer.salesforce.com/tools/salesforcecli) installed as well as a <a href="https://developer.salesforce.com/docs/atlas.en-us.sfdx_dev.meta/sfdx_dev/sfdx_dev_ws_create_new.htm" target="_blank" rel="nofollow noreferrer">SFDX Project</a> setup with a valid `lwc.config.json` file.
 
+<Aside>
+  If you havn't already installed the default LWR specific packages, you will need to install them before continuing.
+
+  If you are having troubles, checkout the [Minimal Config Example](/examples/minimal-config).
+</Aside>
+
 export const gardenAppConfigCode = `{
-   "modules": [
-      {
-         "dir": "./.garden/components",
-         "namespace": "garden"
-      },
-      {
-         "dir": "./force-app/main/default/lwc",
-         "namespace": "c"
+   "lwc": [
+      "modules": [
+        {
+          "dir": "./.garden/components",
+          "namespace": "garden"
+        },
+        {
+          "dir": "./force-app/main/default/lwc",
+          "namespace": "c"
+        }
+      ]
+   ],
+  "routes": [
+    {
+      "id": "app",
+      "path": "/",
+      "rootComponent": "garden/app",
+      "layoutTemplate": "./.garden/layouts/index.html",
+      "bootstrap": {
+        "syntheticShadow": true
       }
-   ]
+    }
+  ]
 }`
-export const fileName = 'lwc.config.json'
+export const fileName = 'lwr.config.json'
 
 <Steps>
 
@@ -36,14 +55,14 @@ export const fileName = 'lwc.config.json'
 2. Create a `garden.config.js` file
 
    ```js
-   import lwcConfig from './lwc.config.json' assert { type: 'json' }
+   import lwrConfig from './lwr.config.json' assert { type: 'json' }
 
    /**
     * @type {import('@lwc-garden/core/types').GardenConfig}
     */
    const CONFIG = {
      // lwc.config.json modules type
-     modules: [...lwcConfig.modules],
+     modules: [...lwrConfig.lwc.modules],
    }
 
    export default CONFIG
@@ -51,12 +70,12 @@ export const fileName = 'lwc.config.json'
 
    This is the bare minimum configuration required to get LWC Garden working. This imports your module configuration from your existing `lwc.config.json` file.
 
-   > Don't forget to add the `garden` config to your `lwc.config.json` file:
+   > Don't forget to add the `garden` config to your `lwr.config.json` file:
    >
    > <Code
    >   code={gardenAppConfigCode}
    >   lang='json'
-   >   ins={[3, 4, 5, 6]}
+   >   ins={[4, 5, 6,7, 14, 15, 16,17,18,19,20,21,22,23,24]}
    >   title={fileName}
    > />
 

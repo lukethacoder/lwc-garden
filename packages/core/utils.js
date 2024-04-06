@@ -1,14 +1,12 @@
 import fs from 'fs'
 import path from 'path'
 import { fileURLToPath, pathToFileURL } from 'url'
+import { logger } from '@lwrjs/diagnostics'
 
 import DEFAULT_THEME from './themes/green.js'
 
 export const __filename = fileURLToPath(import.meta.url)
 export const __dirname = path.dirname(__filename)
-
-// export const __root = process.cwd()
-// export const __cache = path.join(__root, '.garden')
 
 const CACHE_FOLDER = '.garden'
 
@@ -17,6 +15,11 @@ export async function loadConfig(pathToConfig) {
    * @type {import('./types').GardenConfig}
    */
   const GardenConfigFromFile = await checkAndReadFile(pathToConfig)
+
+  if (!GardenConfigFromFile) {
+    logger.error('Please create a garden.config.js file')
+    process.exit(1)
+  }
 
   const gardenConfig = GardenConfigFromFile.default
   const rootDir = gardenConfig.rootDir || process.cwd()
@@ -45,6 +48,7 @@ export async function loadConfig(pathToConfig) {
     rootDir,
     cacheDir: path.join(rootDir, CACHE_FOLDER),
     theme,
+    port: gardenConfig.port || 3333,
     args: {
       cache: true,
       ...gardenConfig?.args,
@@ -67,15 +71,14 @@ export async function loadConfig(pathToConfig) {
   return _gardenConfig
 }
 
-export async function getWebpackConfig(gardenConfig) {
-  if (gardenConfig.webpack) {
-    return gardenConfig.webpack
+export async function loadLwrConfig(pathToConfig) {
+  const LwrConfigFromFile = await checkAndReadFile(pathToConfig)
+  if (!LwrConfigFromFile) {
+    logger.error('Please create a lwr.config.json file')
+    process.exit(1)
   }
 
-  const pathToConfig = path.join(__dirname, './webpack.config.js')
-  const defaultWebpackConfigFile = await checkAndReadFile(pathToConfig)
-
-  return defaultWebpackConfigFile.default(gardenConfig)
+  return LwrConfigFromFile.default
 }
 
 export async function checkAndReadFile(filePath) {
@@ -90,10 +93,10 @@ export async function checkAndReadFile(filePath) {
 
       return import(pathToFileURL(filePath))
     } else {
-      throw new Error(`File "${filePath}" does not exist.`)
+      logger.info(`File "${filePath}" does not exist.`)
     }
   } catch (error) {
-    console.error(error.message)
+    logger.error(error.message)
     return null
   }
 }
@@ -103,7 +106,7 @@ export async function writeStringToFile(filePath, content) {
     await fs.promises.mkdir(path.dirname(filePath), { recursive: true })
     await fs.promises.writeFile(filePath, content, 'utf8')
   } catch (error) {
-    console.error(`❌ Error writing to file: ${filePath}`, error)
+    logger.error(`Error writing to file: ${filePath}`, error)
   }
 }
 

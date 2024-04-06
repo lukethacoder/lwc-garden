@@ -1,0 +1,20 @@
+---
+const { projectId, openFile } = Astro.props
+---
+
+<div style='aspect-ratio: 16 / 9;display: flex;max-height: 80vh;'>
+  <span class='stackblitz' data-id={projectId} data-open-file={openFile}></span>
+</div>
+
+<script>
+  import sdk from '@stackblitz/sdk'
+
+  const el = document.querySelector('.stackblitz') as HTMLElement
+
+  if (el && el.dataset.id) {
+    sdk.embedProjectId(el, el.dataset.id, {
+      forceEmbedLayout: true,
+      openFile: el.dataset.openFile || 'garden.config.js',
+    })
+  }
+</script>

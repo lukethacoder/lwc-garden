@@ -38,12 +38,11 @@ LWC Garden utalises the `lwc.config.json` file as a base for mocking locally.
             - exampleComponent.html
             - exampleComponent.js
           - …
-  - lwc.config.json
+  - lwr.config.json
 </FileTree>
 
-#### `lwc.config.json`
-
 ```json
+// lwr.config.json
 {
   "modules": [
     {
@@ -70,9 +69,8 @@ LWC Garden utalises the `lwc.config.json` file as a base for mocking locally.
 }
 ```
 
-#### `exampleComponent.js`
-
 ```js
+// exampleComponent.js
 import { LightningElement, wire } from 'lwc'
 
 import basePath from '@salesforce/community/basePath'
@@ -111,6 +109,7 @@ Imperative Apex mocks are super simple. The file should `export default` a singl
 Wire Apex mocks are a bit more complex. To build these successfully, you must follow wire adapter structure.
 
 ```js
+// ./__mocks__/apex/ExampleController.getAccount.js
 export default class getAccount {
   connected = false
   accountId
@@ -225,34 +224,32 @@ Before we dive in, lets have a quick look at the folder structure:
             - customOmniCard.html
             - customOmniCard.js
           - …
-  - lwc.config.json
+  - lwr.config.json
 </FileTree>
 
-Configure your `lwc.config.json` file to point to the `__mocks__/omniscript` folder.
+Configure your `lwr.config.json` file to point to the `__mocks__/omniscript` folder.
 
 export const exampleCode = `{
-  "modules": [
-    {
-      "dir": "./.garden/components",
-      "namespace": "garden"
-    },
-    {
-      "dir": "./local",
-      "namespace": "local"
-    },
-    {
-      "dir": "./__mocks__/omnistudio",
-      "namespace": "omnistudio"
-    }
-  ]
+  "lwc": {
+    "modules": [
+      {
+        "dir": "./.garden/components",
+        "namespace": "garden"
+      },
+      {
+        "dir": "./local",
+        "namespace": "local"
+      },
+      {
+        "dir": "./__mocks__/omnistudio",
+        "namespace": "omnistudio"
+      }
+    ]
+  }
 }`
-export const fileName = 'lwc.config.json'
-export const highlights = [
-  '"dir": "./__mocks__/omnistudio",',
-  '"namespace": "omnistudio"',
-]
+export const fileName = 'lwr.config.json'
 
-<Code code={exampleCode} lang='js' ins={[11, 12, 13, 14]} title={fileName} />
+<Code code={exampleCode} lang='js' ins={[12, 13, 14, 15]} title={fileName} />
 
 ### OmniscriptBlock LWC (Mock)
 
@@ -285,6 +282,7 @@ export const highlights = [
 This is our custom LWC that extends the `OmniscriptBlock` imported from the `omnistudio` namespace. With our above config, this will resolve to our local `./__mocks__/omnistudio/omniscriptBlock` LWC.
 
 ```js
+// ./customOmniCard/customOmniCard.js
 import OmniscriptBlock from 'omnistudio/omniscriptBlock'
 import html_template from './customOmniCard.html'
 

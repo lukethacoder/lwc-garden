@@ -1,5 +1,4 @@
 import { ModuleRecord } from './module-types'
-import { Configuration } from 'webpack'
 
 // Garden Config
 export interface GardenConfig {
@@ -7,14 +6,14 @@ export interface GardenConfig {
   rootDir?: string
   ignore?: string[]
   modules: ModuleRecord[]
-  // TODO:
   theme?: GardenTheme
+  // defaults to 3333
+  port?: number
   args?: {
     cache?: boolean
   }
   slots?: GardenSlotsConfig
   lwc?: GardenLwcConfig
-  webpack?: Configuration
 }
 
 export type GardenArgTypes =
@@ -86,9 +85,16 @@ export interface GardenSlotsConfig {
 
 export interface GardenLwcConfig {
   /**
+   * @deprecated - No longer required. Set this as a part of your lwr.config.json instead
    * @type {Boolean}[false] - Should '@lwc/synthetic-shadow' be disabled
    */
   disableSyntheticShadowSupport?: boolean
+
+  /**
+   * When enabled, will load SLDS
+   * @type {Boolean}[false] - Should '@salesforce-ux/design-system' assets be loaded
+   */
+  enableSlds?: boolean
 }
 
 export interface GardenTheme {

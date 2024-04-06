@@ -1,5 +1,8 @@
 # LWC Garden Cache Folder
 .garden
 
+# LWR Cache Folder
+__lwr_cache__
+
 # Symlinked Shared Components
 shared-components

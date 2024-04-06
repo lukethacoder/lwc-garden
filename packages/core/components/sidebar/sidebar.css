@@ -18,6 +18,17 @@ h1 {
   display: flex;
   align-items: center;
 }
+h1 a {
+  display: flex;
+  height: 100%;
+  width: 100%;
+}
+h1 a:hover svg {
+  --garden-foreground: var(--_garden-muted-foreground);
+}
+h1 a:focus-visible {
+  box-shadow: none;
+}
 h1 svg {
   height: 100%;
   width: 100%;
@@ -27,6 +38,7 @@ h1 svg {
   display: flex;
   align-items: center;
   padding: 16px;
+  margin: 0 0 2px;
   justify-content: space-between;
   position: sticky;
   top: 0;
@@ -130,7 +142,7 @@ li {
   padding: 0 8px;
 }
 
-a {
+li a {
   display: inline-block;
   width: 100%;
   text-decoration: none;
@@ -145,12 +157,15 @@ a {
   text-overflow: ellipsis;
   white-space: nowrap;
 }
-a:hover {
+li a:hover {
   background-color: hsl(var(--_garden-primary) / 0.3);
 }
-a[data-is-active='true'] {
+li a[data-is-active='true'] {
   background-color: hsl(var(--_garden-primary));
   color: hsl(var(--_garden-primary-foreground));
+}
+li a:focus-visible {
+  box-shadow: none;
 }
 
 ul p {

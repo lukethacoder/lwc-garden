@@ -1,6 +1,6 @@
 import path from 'path'
 
-import lwcConfig from './lwc.config.json' assert { type: 'json' }
+import lwrConfig from './lwr.config.json' assert { type: 'json' }
 
 /**
  * @type {import('@lwc-garden/core/types').GardenConfig}
@@ -9,8 +9,8 @@ const CONFIG = {
   rootDir: path.resolve('./'),
   // don't display mock LWCs in the sidebar
   ignore: ['./__mocks__/**'],
-  // lwc.config.json modules type
-  modules: lwcConfig.modules,
+  // lwr.config.json modules type
+  modules: lwrConfig.lwc.modules,
 }
 
 export default CONFIG

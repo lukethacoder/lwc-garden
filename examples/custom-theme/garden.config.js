@@ -1,6 +1,6 @@
 import path from 'path'
 
-import lwcConfig from './lwc.config.json' assert { type: 'json' }
+import lwrConfig from './lwr.config.json' assert { type: 'json' }
 import CUSTOM_THEME from './theme.js'
 
 /**
@@ -8,8 +8,8 @@ import CUSTOM_THEME from './theme.js'
  */
 const CONFIG = {
   rootDir: path.resolve('./'),
-  // lwc.config.json modules type
-  modules: [...lwcConfig.modules],
+  // lwr.config.json modules type
+  modules: [...lwrConfig.lwc.modules],
   theme: CUSTOM_THEME,
 }
 

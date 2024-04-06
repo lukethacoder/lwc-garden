@@ -1,0 +1,135 @@
+---
+title: Lightning Base Components
+description: Configure lightning-base-components LWC API properties.
+---
+
+import { Code, Tabs, TabItem } from '@astrojs/starlight/components'
+
+export const gardenConfigJs = `import lwrConfig from './lwr.config.json' assert { type: 'json' }
+
+/**
+ * @type {import('@lwc-garden/core/types').GardenConfig}
+ */
+const CONFIG = {
+  // lwc.config.json modules type
+  modules: [...lwrConfig.lwc.modules],
+  lwc {
+    enableSlds: true
+  }
+}
+
+export default CONFIG`
+
+export const lwrConfigJsWithSlds = `{
+  "lwc": {
+    "modules": []
+  },
+  "moduleProviders": [],
+  "assets": [
+    {
+      "dir": "./.garden/slds",
+      "urlPath": "/slds"
+    }
+  ],
+  "routes": []
+}`
+
+export const lwrConfigJsWithLightningBaseComponents = `{
+  "lwc": {
+    "modules": [
+      { "npm": "lightning-base-components" }
+    ]
+  },
+  "moduleProviders": [],
+  "assets": [],
+  "routes": []
+}`
+
+LWC Garden comes with out of the box support for SLDS and is easy to pair with the official [`lightning-base-components`](https://www.npmjs.com/package/lightning-base-components) NPM package.
+
+## Enable SLDS
+
+There are a few short steps to get SLDS up and running.
+
+#### LWC Garden Configuration
+
+Enabling SLDS is a simple flag in your `garden.config.js` file.
+
+<Code
+  code={gardenConfigJs}
+  lang='js'
+  ins={[9,10,11]}
+  title='garden.config.js'
+/>
+
+
+#### Install `@salesforce-ux/design-system`
+
+`@salesforce-ux/design-system` is where the Salesforce Lightning Design System lives off platform. This can be installed via npm.
+
+<Tabs>
+  {/* prettier-ignore */}
+  <TabItem label='pnpm'>
+    ```sh
+    pnpm add @salesforce-ux/design-system
+    ```
+  </TabItem>
+  {/* prettier-ignore */}
+  <TabItem label='npm'>
+    ```sh
+    npm install @salesforce-ux/design-system
+    ```
+  </TabItem>
+  {/* prettier-ignore */}
+  <TabItem label='yarn'>
+    ```sh
+    yarn add @salesforce-ux/design-system
+    ```
+  </TabItem>
+</Tabs>
+
+You must also edit your `lwr.config.json` file to configure the path to SLDS.
+
+<Code
+  code={lwrConfigJsWithSlds}
+  lang='json'
+  ins={[7,8,9,10]}
+  title='lwr.config.json'
+/>
+
+## Lightning Base Components
+
+Most on-platform components can be used locally in LWC Garden. See the official `lightning-base-components` [README.md](https://www.npmjs.com/package/lightning-base-components) for a list of available LWCs.
+
+You can build your own mock `lightning-*` components if you need, [read more](/guides/lightning-component-mocking).
+
+<Tabs>
+  {/* prettier-ignore */}
+  <TabItem label='pnpm'>
+    ```sh
+    pnpm add lightning-base-components
+    ```
+  </TabItem>
+  {/* prettier-ignore */}
+  <TabItem label='npm'>
+    ```sh
+    npm install lightning-base-components
+    ```
+  </TabItem>
+  {/* prettier-ignore */}
+  <TabItem label='yarn'>
+    ```sh
+    yarn add lightning-base-components
+    ```
+  </TabItem>
+</Tabs>
+
+To get these components working you will need to adjust your `lwr.config.json` file.
+
+
+<Code
+  code={lwrConfigJsWithLightningBaseComponents}
+  lang='json'
+  ins={[4]}
+  title='lwr.config.json'
+/>

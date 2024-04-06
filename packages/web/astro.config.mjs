@@ -80,6 +80,23 @@ export default defineConfig({
           ],
         },
         {
+          label: 'Examples',
+          items: [
+            {
+              label: 'Minimal Configuration',
+              link: '/examples/minimal-config/',
+            },
+            {
+              label: 'Custom Theme',
+              link: '/examples/custom-theme/',
+            },
+            {
+              label: 'Lightning Base Components',
+              link: '/examples/lightning-base-components/',
+            },
+          ],
+        },
+        {
           label: 'Guides',
           items: [
             {
@@ -99,12 +116,12 @@ export default defineConfig({
               link: '/guides/mocking/',
             },
             {
-              label: 'Advanced Webpack',
-              link: '/guides/advanced-webpack/',
-              badge: {
-                text: 'Coming soon',
-                variant: 'caution',
-              },
+              label: 'Lightning Base Components (SLDS)',
+              link: '/guides/lightning-base-components/',
+            },
+            {
+              label: 'Lightning Component Mocking',
+              link: '/guides/lightning-component-mocking/',
             },
           ],
         },

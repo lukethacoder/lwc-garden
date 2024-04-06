@@ -3,6 +3,7 @@ import path from 'path'
 
 import { pathToFileURL } from 'url'
 import { minimatch } from 'minimatch'
+import { logger } from '@lwrjs/diagnostics'
 
 import { formatObjectToString, writeStringToFile } from '../utils.js'
 import { COMPONENT_CONFIG_FILE_NAME, MODULES_LWC_PATH } from '../constants.js'
@@ -31,6 +32,27 @@ async function getHtmlFile(files) {
   return undefined
 }
 
+/**
+ * Get the namespace from the module & filePath.
+ *
+ * - (dir|dirs) & namespace: return namespace
+ * - dir: extract the namespace from the filePath
+ *
+ * @param {string} module
+ * @param {string} filePath
+ * @returns {string}
+ */
+async function getNamespaceForModule(module, filePath) {
+  if (module.namespace) {
+    return module.namespace
+  }
+
+  const pattern = new RegExp(`^${module.dir}/([^/]+)/`)
+  const match = filePath.match(pattern)
+
+  return match ? match[1] : null
+}
+
 async function handleLwcComponentMetadataFromFiles(
   gardenConfig,
   modules,
@@ -42,9 +64,20 @@ async function handleLwcComponentMetadataFromFiles(
 
   const firstFile = files.find((item) => !item.includes('garden.config'))
   const componentName = firstFile.split('/').at(-1).split('.')[0]
-  const { namespace } = modules.find((item) => firstFile.includes(item.dir))
 
-  // const slotsComponents =
+  // search within both `dir` and `dirs` configs
+  const module = modules.find((item) => {
+    if (item.dir) {
+      return firstFile.includes(item.dir)
+    } else if (item.dirs) {
+      return item.dirs.find((subDir) => firstFile.includes(subDir))
+    }
+  })
+
+  if (!module) {
+    return
+  }
+  const namespace = await getNamespaceForModule(module, firstFile)
 
   const configFromComponent = files.find((item) =>
     item.includes(COMPONENT_CONFIG_FILE_NAME)
@@ -209,7 +242,7 @@ async function checkFolders(gardenConfig, folderPaths, modules) {
         )
       }
     } catch (error) {
-      console.error(`Error checking folder: ${folderPath}`, error)
+      logger.error(`Error checking folder: ${folderPath}`, error)
     }
   }
 
@@ -258,6 +291,12 @@ function isFileMatch(filePath, ignorePatterns) {
 async function main(gardenConfig) {
   const { ignore, modules, cacheDir } = gardenConfig
 
+  if (!modules || modules.length === 0) {
+    logger.warn(
+      'No modules configured. Please pass an array of modules in your garden.config.js'
+    )
+  }
+
   const foldersToWatch = modules.reduce((acc, item) => {
     // ignore garden LWCs
     if (item.dir && !item.dir.includes('garden')) {
@@ -269,6 +308,18 @@ async function main(gardenConfig) {
       } else {
         acc.push(item.dir)
       }
+    } else if (item.dirs) {
+      // add support for multi directory namespaced packages
+      item.dirs.forEach((dir) => {
+        if (ignore) {
+          // check file isn't being ignored
+          if (isFileMatch(dir, ignore)) {
+            acc.push(dir)
+          }
+        } else {
+          acc.push(dir)
+        }
+      })
     }
 
     return acc
