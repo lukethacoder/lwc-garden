@@ -15,6 +15,17 @@
       /* DO NOT CHANGE - used to insert Theme Variables */
       @layer base {}
     </style>
+
+    <style>
+      body {
+        /* please SLDS, don't enforce your global CSS here */
+        font-size: 100% !important;
+      }
+      /* let components that reference SLDS use the base body font-size */
+      body garden-container:has([class^="slds"]) {
+        font-size: 0.8125rem;
+      }
+    </style>
   </head>
   <body
     id="main"

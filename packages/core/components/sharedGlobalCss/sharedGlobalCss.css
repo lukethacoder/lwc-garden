@@ -31,3 +31,13 @@
   border-radius: 10px;
   border: 2px solid hsl(var(--_garden-muted));
 }
+
+/* Needed after pulling in SLDS which bloats up the base styles */
+button:focus-visible,
+a:focus-visible,
+summary:focus-visible {
+  outline-color: hsl(var(--_garden-primary));
+  outline-offset: 0;
+  outline-style: dashed;
+  outline-width: 1.5px;
+}

@@ -90,7 +90,7 @@ async function copySlds() {
     recursive: true,
   })
 
-  const userSldsDirConfig = LwrUserConfig.assets.find(
+  const userSldsDirConfig = LwrUserConfig?.assets?.find(
     (item) => item.urlPath === '/slds' && item.dir === './.garden/slds'
   )
   if (!userSldsDirConfig) {
