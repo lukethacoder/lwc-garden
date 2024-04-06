@@ -91,7 +91,6 @@ export interface GardenLwcConfig {
   disableSyntheticShadowSupport?: boolean
 
   /**
-   * TODO: actually configure and setup
    * When enabled, will load SLDS
    * @type {Boolean}[false] - Should '@salesforce-ux/design-system' assets be loaded
    */
