@@ -89,7 +89,7 @@ async function handleLwcComponentMetadataFromFiles(
     // TODO: should we validate this?
     const customLwcConfig = data.default
 
-    let slots = customLwcConfig.slots
+    let slots = customLwcConfig.slots || []
 
     // if no slots are provided, attempt to read from the HTML file
     if (!slots) {
