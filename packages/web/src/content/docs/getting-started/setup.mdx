@@ -17,18 +17,18 @@ To follow this guide, it is expected you have [`node`](https://nodejs.org/en), [
 </Aside>
 
 export const gardenAppConfigCode = `{
-   "lwc": [
-      "modules": [
-        {
-          "dir": "./.garden/components",
-          "namespace": "garden"
-        },
-        {
-          "dir": "./force-app/main/default/lwc",
-          "namespace": "c"
-        }
-      ]
-   ],
+  "lwc": {
+    "modules": [
+      {
+        "dir": "./.garden/components",
+        "namespace": "garden"
+      },
+      {
+        "dir": "./force-app/main/default/lwc",
+        "namespace": "c"
+      }
+    ]
+  },
   "routes": [
     {
       "id": "app",

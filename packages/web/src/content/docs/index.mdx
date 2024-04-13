@@ -29,18 +29,18 @@ import InstallSteps from '../../components/installSteps.mdx'
 import './index.css'
 
 export const gardenAppConfigCode = `{
-   "lwc": [
-      "modules": [
-        {
-          "dir": "./.garden/components",
-          "namespace": "garden"
-        },
-        {
-          "dir": "./force-app/main/default/lwc",
-          "namespace": "c"
-        }
-      ]
-   ],
+  "lwc": {
+    "modules": [
+      {
+        "dir": "./.garden/components",
+        "namespace": "garden"
+      },
+      {
+        "dir": "./force-app/main/default/lwc",
+        "namespace": "c"
+      }
+    ]
+  },
   "routes": [
     {
       "id": "app",
