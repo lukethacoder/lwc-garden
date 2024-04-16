@@ -3,8 +3,9 @@ title: Lightning Base Components
 description: Configure lightning-base-components LWC API properties.
 ---
 
-import { Code, Tabs, TabItem } from '@astrojs/starlight/components'
+import { Aside, Code, Tabs, TabItem } from '@astrojs/starlight/components'
 
+{/* prettier-ignore */}
 export const gardenConfigJs = `import lwrConfig from './lwr.config.json' assert { type: 'json' }
 
 /**
@@ -100,6 +101,10 @@ You must also edit your `lwr.config.json` file to configure the path to SLDS.
 ## Lightning Base Components
 
 Most on-platform components can be used locally in LWC Garden. See the official `lightning-base-components` [README.md](https://www.npmjs.com/package/lightning-base-components) for a list of available LWCs.
+
+<Aside>
+On windows, certain `lightning-base-components` do not work. This is a known issue with the LWR runtime.
+</Aside>
 
 You can build your own mock `lightning-*` components if you need, [read more](/guides/lightning-component-mocking).
 

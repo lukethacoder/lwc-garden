@@ -41,6 +41,12 @@ export const gardenAppConfigCode = `{
       }
     ]
   },
+  "moduleProviders": [
+    "@lwrjs/label-module-provider",
+    "@lwrjs/app-service/moduleProvider",
+    "@lukethacoder/lwrjs-lwc-module-provider",
+    "@lwrjs/npm-module-provider"
+  ],
   "routes": [
     {
       "id": "app",
@@ -113,7 +119,10 @@ export const fileName = 'lwr.config.json'
    > <Code
    >   code={gardenAppConfigCode}
    >   lang='json'
-   >   ins={[4, 5, 6,7, 14, 15, 16,17,18,19,20,21,22,23,24]}
+   >   ins={[
+   >     4, 5, 6, 7, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28,
+   >     29, 30,
+   >   ]}
    >   title={fileName}
    > />
 
