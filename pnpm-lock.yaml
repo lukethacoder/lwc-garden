@@ -4,6 +4,9 @@ settings:
   autoInstallPeers: true
   excludeLinksFromLockfile: false
 
+overrides:
+  '@lwrjs/module-registry': npm:@lukethacoder/lwrjs-module-registry
+
 importers:
 
   .:
@@ -136,6 +139,9 @@ importers:
 
   examples/lightning-base-components:
     dependencies:
+      '@lukethacoder/lwrjs-module-registry':
+        specifier: ^0.12.2
+        version: 0.12.2(@lwc/engine-dom@6.5.0)(@lwc/synthetic-shadow@6.5.0)(@lwrjs/esbuild@0.12.2)(lwc@6.3.4)
       '@lwc-garden/core':
         specifier: workspace:*
         version: link:../../packages/core
@@ -2356,6 +2362,57 @@ packages:
       - supports-color
     dev: false
 
+  /@lukethacoder/lwrjs-module-registry@0.12.2(@lwc/engine-dom@6.3.4)(@lwc/synthetic-shadow@6.5.0)(@lwrjs/esbuild@0.11.15)(lwc@6.5.0):
+    resolution: {integrity: sha512-+rEaiOCfu7KNpxhB5fyi8FV9Y0ZW7z/Ez+RtGJ3dCSS6oPuwEZpnaIV8oJtAS2r0QTItxq6FpQCIxasj86OtrQ==}
+    dependencies:
+      '@lwrjs/config': 0.12.2(@lwc/engine-dom@6.3.4)(@lwc/synthetic-shadow@6.5.0)(@lwrjs/esbuild@0.11.15)(lwc@6.5.0)
+      '@lwrjs/diagnostics': 0.12.2
+      '@lwrjs/shared-utils': 0.12.2
+      fs-extra: 11.2.0
+      rollup: 2.79.1
+    transitivePeerDependencies:
+      - '@lwc/engine-dom'
+      - '@lwc/synthetic-shadow'
+      - '@lwrjs/esbuild'
+      - '@salesforce/pwa-kit-runtime'
+      - lwc
+      - supports-color
+    dev: false
+
+  /@lukethacoder/lwrjs-module-registry@0.12.2(@lwc/engine-dom@6.3.4)(@lwc/synthetic-shadow@6.5.0)(@lwrjs/esbuild@0.12.2)(lwc@6.5.0):
+    resolution: {integrity: sha512-+rEaiOCfu7KNpxhB5fyi8FV9Y0ZW7z/Ez+RtGJ3dCSS6oPuwEZpnaIV8oJtAS2r0QTItxq6FpQCIxasj86OtrQ==}
+    dependencies:
+      '@lwrjs/config': 0.12.2(@lwc/engine-dom@6.3.4)(@lwc/synthetic-shadow@6.5.0)(@lwrjs/esbuild@0.12.2)(lwc@6.5.0)
+      '@lwrjs/diagnostics': 0.12.2
+      '@lwrjs/shared-utils': 0.12.2
+      fs-extra: 11.2.0
+      rollup: 2.79.1
+    transitivePeerDependencies:
+      - '@lwc/engine-dom'
+      - '@lwc/synthetic-shadow'
+      - '@lwrjs/esbuild'
+      - '@salesforce/pwa-kit-runtime'
+      - lwc
+      - supports-color
+    dev: true
+
+  /@lukethacoder/lwrjs-module-registry@0.12.2(@lwc/engine-dom@6.5.0)(@lwc/synthetic-shadow@6.5.0)(@lwrjs/esbuild@0.12.2)(lwc@6.3.4):
+    resolution: {integrity: sha512-+rEaiOCfu7KNpxhB5fyi8FV9Y0ZW7z/Ez+RtGJ3dCSS6oPuwEZpnaIV8oJtAS2r0QTItxq6FpQCIxasj86OtrQ==}
+    dependencies:
+      '@lwrjs/config': 0.12.2(@lwc/engine-dom@6.5.0)(@lwc/synthetic-shadow@6.5.0)(@lwrjs/esbuild@0.12.2)(lwc@6.3.4)
+      '@lwrjs/diagnostics': 0.12.2
+      '@lwrjs/shared-utils': 0.12.2
+      fs-extra: 11.2.0
+      rollup: 2.79.1
+    transitivePeerDependencies:
+      - '@lwc/engine-dom'
+      - '@lwc/synthetic-shadow'
+      - '@lwrjs/esbuild'
+      - '@salesforce/pwa-kit-runtime'
+      - lwc
+      - supports-color
+    dev: false
+
   /@lwc/aria-reflection@6.3.4:
     resolution: {integrity: sha512-GHqC6CJH7yOu48tt7Tpc7fXW8M50ZDpj/8fUvwZcI6MAmLcMaKpVjRPoppg3qDkPptEtkC6ZNyeKo+wb0jgV/g==}
     dev: false
@@ -2709,6 +2766,32 @@ packages:
       - supports-color
     dev: false
 
+  /@lwrjs/config@0.12.2(@lwc/engine-dom@6.3.4)(@lwc/synthetic-shadow@6.5.0)(@lwrjs/esbuild@0.11.15)(lwc@6.5.0):
+    resolution: {integrity: sha512-4qcDlTUT6cj1gIO09TzYB5DW7Vee9UIqzRGC30dWm1oIdvsZxUYXBTVF7+XiNAxT514+DGxS/Vgy775hL8ZkVA==}
+    engines: {node: '>=18.0.0'}
+    peerDependencies:
+      '@lwc/engine-dom': '>= 2.x'
+      '@lwc/synthetic-shadow': '>= 2.x'
+      '@lwrjs/esbuild': 0.12.x || >= 0.12.0-alpha
+      lwc: '>= 2.x'
+    peerDependenciesMeta:
+      '@lwrjs/esbuild':
+        optional: true
+    dependencies:
+      '@lwc/engine-dom': 6.3.4
+      '@lwc/synthetic-shadow': 6.5.0
+      '@lwrjs/diagnostics': 0.12.2
+      '@lwrjs/esbuild': 0.11.15
+      '@lwrjs/instrumentation': 0.12.2
+      '@lwrjs/shared-utils': 0.12.2
+      fs-extra: 11.2.0
+      jsonc-parser: 3.2.1
+      lwc: 6.5.0(@babel/core@7.24.4)(rollup@4.13.0)
+    transitivePeerDependencies:
+      - '@salesforce/pwa-kit-runtime'
+      - supports-color
+    dev: false
+
   /@lwrjs/config@0.12.2(@lwc/engine-dom@6.3.4)(@lwc/synthetic-shadow@6.5.0)(@lwrjs/esbuild@0.12.2)(lwc@6.5.0):
     resolution: {integrity: sha512-4qcDlTUT6cj1gIO09TzYB5DW7Vee9UIqzRGC30dWm1oIdvsZxUYXBTVF7+XiNAxT514+DGxS/Vgy775hL8ZkVA==}
     engines: {node: '>=18.0.0'}
@@ -2784,7 +2867,7 @@ packages:
       '@lwrjs/lwc-module-provider': 0.11.15(@babel/core@7.24.4)(@lwc/compiler@6.5.0)(@lwc/module-resolver@6.5.0)
       '@lwrjs/markdown-view-provider': 0.11.15
       '@lwrjs/module-bundler': 0.11.15(@lwc/features@6.5.0)
-      '@lwrjs/module-registry': 0.11.15
+      '@lwrjs/module-registry': /@lukethacoder/lwrjs-module-registry@0.12.2(@lwc/engine-dom@6.3.4)(@lwc/synthetic-shadow@6.5.0)(@lwrjs/esbuild@0.11.15)(lwc@6.5.0)
       '@lwrjs/npm-module-provider': 0.11.15
       '@lwrjs/nunjucks-view-provider': 0.11.15(chokidar@3.6.0)
       '@lwrjs/o11y': 0.11.15
@@ -2840,7 +2923,7 @@ packages:
       '@lwrjs/lwc-ssr': 0.12.2
       '@lwrjs/markdown-view-provider': 0.12.2
       '@lwrjs/module-bundler': 0.12.2(@lwc/features@6.5.0)
-      '@lwrjs/module-registry': 0.12.2(@lwc/engine-dom@6.3.4)(@lwc/synthetic-shadow@6.5.0)(@lwrjs/esbuild@0.12.2)(lwc@6.5.0)
+      '@lwrjs/module-registry': /@lukethacoder/lwrjs-module-registry@0.12.2(@lwc/engine-dom@6.3.4)(@lwc/synthetic-shadow@6.5.0)(@lwrjs/esbuild@0.12.2)(lwc@6.5.0)
       '@lwrjs/npm-module-provider': 0.12.2
       '@lwrjs/nunjucks-view-provider': 0.12.2(chokidar@3.6.0)
       '@lwrjs/o11y': 0.12.2(o11y@250.11.0)
@@ -2896,7 +2979,7 @@ packages:
       '@lwrjs/lwc-ssr': 0.12.2
       '@lwrjs/markdown-view-provider': 0.12.2
       '@lwrjs/module-bundler': 0.12.2(@lwc/features@6.5.0)
-      '@lwrjs/module-registry': 0.12.2(@lwc/engine-dom@6.5.0)(@lwc/synthetic-shadow@6.5.0)(@lwrjs/esbuild@0.12.2)(lwc@6.3.4)
+      '@lwrjs/module-registry': /@lukethacoder/lwrjs-module-registry@0.12.2(@lwc/engine-dom@6.5.0)(@lwc/synthetic-shadow@6.5.0)(@lwrjs/esbuild@0.12.2)(lwc@6.3.4)
       '@lwrjs/npm-module-provider': 0.12.2
       '@lwrjs/nunjucks-view-provider': 0.12.2(chokidar@3.6.0)
       '@lwrjs/o11y': 0.12.2(o11y@250.11.0)
@@ -3216,51 +3299,6 @@ packages:
     transitivePeerDependencies:
       - '@salesforce/pwa-kit-runtime'
       - supports-color
-
-  /@lwrjs/module-registry@0.11.15:
-    resolution: {integrity: sha512-0P67pFFDB7Yda8X6kUpdlCJqA9pSpmLgmiYG/9wWKUZn3LJSOl3fR9XkRY5hubNoRDLGGJp+2/0a762R3mrBog==}
-    engines: {node: '>=16.0.0'}
-    dependencies:
-      '@lwrjs/diagnostics': 0.11.15
-      '@lwrjs/shared-utils': 0.11.15
-      rollup: 2.79.1
-    dev: false
-
-  /@lwrjs/module-registry@0.12.2(@lwc/engine-dom@6.3.4)(@lwc/synthetic-shadow@6.5.0)(@lwrjs/esbuild@0.12.2)(lwc@6.5.0):
-    resolution: {integrity: sha512-luwSTPTXxfK8pFndfvPY+o52Vne22kaJPHH4D3WcQoOqakXkNd8ax5gAA/kQUS/xZJe8/46ItN6RDEuGXGiU1g==}
-    engines: {node: '>=18.0.0'}
-    dependencies:
-      '@lwrjs/config': 0.12.2(@lwc/engine-dom@6.3.4)(@lwc/synthetic-shadow@6.5.0)(@lwrjs/esbuild@0.12.2)(lwc@6.5.0)
-      '@lwrjs/diagnostics': 0.12.2
-      '@lwrjs/shared-utils': 0.12.2
-      fs-extra: 11.2.0
-      rollup: 2.79.1
-    transitivePeerDependencies:
-      - '@lwc/engine-dom'
-      - '@lwc/synthetic-shadow'
-      - '@lwrjs/esbuild'
-      - '@salesforce/pwa-kit-runtime'
-      - lwc
-      - supports-color
-    dev: true
-
-  /@lwrjs/module-registry@0.12.2(@lwc/engine-dom@6.5.0)(@lwc/synthetic-shadow@6.5.0)(@lwrjs/esbuild@0.12.2)(lwc@6.3.4):
-    resolution: {integrity: sha512-luwSTPTXxfK8pFndfvPY+o52Vne22kaJPHH4D3WcQoOqakXkNd8ax5gAA/kQUS/xZJe8/46ItN6RDEuGXGiU1g==}
-    engines: {node: '>=18.0.0'}
-    dependencies:
-      '@lwrjs/config': 0.12.2(@lwc/engine-dom@6.5.0)(@lwc/synthetic-shadow@6.5.0)(@lwrjs/esbuild@0.12.2)(lwc@6.3.4)
-      '@lwrjs/diagnostics': 0.12.2
-      '@lwrjs/shared-utils': 0.12.2
-      fs-extra: 11.2.0
-      rollup: 2.79.1
-    transitivePeerDependencies:
-      - '@lwc/engine-dom'
-      - '@lwc/synthetic-shadow'
-      - '@lwrjs/esbuild'
-      - '@salesforce/pwa-kit-runtime'
-      - lwc
-      - supports-color
-    dev: false
 
   /@lwrjs/npm-module-provider@0.11.15:
     resolution: {integrity: sha512-uo98bIpmevq9h0YP8e1BfSinAZMNkJpHyvyW8RPYP7ScNs7UOSZkyjUhrOpnCNRoRyOcB1iR+HZj+LkYV8F68Q==}

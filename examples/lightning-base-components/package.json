@@ -15,6 +15,7 @@
     "typescript": "^5.4.3"
   },
   "dependencies": {
+    "@lukethacoder/lwrjs-module-registry": "^0.12.2",
     "@lwc-garden/core": "workspace:*",
     "@lwc/engine-dom": "^6.5.0",
     "@lwc/synthetic-shadow": "^6.5.0",

@@ -137,3 +137,34 @@ Some components in the npm package are not yet supported for use by customers on
 - lightning-select
 - lightning-stacked-tab
 - lightning-stacked-tabset
+
+## Windows Support
+
+By default, Salesforce does not offer proper Windows support due to bugs in their `@lwrjs/*` packages.
+
+We can add native windows support (no need for WSL) via [`@lukethacoder/lwrjs-module-registry
+`](https://www.npmjs.com/package/@lukethacoder/lwrjs-module-registry). This package is an opinionated edit that fixes Windows specific issues as well as a few other bugs.
+
+### Install
+
+```cmd
+pnpm add @lukethacoder/lwrjs-module-registry
+```
+
+### Configuration
+
+In your `package.json`, add the following override.
+
+> NOTE: this is for pnpm. NPM and Yarn have a similar overrides method.
+
+```json
+{
+  "pnpm": {
+    "overrides": {
+      "@lwrjs/module-registry": "npm:@lukethacoder/lwrjs-module-registry"
+    }
+  }
+}
+```
+
+> NOTE: due to the monorepo structure of this repo, the overrides here have been set at the root of the project. In your project, you should set this in your main `package.json`
