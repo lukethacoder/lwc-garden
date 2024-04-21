@@ -138,3 +138,31 @@ To get these components working you will need to adjust your `lwr.config.json` f
   ins={[4]}
   title='lwr.config.json'
 />
+
+## Windows support
+
+By default, Salesforce does not offer proper Windows support due to bugs in their `@lwrjs/*` packages.
+
+We can add native windows support (no need for WSL) via [`@lukethacoder/lwrjs-module-registry`](https://www.npmjs.com/package/@lukethacoder/lwrjs-module-registry). This package is an opinionated edit that fixes Windows specific issues as well as a few other bugs.
+
+### Install
+
+```sh
+pnpm add @lukethacoder/lwrjs-module-registry
+```
+
+### Configuration
+
+In your `package.json`, add the following override.
+
+```json
+{
+  "pnpm": {
+    "overrides": {
+      "@lwrjs/module-registry": "npm:@lukethacoder/lwrjs-module-registry"
+    }
+  }
+}
+```
+
+> NOTE: this is for pnpm. NPM and Yarn have a similar overrides method.
