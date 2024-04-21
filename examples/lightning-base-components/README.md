@@ -142,8 +142,7 @@ Some components in the npm package are not yet supported for use by customers on
 
 By default, Salesforce does not offer proper Windows support due to bugs in their `@lwrjs/*` packages.
 
-We can add native windows support (no need for WSL) via [`@lukethacoder/lwrjs-module-registry
-`](https://www.npmjs.com/package/@lukethacoder/lwrjs-module-registry). This package is an opinionated edit that fixes Windows specific issues as well as a few other bugs.
+We can add native windows support (no need for WSL) via [`@lukethacoder/lwrjs-module-registry`](https://www.npmjs.com/package/@lukethacoder/lwrjs-module-registry). This package is an opinionated edit that fixes Windows specific issues as well as a few other bugs.
 
 ### Install
 
