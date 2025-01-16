@@ -9,7 +9,7 @@ export async function checkAndReadFile(filePath) {
       // assert JSON imports
       if (filePath.split('.').at(-1) === 'json') {
         return import(pathToFileURL(filePath), {
-          assert: { type: 'json' },
+          with: { type: 'json' },
         })
       }
 

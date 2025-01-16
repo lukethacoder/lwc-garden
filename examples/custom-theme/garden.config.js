@@ -1,6 +1,6 @@
 import path from 'path'
 
-import lwrConfig from './lwr.config.json' assert { type: 'json' }
+import lwrConfig from './lwr.config.json' with { type: 'json' }
 import CUSTOM_THEME from './theme.js'
 
 /**

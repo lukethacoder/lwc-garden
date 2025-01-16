@@ -1,4 +1,4 @@
-import lwrConfig from './lwr.config.json' assert { type: 'json' }
+import lwrConfig from './lwr.config.json' with { type: 'json' }
 
 /**
  * @type {import('@lwc-garden/core/types').GardenConfig}
