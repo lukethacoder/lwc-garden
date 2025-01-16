@@ -13,11 +13,11 @@ export const gardenConfigJs = `import lwrConfig from './lwr.config.json' with { 
 - @type {import('@lwc-garden/core/types').GardenConfig}
   \*/
   const CONFIG = {
-  // lwc.config.json modules type
-  modules: [...lwrConfig.lwc.modules],
-  lwc {
-  enableSlds: true
-  }
+    // lwc.config.json modules type
+    modules: [...lwrConfig.lwc.modules],
+    lwc {
+      enableSlds: true
+    }
   }
 
 export default CONFIG`
