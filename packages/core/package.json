@@ -1,6 +1,6 @@
 {
   "name": "@lwc-garden/core",
-  "version": "1.0.1",
+  "version": "1.1.0.alpha.0",
   "description": "🍃 LWC Garden Core Package - lwc-local-dev-server",
   "homepage": "https://lwc.garden",
   "type": "module",
@@ -12,32 +12,32 @@
   },
   "dependencies": {
     "@lukethacoder/lwrjs-lwc-module-provider": "^0.12.2",
-    "@lwc/engine-dom": "^6.3.4",
-    "@lwc/synthetic-shadow": "^6.3.4",
-    "@lwrjs/diagnostics": "^0.12.2",
-    "@lwrjs/markdown-view-provider": "^0.12.2",
-    "chalk": "^5.3.0",
-    "chokidar": "^3.6.0",
-    "minimatch": "^9.0.3",
-    "typescript": "^5.4.3"
+    "@lwc/engine-dom": "^8.12.4",
+    "@lwc/synthetic-shadow": "^8.12.4",
+    "@lwrjs/diagnostics": "^0.16.2",
+    "@lwrjs/markdown-view-provider": "^0.16.2",
+    "chalk": "^5.4.1",
+    "chokidar": "^4.0.3",
+    "minimatch": "^10.0.1",
+    "typescript": "^5.7.3"
   },
   "devDependencies": {
-    "@lwrjs/core": "^0.12.2",
-    "eslint": "^8.57.0",
-    "prettier": "^3.2.5"
+    "@lwrjs/core": "^0.16.2",
+    "eslint": "^9.18.0",
+    "prettier": "^3.4.2"
   },
   "peerDependencies": {
-    "@lwrjs/client-modules": ">= 0.11.x",
-    "@lwrjs/config": ">= 0.11.x",
-    "@lwrjs/core": ">= 0.11.x",
-    "@lwrjs/label-module-provider": ">= 0.11.x",
-    "@lwrjs/loader": ">= 0.11.x",
-    "@lwrjs/o11y": ">= 0.11.x",
-    "@lwrjs/router": ">= 0.11.x",
-    "@lwrjs/types": ">=0.11.x",
-    "@salesforce-ux/design-system": "^2.23.2",
-    "lwc": ">= 6.x",
-    "lwr": ">= 0.11.x"
+    "@lwrjs/client-modules": ">= 0.16.x",
+    "@lwrjs/config": ">= 0.16.x",
+    "@lwrjs/core": ">= 0.16.x",
+    "@lwrjs/label-module-provider": ">= 0.16.x",
+    "@lwrjs/loader": ">= 0.16.x",
+    "@lwrjs/o11y": ">= 0.16.x",
+    "@lwrjs/router": ">= 0.16.x",
+    "@lwrjs/types": ">=0.16.x",
+    "@salesforce-ux/design-system": ">= 2.23.0",
+    "lwc": ">= 8.x",
+    "lwr": ">= 0.16.x"
   },
   "lint-staged": {
     "**/*.{css,html,js,json,md,yaml,yml}": [
