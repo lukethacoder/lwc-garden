@@ -6,7 +6,11 @@ import { minimatch } from 'minimatch'
 import { logger } from '@lwrjs/diagnostics'
 
 import { formatObjectToString, writeStringToFile } from '../utils.js'
-import { COMPONENT_CONFIG_FILE_NAME, MODULES_LWC_PATH } from '../constants.js'
+import {
+  COMPONENT_CONFIG_FILE_NAME,
+  COMPONENT_CONFIG_FILE_NAME_TS,
+  MODULES_LWC_PATH,
+} from '../constants.js'
 
 function readSlotsFromHtml(htmlString) {
   // Define the regular expression pattern
@@ -79,8 +83,10 @@ async function handleLwcComponentMetadataFromFiles(
   }
   const namespace = await getNamespaceForModule(module, firstFile)
 
-  const configFromComponent = files.find((item) =>
-    item.includes(COMPONENT_CONFIG_FILE_NAME)
+  const configFromComponent = files.find(
+    (item) =>
+      item.includes(COMPONENT_CONFIG_FILE_NAME) ||
+      item.includes(COMPONENT_CONFIG_FILE_NAME_TS)
   )
   if (configFromComponent) {
     // import local LWCs garden.config.js file
@@ -222,7 +228,8 @@ async function checkFolders(gardenConfig, folderPaths, modules) {
           // LWCs should have componentName/componentName.(html|js|css) structure
           if (
             parentFolderName === baseName ||
-            entry === COMPONENT_CONFIG_FILE_NAME
+            entry === COMPONENT_CONFIG_FILE_NAME ||
+            entry === COMPONENT_CONFIG_FILE_NAME_TS
           ) {
             files.push({
               parentFolderName,
