@@ -11,12 +11,15 @@ export const __dirname = path.dirname(__filename)
 const CACHE_FOLDER = '.garden'
 
 export async function loadConfig(pathToConfig) {
+  const GardenConfigFromFileJs = await checkAndReadFile(pathToConfig)
+  const GardenConfigFromFileTs = await checkAndReadFile(
+    pathToConfig.replace('.js', '.ts')
+  )
+
   /**
    * @type {import('./types').GardenConfig}
    */
-  const GardenConfigFromFile =
-    (await checkAndReadFile(pathToConfig)) ||
-    (await checkAndReadFile(pathToConfig.replace('.js', '.ts')))
+  const GardenConfigFromFile = GardenConfigFromFileTs || GardenConfigFromFileJs
 
   if (!GardenConfigFromFile) {
     logger.error('Please create a garden.config.(js|ts) file')
