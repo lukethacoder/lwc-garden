@@ -160,7 +160,7 @@ async function handleLwcComponentMetadataFromFiles(
 }
 
 /**
- * Valid LWCs should contain a .html file and a .js file that matches the parent folders names
+ * Valid LWCs should contain a .html file and a .(js|ts) file that matches the parent folders names
  * @param {Object[]} files
  * @returns {boolean}
  */
@@ -177,8 +177,14 @@ function validateLwcFromFiles(files) {
         `${item.parentFolderName}/${item.parentFolderName}`
       )[1] === '.js'
   )
+  const hasTsFile = files.find(
+    (item) =>
+      item.entryPath.split(
+        `${item.parentFolderName}/${item.parentFolderName}`
+      )[1] === '.ts'
+  )
 
-  return hasHtmlFile && hasJsFile
+  return hasHtmlFile && (hasJsFile || hasTsFile)
 }
 
 async function checkFolders(gardenConfig, folderPaths, modules) {
