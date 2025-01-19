@@ -225,7 +225,7 @@ async function checkFolders(gardenConfig, folderPaths, modules) {
           const parentFolderName = folderPath.split('/').at(-1)
           const baseName = entry.split('.')[0]
 
-          // LWCs should have componentName/componentName.(html|js|css) structure
+          // LWCs should have componentName/componentName.(html|js|ts|css) structure
           if (
             parentFolderName === baseName ||
             entry === COMPONENT_CONFIG_FILE_NAME ||
