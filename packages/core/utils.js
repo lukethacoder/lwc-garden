@@ -14,10 +14,12 @@ export async function loadConfig(pathToConfig) {
   /**
    * @type {import('./types').GardenConfig}
    */
-  const GardenConfigFromFile = await checkAndReadFile(pathToConfig)
+  const GardenConfigFromFile =
+    (await checkAndReadFile(pathToConfig)) ||
+    (await checkAndReadFile(pathToConfig.replace('.js', '.ts')))
 
   if (!GardenConfigFromFile) {
-    logger.error('Please create a garden.config.js file')
+    logger.error('Please create a garden.config.(js|ts) file')
     process.exit(1)
   }
 
