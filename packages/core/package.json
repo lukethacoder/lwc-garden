@@ -1,6 +1,6 @@
 {
   "name": "@lwc-garden/core",
-  "version": "1.1.1-alpha.4",
+  "version": "1.2.0",
   "description": "🍃 LWC Garden Core Package - lwc-local-dev-server",
   "homepage": "https://lwc.garden",
   "type": "module",
