@@ -4,12 +4,15 @@ import path from 'path'
 import { pathToFileURL } from 'url'
 import { minimatch } from 'minimatch'
 import { logger } from '@lwrjs/diagnostics'
+import { transformSync as babelTransform } from '@babel/core'
 
 import { formatObjectToString, writeStringToFile } from '../utils.js'
 import {
   COMPONENT_CONFIG_FILE_NAME,
   COMPONENT_CONFIG_FILE_NAME_TS,
+  DEFAULT_BABEL_CONFIG,
   MODULES_LWC_PATH,
+  TEMP_CONFIG,
 } from '../constants.js'
 
 function readSlotsFromHtml(htmlString) {
@@ -83,14 +86,69 @@ async function handleLwcComponentMetadataFromFiles(
   }
   const namespace = await getNamespaceForModule(module, firstFile)
 
-  const configFromComponent = files.find(
-    (item) =>
-      item.includes(COMPONENT_CONFIG_FILE_NAME) ||
-      item.includes(COMPONENT_CONFIG_FILE_NAME_TS)
+  const configFromComponent = files.find((item) =>
+    item.includes(COMPONENT_CONFIG_FILE_NAME)
   )
-  if (configFromComponent) {
+  const configFromComponentTs = files.find((item) =>
+    item.includes(COMPONENT_CONFIG_FILE_NAME_TS)
+  )
+  // default to .js
+  let componentConfigName = configFromComponent
+
+  if (configFromComponentTs) {
+    let source = await fs.readFile(configFromComponentTs, 'utf8')
+
+    const babelConfig = {
+      ...DEFAULT_BABEL_CONFIG,
+      presets: [['@babel/preset-typescript', { onlyRemoveTypeImports: false }]],
+      filename: configFromComponentTs,
+    }
+    logger.debug({
+      label: 'LwcCompiler',
+      message: 'babelTransform',
+      additionalInfo: { babelConfig },
+    })
+    let result
+    try {
+      result = babelTransform(source, babelConfig)
+    } catch (error) {
+      logger.debug({
+        label: 'LwcCompiler',
+        message: 'babelTransform error',
+        additionalInfo: error,
+      })
+      throw error
+    }
+
+    logger.verbose({
+      label: 'LwcCompiler',
+      message: 'babelTransform result',
+      additionalInfo: { result },
+    })
+    if (!result || !result.code) {
+      logger.debug({
+        label: 'LwcCompiler',
+        message: 'babelTransform invalid result',
+        additionalInfo: { result },
+      })
+      throw new Error(`Error TS compiling ${configFromComponentTs}`)
+    }
+    source = result.code
+
+    if (source) {
+      // write the JS output to {COMPONENT}/.garden.config.js
+      const jsName = configFromComponentTs.replace(
+        'garden.config.ts',
+        '.garden.config.js'
+      )
+      await fs.writeFile(jsName, source)
+      componentConfigName = jsName
+    }
+  }
+
+  if (componentConfigName) {
     // import local LWCs garden.config.js file
-    const data = await import(pathToFileURL(configFromComponent))
+    const data = await import(pathToFileURL(componentConfigName))
 
     // TODO: should we validate this?
     const customLwcConfig = data.default

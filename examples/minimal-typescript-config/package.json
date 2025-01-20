@@ -1,0 +1,39 @@
+{
+  "name": "@lwc-garden/example-minimal-config",
+  "private": true,
+  "version": "1.0.0",
+  "description": "minimal-typescript-config",
+  "type": "module",
+  "scripts": {
+    "dev": "npx -p @lwc-garden/core dev"
+  },
+  "devDependencies": {
+    "eslint": "^8.57.0",
+    "prettier": "^3.2.5",
+    "typescript": "^5.4.3"
+  },
+  "dependencies": {
+    "@lwc-garden/core": "workspace:*",
+    "@lwc/engine-dom": "^6.5.0",
+    "@lwc/synthetic-shadow": "^6.5.0",
+    "@lwrjs/client-modules": "^0.12.2",
+    "@lwrjs/config": "^0.12.2",
+    "@lwrjs/core": "^0.12.2",
+    "@lwrjs/label-module-provider": "^0.12.2",
+    "@lwrjs/loader": "^0.12.2",
+    "@lwrjs/markdown-view-provider": "^0.12.2",
+    "@lwrjs/o11y": "^0.12.2",
+    "@lwrjs/router": "^0.12.2",
+    "@lwrjs/types": "^0.12.2",
+    "lwc": "^6.3.4",
+    "lwr": "^0.12.2"
+  },
+  "lint-staged": {
+    "**/*.{css,html,js,json,md,yaml,yml}": [
+      "prettier --write"
+    ],
+    "**/lwc/**/*.js": [
+      "eslint --cache --fix"
+    ]
+  }
+}

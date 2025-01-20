@@ -11,6 +11,8 @@
     "dev": "./bin/run.js"
   },
   "dependencies": {
+    "@babel/core": "^7.26.0",
+    "@babel/preset-typescript": "^7.26.0",
     "@lukethacoder/lwrjs-lwc-module-provider": "^0.12.2",
     "@lwc/engine-dom": "^8.12.4",
     "@lwc/synthetic-shadow": "^8.12.4",

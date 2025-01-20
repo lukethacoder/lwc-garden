@@ -2,41 +2,87 @@ import fs from 'fs'
 import path from 'path'
 import { fileURLToPath, pathToFileURL } from 'url'
 import { logger } from '@lwrjs/diagnostics'
+import { transformSync as babelTransform } from '@babel/core'
 
 import DEFAULT_THEME from './themes/green.js'
+
+import { CACHE_FOLDER, TEMP_CONFIG, DEFAULT_BABEL_CONFIG } from './constants.js'
 
 export const __filename = fileURLToPath(import.meta.url)
 export const __dirname = path.dirname(__filename)
 
-const CACHE_FOLDER = '.garden'
-
 export async function loadConfig(pathToConfig) {
-  if (
-    !(
-      fs.existsSync(pathToConfig) ||
-      fs.existsSync(pathToConfig.replace('.js', '.ts'))
-    )
-  ) {
-    logger.error('Please create a garden.config.(js|ts) file')
-    process.exit(1)
+  // check TypeScript (garden.config.ts)
+  const tsConfigFile = pathToConfig.replace('.js', '.ts')
+  if (fs.existsSync(tsConfigFile)) {
+    let source = fs.readFileSync(tsConfigFile, 'utf8')
+
+    const babelConfig = {
+      ...DEFAULT_BABEL_CONFIG,
+      presets: [['@babel/preset-typescript', { onlyRemoveTypeImports: false }]],
+      filename: tsConfigFile,
+    }
+    logger.debug({
+      label: 'LwcCompiler',
+      message: 'babelTransform',
+      additionalInfo: { babelConfig },
+    })
+    let result
+    try {
+      result = babelTransform(source, babelConfig)
+    } catch (error) {
+      logger.debug({
+        label: 'LwcCompiler',
+        message: 'babelTransform error',
+        additionalInfo: error,
+      })
+      throw error
+    }
+
+    logger.verbose({
+      label: 'LwcCompiler',
+      message: 'babelTransform result',
+      additionalInfo: { result },
+    })
+    if (!result || !result.code) {
+      logger.debug({
+        label: 'LwcCompiler',
+        message: 'babelTransform invalid result',
+        additionalInfo: { result },
+      })
+      throw new Error(`Error TS compiling ${tsConfigFile}`)
+    }
+    source = result.code
+
+    if (source) {
+      // write the JS output to .garden_temp/garden.config.js
+      await fs.writeFileSync(TEMP_CONFIG, source)
+    }
   }
 
   /**
    * @type {import('./types').GardenConfig}
    */
-  const GardenConfigFromFile = fs.existsSync(pathToConfig)
-    ? await checkAndReadFile(pathToConfig)
-    : await checkAndReadFile(pathToConfig.replace('.js', '.ts'))
+  let GardenConfigFromFile
+  if (fs.existsSync(TEMP_CONFIG)) {
+    GardenConfigFromFile = await checkAndReadFile(TEMP_CONFIG)
+  }
 
+  // no TS config, query for garden.config.js instead
+  if (!GardenConfigFromFile) {
+    GardenConfigFromFile = await checkAndReadFile(pathToConfig)
+  }
+
+  // no config file at all
   if (!GardenConfigFromFile) {
     logger.error('Please create a garden.config.(js|ts) file')
     process.exit(1)
   }
 
   const gardenConfig = GardenConfigFromFile.default
-  const rootDir = gardenConfig.rootDir || process.cwd()
+  const rootDir = gardenConfig?.rootDir || process.cwd()
 
-  const themeFromConfig = gardenConfig.theme
+  const themeFromConfig = gardenConfig?.theme
   const theme = {
     light: {
       ...DEFAULT_THEME.light,
@@ -60,7 +106,7 @@ export async function loadConfig(pathToConfig) {
     rootDir,
     cacheDir: path.join(rootDir, CACHE_FOLDER),
     theme,
-    port: gardenConfig.port || 3333,
+    port: gardenConfig?.port || 3333,
     args: {
       cache: true,
       ...gardenConfig?.args,
