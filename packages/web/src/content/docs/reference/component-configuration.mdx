@@ -5,13 +5,48 @@ description: LWC Garden Configuration File for specific LWCs.
 
 import { Aside } from '@astrojs/starlight/components'
 
-Each LWC may choose to bring its own custom `garden.config.js` file. This should be placed in the LWC folder.
+Each LWC may choose to bring its own custom `garden.config.(js|ts)` file. This should be placed in the LWC folder.
 
 <Aside type='note'>
-  You may wish to add `garden.config.js` to your `.forceignore` file if you do
+  You may wish to add `garden.config.(js|ts)` to your `.forceignore` file if you do
   not wish to push your configuration files. It is advised to keep these files
   backed up in `git` to share with your fellow developers.
 </Aside>
+
+```ts
+// garden.config.ts
+import { GardenComponentModule, GardenOption } from '@lwc-garden/core/types'
+import { InputTypeValues } from './types'
+
+// You may choose to keep these types in a `./types` file instead
+export const InputTypeValues = ['text', 'number', 'email', 'tel'] as const
+
+export type InputType = (typeof InputTypeValues)[number]
+
+const inputTypeValuesMap: GardenOption[] = InputTypeValues.map((item) => ({
+  label: item,
+  value: item,
+}))
+
+export default {
+  name: 'Component Text',
+  argTypes: [
+    {
+      name: 'label',
+      type: 'text',
+    },
+    {
+      name: 'value',
+      type: 'text',
+    },
+    {
+      name: 'type',
+      type: 'select',
+      options: inputTypeValuesMap,
+    },
+  ],
+} satisfies GardenComponentModule
+```
 
 ```js
 // garden.config.js
@@ -24,6 +59,20 @@ export default {
     {
       name: 'label',
       type: 'text',
+    },
+    {
+      name: 'value',
+      type: 'text',
+    },
+    {
+      name: 'type',
+      type: 'select',
+      options: [
+        { label: 'text', value: 'text' },
+        { label: 'number', value: 'number' },
+        { label: 'email', value: 'email' },
+        { label: 'tel', value: 'tel' },
+      ],
     },
   ],
 }

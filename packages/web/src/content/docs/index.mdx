@@ -98,20 +98,16 @@ export const fileName = 'lwr.config.json'
 
    <InstallSteps />
 
-2. Create a `garden.config.js` file
+2. Create a `garden.config.ts` file
 
-   ```js
+   ```ts
+   import { GardenConfig } from '@lwc-garden/core/types'
    import lwrConfig from './lwr.config.json' with { type: 'json' }
 
-   /**
-    * @type {import('@lwc-garden/core/types').GardenConfig}
-    */
-   const CONFIG = {
-     // lwr.config.json modules type
+   export default {
+     // lwc.config.json modules type
      modules: [...lwrConfig.lwc.modules],
-   }
-
-   export default CONFIG
+   } satisfies GardenConfig
    ```
 
    > Don't forget to add the `garden` config to your `lwr.config.json` file:
