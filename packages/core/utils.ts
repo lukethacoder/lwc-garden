@@ -2,76 +2,27 @@ import fs from 'fs'
 import path from 'path'
 import { fileURLToPath, pathToFileURL } from 'url'
 import { logger } from '@lwrjs/diagnostics'
-import { transformSync as babelTransform } from '@babel/core'
 
 import DEFAULT_THEME from './themes/green.js'
 
-import { CACHE_FOLDER, TEMP_CONFIG, DEFAULT_BABEL_CONFIG } from './constants.js'
+import { CACHE_FOLDER } from './constants.js'
+import { GardenConfig } from './types.js'
 
 export const __filename = fileURLToPath(import.meta.url)
 export const __dirname = path.dirname(__filename)
 
-export async function loadConfig(pathToConfig) {
-  // check TypeScript (garden.config.ts)
+export function getKeys<T extends object>(obj: T): (keyof T)[] {
+  return Object.keys(obj) as (keyof T)[]
+}
+
+export async function loadConfig(pathToConfig: string) {
   const tsConfigFile = pathToConfig.replace('.js', '.ts')
-  if (fs.existsSync(tsConfigFile)) {
-    let source = fs.readFileSync(tsConfigFile, 'utf8')
 
-    const babelConfig = {
-      ...DEFAULT_BABEL_CONFIG,
-      presets: [['@babel/preset-typescript', { onlyRemoveTypeImports: false }]],
-      filename: tsConfigFile,
-    }
-    logger.debug({
-      label: 'LwcCompiler',
-      message: 'babelTransform',
-      additionalInfo: { babelConfig },
-    })
-    let result
-    try {
-      result = babelTransform(source, babelConfig)
-    } catch (error) {
-      logger.debug({
-        label: 'LwcCompiler',
-        message: 'babelTransform error',
-        additionalInfo: error,
-      })
-      throw error
-    }
+  let useTsConfig = fs.existsSync(tsConfigFile)
 
-    logger.verbose({
-      label: 'LwcCompiler',
-      message: 'babelTransform result',
-      additionalInfo: { result },
-    })
-    if (!result || !result.code) {
-      logger.debug({
-        label: 'LwcCompiler',
-        message: 'babelTransform invalid result',
-        additionalInfo: { result },
-      })
-      throw new Error(`Error TS compiling ${tsConfigFile}`)
-    }
-    source = result.code
-
-    if (source) {
-      // write the JS output to .garden_temp/garden.config.js
-      await fs.writeFileSync(TEMP_CONFIG, source)
-    }
-  }
-
-  /**
-   * @type {import('./types').GardenConfig}
-   */
-  let GardenConfigFromFile
-  if (fs.existsSync(TEMP_CONFIG)) {
-    GardenConfigFromFile = await checkAndReadFile(TEMP_CONFIG)
-  }
-
-  // no TS config, query for garden.config.js instead
-  if (!GardenConfigFromFile) {
-    GardenConfigFromFile = await checkAndReadFile(pathToConfig)
-  }
+  let GardenConfigFromFile: { default: GardenConfig } | undefined = useTsConfig
+    ? await checkAndReadFile(tsConfigFile)
+    : await checkAndReadFile(pathToConfig)
 
   // no config file at all
   if (!GardenConfigFromFile) {
@@ -129,7 +80,7 @@ export async function loadConfig(pathToConfig) {
   return _gardenConfig
 }
 
-export async function loadLwrConfig(pathToConfig) {
+export async function loadLwrConfig(pathToConfig: string) {
   const LwrConfigFromFile = await checkAndReadFile(pathToConfig)
   if (!LwrConfigFromFile) {
     logger.error('Please create a lwr.config.json file')
@@ -139,27 +90,27 @@ export async function loadLwrConfig(pathToConfig) {
   return LwrConfigFromFile.default
 }
 
-export async function checkAndReadFile(filePath) {
+export async function checkAndReadFile(filePath: string) {
   try {
     if (fs.existsSync(filePath)) {
       // assert JSON imports
       if (filePath.split('.').at(-1) === 'json') {
-        return import(pathToFileURL(filePath), {
+        return import(pathToFileURL(filePath).toString(), {
           with: { type: 'json' },
         })
       }
 
-      return import(pathToFileURL(filePath))
+      return import(pathToFileURL(filePath).toString())
     } else {
       logger.info(`File "${filePath}" does not exist.`)
     }
   } catch (error) {
-    logger.error(error.message)
+    logger.error((error as any).message)
     return null
   }
 }
 
-export async function writeStringToFile(filePath, content) {
+export async function writeStringToFile(filePath: string, content: string) {
   try {
     await fs.promises.mkdir(path.dirname(filePath), { recursive: true })
     await fs.promises.writeFile(filePath, content, 'utf8')
@@ -177,7 +128,7 @@ export async function writeStringToFile(filePath, content) {
  * @param {number}[2] indent
  * @returns {string}
  */
-export function formatObjectToString(obj, indent = 2) {
+export function formatObjectToString(obj: any, indent = 2) {
   if (typeof obj === 'function') {
     return obj.toString()
   }

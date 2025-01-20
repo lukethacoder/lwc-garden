@@ -1,9 +1,8 @@
-#!/usr/bin/env node
-
 import fs from 'fs'
 import path from 'path'
 import chalk from 'chalk'
 import { createServer } from 'lwr'
+import { LwrGlobalConfig } from '@lwrjs/types'
 import { logger } from '@lwrjs/diagnostics'
 
 import readFiles from './readFiles.js'
@@ -22,7 +21,9 @@ const GardenConfig = await loadConfig(`${process.cwd()}/garden.config.js`)
  * Load the users garden.config.js file
  * @type {import('@lwrjs/types').LwrGlobalConfig}
  */
-const LwrUserConfig = await loadLwrConfig(`${process.cwd()}/lwr.config.json`)
+const LwrUserConfig: LwrGlobalConfig = await loadLwrConfig(
+  `${process.cwd()}/lwr.config.json`
+)
 
 // save garden.config.js to the `garden-config` LWC
 await syncToLwc(
@@ -34,7 +35,7 @@ await syncToLwc(
  * @param {import('@lwrjs/types').LwrGlobalConfig} config
  * @returns {Promise<LwrApp | undefined>}
  */
-async function createApp(config) {
+async function createApp(config: LwrGlobalConfig) {
   return await createServer(config)
 }
 
@@ -90,9 +91,15 @@ async function copySlds() {
     recursive: true,
   })
 
-  const userSldsDirConfig = LwrUserConfig?.assets?.find(
-    (item) => item.urlPath === '/slds' && item.dir === './.garden/slds'
-  )
+  const assets = LwrUserConfig?.assets || []
+  const userSldsDirConfig =
+    typeof assets !== 'string'
+      ? assets.find(
+          (item) =>
+            item.urlPath === '/slds' && (item as any).dir === './.garden/slds'
+        )
+      : []
+
   if (!userSldsDirConfig) {
     // validate users lwr.config.json has been correctly configured to support SLDS
     logger.warn(

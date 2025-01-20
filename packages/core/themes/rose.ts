@@ -1,16 +1,14 @@
-/**
- * @type {import('./types').GardenTheme}
- */
+import { GardenTheme } from '../types'
+
 export default {
   light: {
-    'font-family': 'Gantari',
     background: '0 0% 100%',
     foreground: '240 10% 3.9%',
     card: '0 0% 100%',
     'card-foreground': '240 10% 3.9%',
     popover: '0 0% 100%',
     'popover-foreground': '240 10% 3.9%',
-    primary: '142.1 76.2% 36.3%',
+    primary: '346.8 77.2% 49.8%',
     'primary-foreground': '355.7 100% 97.3%',
     secondary: '240 4.8% 95.9%',
     'secondary-foreground': '240 5.9% 10%',
@@ -22,11 +20,8 @@ export default {
     'destructive-foreground': '0 0% 98%',
     border: '240 5.9% 90%',
     input: '240 5.9% 90%',
-    ring: '142.1 76.2% 36.3%',
-    radius: '0.5rem',
-    'container-background': '240 4.8% 95.9%',
-    'dialog-background': '20 14.3% 4.1%',
-    'dialog-background-alpha': '0.5',
+    ring: '346.8 77.2% 49.8%',
+    radius: '0.3rem',
   },
   dark: {
     background: '20 14.3% 4.1%',
@@ -35,8 +30,8 @@ export default {
     'card-foreground': '0 0% 95%',
     popover: '0 0% 9%',
     'popover-foreground': '0 0% 95%',
-    primary: '142.1 70.6% 45.3%',
-    'primary-foreground': '144.9 80.4% 10%',
+    primary: '346.8 77.2% 49.8%',
+    'primary-foreground': '355.7 100% 97.3%',
     secondary: '240 3.7% 15.9%',
     'secondary-foreground': '0 0% 98%',
     muted: '0 0% 15%',
@@ -47,7 +42,6 @@ export default {
     'destructive-foreground': '0 85.7% 97.3%',
     border: '240 3.7% 15.9%',
     input: '240 3.7% 15.9%',
-    ring: '142.4 71.8% 29.2%',
-    'container-background': '0 0% 15%',
+    ring: '346.8 77.2% 49.8%',
   },
-}
+} satisfies GardenTheme

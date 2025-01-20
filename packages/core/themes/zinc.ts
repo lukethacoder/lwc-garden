@@ -1,6 +1,5 @@
-/**
- * @type {import('../types').GardenTheme}
- */
+import { GardenTheme } from '../types'
+
 export default {
   light: {
     background: '0 0% 100%',
@@ -9,8 +8,8 @@ export default {
     'card-foreground': '240 10% 3.9%',
     popover: '0 0% 100%',
     'popover-foreground': '240 10% 3.9%',
-    primary: '346.8 77.2% 49.8%',
-    'primary-foreground': '355.7 100% 97.3%',
+    primary: '240 5.9% 10%',
+    'primary-foreground': '0 0% 98%',
     secondary: '240 4.8% 95.9%',
     'secondary-foreground': '240 5.9% 10%',
     muted: '240 4.8% 95.9%',
@@ -21,28 +20,28 @@ export default {
     'destructive-foreground': '0 0% 98%',
     border: '240 5.9% 90%',
     input: '240 5.9% 90%',
-    ring: '346.8 77.2% 49.8%',
+    ring: '240 5.9% 10%',
     radius: '0.3rem',
   },
   dark: {
-    background: '20 14.3% 4.1%',
-    foreground: '0 0% 95%',
-    card: '24 9.8% 10%',
-    'card-foreground': '0 0% 95%',
-    popover: '0 0% 9%',
-    'popover-foreground': '0 0% 95%',
-    primary: '346.8 77.2% 49.8%',
-    'primary-foreground': '355.7 100% 97.3%',
+    background: '240 10% 3.9%',
+    foreground: '0 0% 98%',
+    card: '240 10% 3.9%',
+    'card-foreground': '0 0% 98%',
+    popover: '240 10% 3.9%',
+    'popover-foreground': '0 0% 98%',
+    primary: '0 0% 98%',
+    'primary-foreground': '240 5.9% 10%',
     secondary: '240 3.7% 15.9%',
     'secondary-foreground': '0 0% 98%',
-    muted: '0 0% 15%',
+    muted: '240 3.7% 15.9%',
     'muted-foreground': '240 5% 64.9%',
-    accent: '12 6.5% 15.1%',
+    accent: '240 3.7% 15.9%',
     'accent-foreground': '0 0% 98%',
     destructive: '0 62.8% 30.6%',
-    'destructive-foreground': '0 85.7% 97.3%',
+    'destructive-foreground': '0 0% 98%',
     border: '240 3.7% 15.9%',
     input: '240 3.7% 15.9%',
-    ring: '346.8 77.2% 49.8%',
+    ring: '240 4.9% 83.9%',
   },
-}
+} satisfies GardenTheme

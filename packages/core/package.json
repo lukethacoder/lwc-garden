@@ -5,10 +5,10 @@
   "homepage": "https://lwc.garden",
   "type": "module",
   "scripts": {
-    "dev": "node ./bin/run.js"
+    "dev": "tsx ./bin/run.ts"
   },
   "bin": {
-    "dev": "./bin/run.js"
+    "dev": "./bin/run.ts"
   },
   "dependencies": {
     "@babel/core": "^7.26.0",
@@ -39,7 +39,8 @@
     "@lwrjs/types": ">=0.16.x",
     "@salesforce-ux/design-system": ">= 2.23.0",
     "lwc": ">= 8.x",
-    "lwr": ">= 0.16.x"
+    "lwr": ">= 0.16.x",
+    "tsx": ">= 4.x"
   },
   "lint-staged": {
     "**/*.{css,html,js,json,md,yaml,yml}": [

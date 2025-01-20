@@ -8,14 +8,21 @@ import { transformSync as babelTransform } from '@babel/core'
 
 import { formatObjectToString, writeStringToFile } from '../utils.js'
 import {
+  __cache,
   COMPONENT_CONFIG_FILE_NAME,
   COMPONENT_CONFIG_FILE_NAME_TS,
   DEFAULT_BABEL_CONFIG,
   MODULES_LWC_PATH,
-  TEMP_CONFIG,
 } from '../constants.js'
+import {
+  GardenConfig,
+  GardenModule,
+  GardenModuleInternal,
+  GardentComponentModuleFile,
+} from '../types.js'
+import { isDirModuleRecord, ModuleRecord } from '../module-types.js'
 
-function readSlotsFromHtml(htmlString) {
+function readSlotsFromHtml(htmlString: string) {
   // Define the regular expression pattern
   const pattern = /<slot(?:\s+name="([^"]*)")?>/g
 
@@ -30,7 +37,7 @@ function readSlotsFromHtml(htmlString) {
   return slotNames
 }
 
-async function getHtmlFile(files) {
+async function getHtmlFile(files: string[]) {
   const htmlFile = files.find((item) => item.includes('.html'))
 
   if (htmlFile) {
@@ -49,35 +56,43 @@ async function getHtmlFile(files) {
  * @param {string} filePath
  * @returns {string}
  */
-async function getNamespaceForModule(module, filePath) {
-  if (module.namespace) {
-    return module.namespace
+async function getNamespaceForModule(module: ModuleRecord, filePath: string) {
+  if (isDirModuleRecord(module)) {
+    if (module.namespace) {
+      return module.namespace
+    }
+
+    const pattern = new RegExp(`^${module.dir}/([^/]+)/`)
+    const match = filePath.match(pattern)
+
+    return match ? match[1] : null
   }
-
-  const pattern = new RegExp(`^${module.dir}/([^/]+)/`)
-  const match = filePath.match(pattern)
-
-  return match ? match[1] : null
+  return null
 }
 
 async function handleLwcComponentMetadataFromFiles(
-  gardenConfig,
-  modules,
-  files
-) {
-  const {
-    slots: { placeholder, components },
-  } = gardenConfig
+  gardenConfig: GardenConfig,
+  modules: ModuleRecord[],
+  files: string[]
+): Promise<GardenModuleInternal | undefined> {
+  const placeholder: boolean = gardenConfig.slots?.placeholder || true
+  const components = gardenConfig.slots?.components
 
   const firstFile = files.find((item) => !item.includes('garden.config'))
-  const componentName = firstFile.split('/').at(-1).split('.')[0]
+  const componentSplit = firstFile?.split('/')
+  const componentName =
+    componentSplit && componentSplit.length > 0
+      ? componentSplit.at(-1).split('.')[0]
+      : ''
 
   // search within both `dir` and `dirs` configs
   const module = modules.find((item) => {
-    if (item.dir) {
-      return firstFile.includes(item.dir)
-    } else if (item.dirs) {
-      return item.dirs.find((subDir) => firstFile.includes(subDir))
+    if (isDirModuleRecord(item)) {
+      if (item.dir) {
+        return firstFile.includes(item.dir)
+      } else if (item.dirs) {
+        return item.dirs.find((subDir) => firstFile.includes(subDir))
+      }
     }
   })
 
@@ -95,6 +110,7 @@ async function handleLwcComponentMetadataFromFiles(
   // default to .js
   let componentConfigName = configFromComponent
 
+  // TODO: may not need this?
   if (configFromComponentTs) {
     let source = await fs.readFile(configFromComponentTs, 'utf8')
 
@@ -148,7 +164,9 @@ async function handleLwcComponentMetadataFromFiles(
 
   if (componentConfigName) {
     // import local LWCs garden.config.js file
-    const data = await import(pathToFileURL(componentConfigName))
+    const data: { default: GardenModule } = await import(
+      pathToFileURL(componentConfigName).toString()
+    )
 
     // TODO: should we validate this?
     const customLwcConfig = data.default
@@ -194,23 +212,24 @@ async function handleLwcComponentMetadataFromFiles(
     }
   }
 
-  let slots = []
+  let slots: string[] = []
   const htmlFileContents = await getHtmlFile(files)
   if (htmlFileContents) {
     slots = readSlotsFromHtml(htmlFileContents)
   }
 
-  const slotComponents = placeholder
-    ? Object.keys(components).reduce((acc, item) => {
-        if (slots.includes(item)) {
-          acc = {
-            ...acc,
-            [item]: components[item],
+  const slotComponents =
+    placeholder && components
+      ? Object.keys(components).reduce((acc, item) => {
+          if (slots.includes(item)) {
+            acc = {
+              ...acc,
+              [item]: components[item],
+            }
           }
-        }
-        return acc
-      }, {})
-    : undefined
+          return acc
+        }, {})
+      : undefined
 
   return {
     id: `${namespace}-${componentName}`,
@@ -228,22 +247,22 @@ async function handleLwcComponentMetadataFromFiles(
  * @param {Object[]} files
  * @returns {boolean}
  */
-function validateLwcFromFiles(files) {
+function validateLwcFromFiles(files: GardentComponentModuleFile[]) {
   const hasHtmlFile = files.find(
     (item) =>
-      item.entryPath.split(
+      item.entryPath?.split(
         `${item.parentFolderName}/${item.parentFolderName}`
       )[1] === '.html'
   )
   const hasJsFile = files.find(
     (item) =>
-      item.entryPath.split(
+      item.entryPath?.split(
         `${item.parentFolderName}/${item.parentFolderName}`
       )[1] === '.js'
   )
   const hasTsFile = files.find(
     (item) =>
-      item.entryPath.split(
+      item.entryPath?.split(
         `${item.parentFolderName}/${item.parentFolderName}`
       )[1] === '.ts'
   )
@@ -251,15 +270,19 @@ function validateLwcFromFiles(files) {
   return hasHtmlFile && (hasJsFile || hasTsFile)
 }
 
-async function checkFolders(gardenConfig, folderPaths, modules) {
-  let components = []
+async function checkFolders(
+  gardenConfig: GardenConfig,
+  folderPaths: string[],
+  modules: ModuleRecord[]
+): Promise<GardenModuleInternal[] | undefined> {
+  let components: GardenModuleInternal[] = []
   const { ignore } = gardenConfig
 
   for (const folderPath of folderPaths) {
     try {
       const dirEntries = await fs.readdir(folderPath)
 
-      const files = []
+      const files: GardentComponentModuleFile[] = []
       for (const entry of dirEntries) {
         const entryPath = `${folderPath}/${entry}`
         const stats = await fs.stat(entryPath)
@@ -280,7 +303,7 @@ async function checkFolders(gardenConfig, folderPaths, modules) {
             components = components.concat(_components)
           }
         } else {
-          const parentFolderName = folderPath.split('/').at(-1)
+          const parentFolderName = folderPath.split('/').at(-1) || ''
           const baseName = entry.split('.')[0]
 
           // LWCs should have componentName/componentName.(html|js|ts|css) structure
@@ -304,13 +327,14 @@ async function checkFolders(gardenConfig, folderPaths, modules) {
        * Only attempt to render LWCs with at least a componentName.js and a componentName.html file
        */
       if (files.length > 0 && isValidLwcFromFiles) {
-        components.push(
-          await handleLwcComponentMetadataFromFiles(
-            gardenConfig,
-            modules,
-            files.map((item) => item.entryPath)
-          )
+        const _files = await handleLwcComponentMetadataFromFiles(
+          gardenConfig,
+          modules,
+          files.map((item) => item.entryPath || '')
         )
+        if (_files) {
+          components.push(_files)
+        }
       }
     } catch (error) {
       logger.error(`Error checking folder: ${folderPath}`, error)
@@ -320,18 +344,25 @@ async function checkFolders(gardenConfig, folderPaths, modules) {
   return components
 }
 
-async function saveComponentsMetadataToFile(moduleFile, components) {
-  const fileLines = components.reduce((acc, item) => {
+async function saveComponentsMetadataToFile(
+  moduleFile: string,
+  components: GardenModuleInternal[] | undefined
+) {
+  if (!components) {
+    return
+  }
+
+  const fileLines = components.reduce((acc, item: any) => {
     item['LWC'] = `() => import('${item.name}')`
     acc.push(item)
 
     return acc
-  }, [])
+  }, [] as any[])
 
   const metadataString = formatObjectToString(fileLines)
 
   // Function to remove quotes from LWC key
-  function removeQuotesFromLWC(dataString) {
+  function removeQuotesFromLWC(dataString: string) {
     // Capture the value without quotes
     // const regex = /: ?"([^"]+)"/g
     const regex = /: "\(\) => import\(([^)]+)\)"/g
@@ -346,7 +377,7 @@ export const MODULES: GardenModule[] = ${removeQuotesFromLWC(metadataString)}`
   )
 }
 
-function isFileMatch(filePath, ignorePatterns) {
+function isFileMatch(filePath: string, ignorePatterns: string[] | undefined) {
   if (ignorePatterns && ignorePatterns.length > 0) {
     for (const pattern of ignorePatterns) {
       if (minimatch(filePath, pattern)) {
@@ -359,7 +390,7 @@ function isFileMatch(filePath, ignorePatterns) {
   return true
 }
 
-async function main(gardenConfig) {
+async function main(gardenConfig: GardenConfig) {
   const { ignore, modules, cacheDir } = gardenConfig
 
   if (!modules || modules.length === 0) {
@@ -368,36 +399,42 @@ async function main(gardenConfig) {
     )
   }
 
-  const foldersToWatch = modules.reduce((acc, item) => {
-    // ignore garden LWCs
-    if (item.dir && !item.dir.includes('garden')) {
-      if (ignore) {
-        // check file isn't being ignored
-        if (isFileMatch(item.dir, ignore)) {
-          acc.push(item.dir)
-        }
-      } else {
-        acc.push(item.dir)
-      }
-    } else if (item.dirs) {
-      // add support for multi directory namespaced packages
-      item.dirs.forEach((dir) => {
+  const foldersToWatch = modules.reduce<string[]>((acc, item) => {
+    if (isDirModuleRecord(item)) {
+      // ignore garden LWCs
+      if (item.dir && !item.dir.includes('garden')) {
         if (ignore) {
           // check file isn't being ignored
-          if (isFileMatch(dir, ignore)) {
-            acc.push(dir)
+          if (isFileMatch(item.dir, ignore)) {
+            acc.push(item.dir)
           }
         } else {
-          acc.push(dir)
+          acc.push(item.dir)
         }
-      })
+      } else if (item.dirs) {
+        // add support for multi directory namespaced packages
+        item.dirs.forEach((dir) => {
+          if (ignore) {
+            // check file isn't being ignored
+            if (isFileMatch(dir, ignore)) {
+              acc.push(dir)
+            }
+          } else {
+            acc.push(dir)
+          }
+        })
+      }
     }
 
     return acc
   }, [])
 
   const components = await checkFolders(gardenConfig, foldersToWatch, modules)
-  const modulesFile = path.join(cacheDir, 'components', MODULES_LWC_PATH)
+  const modulesFile = path.join(
+    cacheDir || __cache,
+    'components',
+    MODULES_LWC_PATH
+  )
 
   await saveComponentsMetadataToFile(modulesFile, components)
 }
