@@ -1,16 +1,18 @@
 {
   "name": "@lwc-garden/core",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "🍃 LWC Garden Core Package - lwc-local-dev-server",
   "homepage": "https://lwc.garden",
   "type": "module",
   "scripts": {
-    "dev": "node ./bin/run.js"
+    "dev": "tsx ./bin/run.ts"
   },
   "bin": {
-    "dev": "./bin/run.js"
+    "dev": "./bin/run.ts"
   },
   "dependencies": {
+    "@babel/core": "^7.26.0",
+    "@babel/preset-typescript": "^7.26.0",
     "@lukethacoder/lwrjs-lwc-module-provider": "^0.12.2",
     "@lwc/engine-dom": "^8.12.4",
     "@lwc/synthetic-shadow": "^8.12.4",
@@ -37,7 +39,8 @@
     "@lwrjs/types": ">=0.16.x",
     "@salesforce-ux/design-system": ">= 2.23.0",
     "lwc": ">= 8.x",
-    "lwr": ">= 0.16.x"
+    "lwr": ">= 0.16.x",
+    "tsx": ">= 4.x"
   },
   "lint-staged": {
     "**/*.{css,html,js,json,md,yaml,yml}": [

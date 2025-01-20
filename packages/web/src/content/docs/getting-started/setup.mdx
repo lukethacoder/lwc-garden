@@ -67,7 +67,19 @@ export const fileName = 'lwr.config.json'
 
    <InstallSteps />
 
-2. Create a `garden.config.js` file
+2. Create a `garden.config.ts` file
+
+   ```ts
+   import { GardenConfig } from '@lwc-garden/core/types'
+   import lwrConfig from './lwr.config.json' with { type: 'json' }
+
+   export default {
+     // lwc.config.json modules type
+     modules: [...lwrConfig.lwc.modules],
+   } satisfies GardenConfig
+   ```
+
+   You may also choose to use a vanilla JavaScript config file, `garden.config.js`, but it is highly recommended to use TypeScript for proper config typing support. Here is an example of a basic JavaScript config setup:
 
    ```js
    import lwrConfig from './lwr.config.json' with { type: 'json' }
@@ -82,6 +94,7 @@ export const fileName = 'lwr.config.json'
 
    export default CONFIG
    ```
+
 
    This is the bare minimum configuration required to get LWC Garden working. This imports your module configuration from your existing `lwc.config.json` file.
 

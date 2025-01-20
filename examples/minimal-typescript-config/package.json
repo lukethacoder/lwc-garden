@@ -1,16 +1,17 @@
 {
-  "name": "@lwc-garden/example-custom-theme",
+  "name": "@lwc-garden/example-minimal-config",
   "private": true,
   "version": "1.0.0",
-  "description": "custom-theme",
+  "description": "minimal-typescript-config",
   "type": "module",
   "scripts": {
-    "dev": "npx @lwc-garden/core dev"
+    "dev": "npx -p @lwc-garden/core dev"
   },
   "devDependencies": {
     "eslint": "^8.57.0",
     "prettier": "^3.2.5",
-    "typescript": "^5.4.3"
+    "typescript": "^5.4.3",
+    "tsx": "^4.19.2"
   },
   "dependencies": {
     "@lwc-garden/core": "workspace:*",
@@ -26,8 +27,7 @@
     "@lwrjs/router": "^0.12.2",
     "@lwrjs/types": "^0.12.2",
     "lwc": "^6.3.4",
-    "lwr": "^0.12.2",
-    "tsx": "^4.19.2"
+    "lwr": "^0.12.2"
   },
   "lint-staged": {
     "**/*.{css,html,js,json,md,yaml,yml}": [

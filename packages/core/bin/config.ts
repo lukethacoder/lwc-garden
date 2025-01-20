@@ -1,7 +1,8 @@
+import { GardenConfig } from '../types.js'
 import { formatObjectToString, writeStringToFile } from '../utils.js'
 
 /// Function to convert object to string
-function objectToString(obj) {
+function objectToString(obj: object) {
   let str = 'export const CONFIG = '
   str += formatObjectToString(obj)
   return str
@@ -10,9 +11,9 @@ function objectToString(obj) {
 /**
  * Save the users config to the lwc-garden config LWC
  */
-export async function syncToLwc(configLwcPath, gardenConfig) {
-  // ignore the webpack config
-  const { webpack, ...config } = gardenConfig
-
-  await writeStringToFile(configLwcPath, objectToString(config))
+export async function syncToLwc(
+  configLwcPath: string,
+  gardenConfig: GardenConfig
+) {
+  await writeStringToFile(configLwcPath, objectToString(gardenConfig))
 }

@@ -1,6 +1,5 @@
-/**
- * @type {import('../types').GardenTheme}
- */
+import { GardenTheme } from '../types'
+
 export default {
   light: {
     background: '0 0% 100%',
@@ -45,4 +44,4 @@ export default {
     input: '217.2 32.6% 17.5%',
     ring: '224.3 76.3% 48%',
   },
-}
+} satisfies GardenTheme

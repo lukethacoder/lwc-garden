@@ -7,6 +7,17 @@ The following is a reference of all available values for the `garden.config.js` 
 
 If you are looking for component level configuration, checkout [Component Configuration](/reference/component-configuration).
 
+```ts
+// garden.config.ts
+import { GardenConfig } from '@lwc-garden/core/types'
+import lwrConfig from './lwr.config.json' with { type: 'json' }
+
+export default {
+  // lwc.config.json modules type
+  modules: [...lwrConfig.lwc.modules],
+} satisfies GardenConfig
+```
+
 ```js
 // garden.config.js
 import lwrConfig from './lwr.config.json' with { type: 'json' }

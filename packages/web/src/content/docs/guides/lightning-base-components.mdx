@@ -46,7 +46,11 @@ export const lwrConfigJsWithLightningBaseComponents = `{
   "routes": []
 }`
 
-LWC Garden comes with out of the box support for SLDS and is easy to pair with the official [`lightning-base-components`](https://www.npmjs.com/package/lightning-base-components) NPM package.
+LWC Garden comes with out-of-the-box support for SLDS and is easy to pair with the official [`lightning-base-components`](https://www.npmjs.com/package/lightning-base-components) NPM package.
+
+<Aside type='caution'>
+  The public version of the [`lightning-base-components`](https://www.npmjs.com/package/lightning-base-components) NPM package has been officially deprecated by Salesforce. Only internal Salesforce developers have access to any future updates to this package. This means the public package may lag behind on-platform components. You may need to mock your own `lightning-*` components in the future. You can learn more about mocking your own `lightning-*` components [here](/guides/lightning-component-mocking).
+</Aside>
 
 ## Enable SLDS
 
@@ -100,6 +104,10 @@ You must also edit your `lwr.config.json` file to configure the path to SLDS.
 ## Lightning Base Components
 
 Most on-platform components can be used locally in LWC Garden. See the official `lightning-base-components` [README.md](https://www.npmjs.com/package/lightning-base-components) for a list of available LWCs.
+
+<Aside type='caution'>
+  The public version of the [`lightning-base-components`](https://www.npmjs.com/package/lightning-base-components) NPM package has been officially deprecated by Salesforce. Only internal Salesforce developers have access to any future updates to this package. This means the public package may lag behind on-platform components. You may need to mock your own `lightning-*` components in the future. You can learn more about mocking your own `lightning-*` components [here](/guides/lightning-component-mocking).
+</Aside>
 
 <Aside>
   On windows, certain `lightning-base-components` do not work. This is a known

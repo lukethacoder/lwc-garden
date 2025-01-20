@@ -30,6 +30,24 @@ export interface ModuleResolverConfig {
   modules: ModuleRecord[]
 }
 export type ModuleRecord = AliasModuleRecord | DirModuleRecord | NpmModuleRecord
+
+export function isAliasModuleRecord(
+  obj: ModuleRecord
+): obj is AliasModuleRecord {
+  return Object.hasOwn(obj, 'name') && Object.hasOwn(obj, 'path')
+}
+
+export function isDirModuleRecord(obj: ModuleRecord): obj is DirModuleRecord {
+  return (
+    Object.hasOwn(obj, 'namespace') &&
+    (Object.hasOwn(obj, 'dir') || Object.hasOwn(obj, 'dirs'))
+  )
+}
+
+export function isNpmModuleRecord(obj: ModuleRecord): obj is NpmModuleRecord {
+  return Object.hasOwn(obj, 'npm')
+}
+
 export interface LwcConfig {
   modules?: ModuleRecord[]
   expose?: string[]

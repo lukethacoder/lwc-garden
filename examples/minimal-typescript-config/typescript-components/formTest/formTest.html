@@ -1,0 +1,10 @@
+<template>
+  <template for:each={inputs} for:item="item">
+    <div key={item.id}>
+      <example-input-text
+        label={item.label}
+        type={item.type}
+      ></example-input-text>
+    </div>
+  </template>
+</template>

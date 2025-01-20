@@ -127,6 +127,14 @@ For more information, check out the [Official Documentation](https://lwc.garden)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
+## Package Development
+
+You can test the local package using
+
+```bash
+npx -p @lwc-garden/core dev
+```
+
 ## Publishing
 
 Only the `@lwc-garden/core` package should be published to npm (for now).

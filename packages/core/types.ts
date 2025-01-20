@@ -4,6 +4,7 @@ import { ModuleRecord } from './module-types'
 export interface GardenConfig {
   // defaults to process.cwd()
   rootDir?: string
+  cacheDir?: string
   ignore?: string[]
   modules: ModuleRecord[]
   theme?: GardenTheme
@@ -42,8 +43,11 @@ export interface GardenArgType {
   options?: GardenOption[]
 }
 
-export interface GardenModule {
+export interface GardenModule extends GardenModuleInternal {
   LWC: () => Promise<any>
+}
+
+export interface GardenModuleInternal {
   id: string
   href: string
   label: string
@@ -54,6 +58,12 @@ export interface GardenModule {
   slotComponents?: {
     [key: string]: () => Promise<any>
   }
+}
+
+export interface GardentComponentModuleFile extends GardenComponentModule {
+  parentFolderName?: string
+  baseName?: string
+  entryPath?: string
 }
 
 export interface GardenComponentModule {
