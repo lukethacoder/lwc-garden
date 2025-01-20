@@ -26,7 +26,8 @@
     "@lwrjs/router": "^0.12.2",
     "@lwrjs/types": "^0.12.2",
     "lwc": "^6.3.4",
-    "lwr": "^0.12.2"
+    "lwr": "^0.12.2",
+    "tsx": "^4.19.2"
   },
   "lint-staged": {
     "**/*.{css,html,js,json,md,yaml,yml}": [

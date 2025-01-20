@@ -1,6 +1,5 @@
 # LWC Garden Cache Folder
 .garden
-.garden.config.js
 
 # LWR Cache Folder
 __lwr_cache__

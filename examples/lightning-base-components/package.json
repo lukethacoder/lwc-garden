@@ -31,7 +31,8 @@
     "@salesforce-ux/design-system": "^2.23.2",
     "lightning-base-components": "1.21.9-alpha",
     "lwc": "^6.3.4",
-    "lwr": "^0.12.2"
+    "lwr": "^0.12.2",
+    "tsx": "^4.19.2"
   },
   "lint-staged": {
     "**/*.{css,html,js,json,md,yaml,yml}": [
