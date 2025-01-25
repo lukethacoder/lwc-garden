@@ -1,15 +1,10 @@
-import path from 'path'
-import { access, readFile, stat } from 'fs/promises'
-import { fileURLToPath } from 'url'
+import { access, stat } from 'fs/promises'
 
 import { hashContent } from '@lwrjs/shared-utils'
 import {
   AbstractModuleId,
-  FsModuleEntry,
   ModuleCompiled,
-  ModuleEntry,
   ModuleProvider,
-  ModuleSource,
   ProviderContext,
   VirtualModuleEntry,
 } from '@lwrjs/types'
@@ -59,7 +54,7 @@ async function generateModule(
 }
 
 interface StaticResourceProviderOptions {
-  paths: string | string[]
+  paths: string[]
 }
 
 export default class StaticResourceProvider implements ModuleProvider {
@@ -69,13 +64,13 @@ export default class StaticResourceProvider implements ModuleProvider {
   paths: string[] = []
 
   constructor(config: StaticResourceProviderOptions, context: ProviderContext) {
-    const { paths = 'force-app/main/default/staticresources' } = config
+    const { paths = ['force-app/main/default/staticresources'] } = config
 
     // bind rootDir from user config
     this.rootDir = context.config.rootDir
 
     // normalize to always be an array
-    this.paths = typeof paths === 'string' ? [paths] : paths
+    this.paths = paths
   }
 
   getConfig = () => ({
@@ -87,7 +82,6 @@ export default class StaticResourceProvider implements ModuleProvider {
     specifier,
   }: AbstractModuleId): Promise<VirtualModuleEntry | undefined> {
     if (specifier.startsWith('@salesforce/resourceUrl/')) {
-      // Module provider checks for the @my namespace
       return {
         id: `${specifier}|${this.version}`,
         virtual: true,

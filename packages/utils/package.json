@@ -10,6 +10,7 @@
     "./hooks/apex.ts": "./hooks/apex.ts",
     "./hooks/staticresources.ts": "./hooks/staticresources.ts",
     "./resolvers/apex.ts": "./resolvers/apex.ts",
+    "./resolvers/labels.ts": "./resolvers/labels.ts",
     "./resolvers/staticresources.ts": "./resolvers/staticresources.ts"
   },
   "files": [
@@ -21,6 +22,7 @@
   "dependencies": {
     "@lwc/engine-core": "^8.12.6",
     "@lwc/types": "^8.12.6",
+    "@lwc/wire-service": "^8.12.6",
     "@lwrjs/lwc-module-provider": "^0.16.2"
   },
   "devDependencies": {

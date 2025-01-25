@@ -11,7 +11,7 @@ import {
   VirtualModuleEntry,
 } from '@lwrjs/types'
 
-export const readFileContent = async (filePath: string) => {
+const readFileContent = async (filePath: string) => {
   try {
     // Resolve the full path (for compatibility with ES modules)
     const __dirname = path.dirname(fileURLToPath(import.meta.url))
@@ -29,7 +29,7 @@ export const readFileContent = async (filePath: string) => {
   }
 }
 
-export const fileExists = async (filePath: string): Promise<boolean> => {
+const fileExists = async (filePath: string): Promise<boolean> => {
   try {
     await access(filePath)
     return true // File exists
@@ -90,7 +90,7 @@ ${
 }
 
 interface ApexProviderOptions {
-  paths: string | string[]
+  paths: string[]
 }
 
 export default class ApexProvider implements ModuleProvider {
@@ -100,13 +100,13 @@ export default class ApexProvider implements ModuleProvider {
   paths: string[] = []
 
   constructor(config: ApexProviderOptions, context: ProviderContext) {
-    const { paths = 'apex' } = config
+    const { paths = ['apex'] } = config
 
     // bind rootDir from user config
     this.rootDir = context.config.rootDir
 
     // normalize to always be an array
-    this.paths = typeof paths === 'string' ? [paths] : paths
+    this.paths = paths
   }
 
   getConfig() {
@@ -127,7 +127,6 @@ export default class ApexProvider implements ModuleProvider {
         return undefined
       }
 
-      // Module provider checks for the @my namespace
       return {
         id: `${specifier}|${this.version}`,
         virtual: true,
