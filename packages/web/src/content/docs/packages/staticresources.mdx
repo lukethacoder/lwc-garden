@@ -1,0 +1,35 @@
+---
+title: 'Static Resource Mocking'
+description: LWC Garden Static Resource Mocking approach, custom hooks and resolvers
+---
+
+import { Aside } from '@astrojs/starlight/components'
+
+This configuration allows you to define multiple staticresource paths to be resolved locally without having to explicitly map all files in your `lwr.config.json`|`lwc.config.json` file.
+
+The configuration uses both a custom hook and module provider. These can be configured as follows:
+
+```json
+"moduleProviders": [
+  [
+    "@lwc-garden/utils/resolvers/staticresources.ts",
+    {
+      "paths": ["force-app/main/default/staticresources"]
+    }
+  ]
+]
+"hooks": [
+  "@lwc-garden/utils/hooks/staticresources.ts"
+],
+"globalData": {
+  "garden": {
+    "staticresources": {
+      "paths": ["force-app/main/default/staticresources"]
+    }
+  }
+}
+```
+
+<Aside>
+Both `"paths"` value should have the same values.
+</Aside>
