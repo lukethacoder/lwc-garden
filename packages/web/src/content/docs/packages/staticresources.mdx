@@ -1,6 +1,6 @@
 ---
-title: 'Static Resource Mocking'
-description: LWC Garden Static Resource Mocking approach, custom hooks and resolvers
+title: 'Static Resources'
+description: LWC Garden Static Resource resolution approach, using custom hooks and resolvers
 ---
 
 import { Aside } from '@astrojs/starlight/components'
@@ -10,6 +10,7 @@ This configuration allows you to define multiple staticresource paths to be reso
 The configuration uses both a custom hook and module provider. These can be configured as follows:
 
 ```json
+// lwr.config.json
 "moduleProviders": [
   [
     "@lwc-garden/utils/resolvers/staticresources.ts",
@@ -39,6 +40,7 @@ All files will be recursively available to be directly imported from within LWC 
 Example usage:
 
 ```js
+// lwc/myResourceTest/myResourceTest.js
 import { LightningElement } from 'lwc'
 import { loadStyle, loadScript } from 'lightning/platformResourceLoader'
 

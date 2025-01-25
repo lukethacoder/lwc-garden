@@ -132,7 +132,7 @@ export default defineConfig({
             { label: 'Custom Labels', link: '/packages/labels/' },
             { label: 'Apex Mocking', link: '/packages/apex/' },
             {
-              label: 'Static Resource Mocking',
+              label: 'Static Resources',
               link: '/packages/staticresources/',
             },
             {

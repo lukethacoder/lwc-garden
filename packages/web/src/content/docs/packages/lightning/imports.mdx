@@ -25,6 +25,7 @@ Both `loadStyle` and `loadScript` will function slightly differently based on if
 Native shadow will import resources within the context of the caller (the `LightningElement` the `loadStyle` or `loadScript` method was called from). This will mean any CSS/JS imported will be scoped to that specific component.
 
 ```html
+<!-- lwc/myComponent/myComponent.html -->
 <c-my-component>
   #shadow-root
   <p>My Component</p>
