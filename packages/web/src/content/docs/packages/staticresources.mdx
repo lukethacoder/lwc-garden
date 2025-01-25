@@ -33,3 +33,35 @@ The configuration uses both a custom hook and module provider. These can be conf
 <Aside>
 Both `"paths"` value should have the same values.
 </Aside>
+
+All files will be recursively available to be directly imported from within LWC via the `lightning/platformResourceLoader` imports, `loadStyle()` and `loadScript()`.
+
+Example usage:
+
+```js
+import { LightningElement } from 'lwc'
+import { loadStyle, loadScript } from 'lightning/platformResourceLoader'
+
+import MY_RESOURCE_URL from '@salesforce/resourceUrl/myResource'
+
+export default MyResourceTest extends LightningElement {
+  isFirstRender = true
+
+  async renderedCallback() {
+    if (this.isFirstRender) {
+      this.isFirstRender = false
+
+      try {
+        await Promise.all([
+          loadScript(this, `${MY_RESOURCE_URL}/script.js`),
+          loadStyle(this, `${MY_RESOURCE_URL}/style.css`)
+        ])
+        // successfully loaded - run logic here as required
+      } catch (error) {
+        console.error(`Error loading static resource from folder ${MY_RESOURCE_URL} `, error)
+        // TODO: handle load error
+      }
+    }
+  }
+}
+```

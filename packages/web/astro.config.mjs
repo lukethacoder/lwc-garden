@@ -129,10 +129,19 @@ export default defineConfig({
           label: '@lwc-garden/utils',
           items: [
             { label: 'Introduction', link: '/packages/utils/' },
+            { label: 'Custom Labels', link: '/packages/labels/' },
             { label: 'Apex Mocking', link: '/packages/apex/' },
             {
               label: 'Static Resource Mocking',
               link: '/packages/staticresources/',
+            },
+            {
+              label: 'lightning/* Imports',
+              link: '/packages/lightning/imports',
+            },
+            {
+              label: 'lightning-* Components',
+              link: '/packages/lightning/components',
             },
           ],
         },
