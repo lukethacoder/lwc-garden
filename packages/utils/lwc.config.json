@@ -1,0 +1,8 @@
+{
+  "modules": [
+    {
+      "dir": "components"
+    }
+  ],
+  "expose": ["lightning/platformResourceLoader"]
+}

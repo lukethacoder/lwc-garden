@@ -1,0 +1,56 @@
+{
+  "name": "@lwc-garden/utils",
+  "version": "1.2.0",
+  "description": "🍃 LWC Garden Utilities Package",
+  "homepage": "https://lwc.garden",
+  "type": "module",
+  "exports": {
+    "./components": "./components",
+    "./utils": "./utils/index.js",
+    "./hooks/apex.ts": "./hooks/apex.ts",
+    "./hooks/staticresources.ts": "./hooks/staticresources.ts",
+    "./resolvers/apex.ts": "./resolvers/apex.ts",
+    "./resolvers/staticresources.ts": "./resolvers/staticresources.ts"
+  },
+  "files": [
+    "components/**/*.ts",
+    "hooks/**/*.ts",
+    "resolvers/**/*.ts",
+    "utils/**/*.ts"
+  ],
+  "dependencies": {
+    "@lwc/engine-core": "^8.12.6",
+    "@lwc/types": "^8.12.6",
+    "@lwrjs/lwc-module-provider": "^0.16.2"
+  },
+  "devDependencies": {
+    "@lwrjs/shared-utils": "^0.16.2",
+    "chalk": "^5.4.1",
+    "chokidar": "^4.0.3",
+    "minimatch": "^10.0.1",
+    "prettier": "^3.4.2",
+    "typescript": "^5.7.3"
+  },
+  "peerDependencies": {
+    "@lwrjs/client-modules": ">= 0.16.x",
+    "@lwrjs/config": ">= 0.16.x",
+    "@lwrjs/core": ">= 0.16.x",
+    "@lwrjs/label-module-provider": ">= 0.16.x",
+    "@lwrjs/loader": ">= 0.16.x",
+    "@lwrjs/o11y": ">= 0.16.x",
+    "@lwrjs/router": ">= 0.16.x",
+    "@lwrjs/types": ">=0.16.x",
+    "@salesforce-ux/design-system": ">= 2.23.0",
+    "lwc": ">= 8.x",
+    "lwr": ">= 0.16.x",
+    "tsx": ">= 4.x"
+  },
+  "lint-staged": {
+    "**/*.{css,html,js,json,md,yaml,yml}": [
+      "prettier --write"
+    ],
+    "**/lwc/**/*.js": [
+      "eslint --cache --fix"
+    ]
+  }
+}
