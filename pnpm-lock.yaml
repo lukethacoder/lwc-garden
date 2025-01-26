@@ -46,7 +46,7 @@ importers:
         version: 0.12.2(@lwc/engine-dom@6.5.0)(@lwc/synthetic-shadow@6.5.0)(@lwrjs/esbuild@0.12.4)(@salesforce/pwa-kit-runtime@3.7.0(@babel/core@7.24.1)(@salesforce/pwa-kit-dev@3.7.0(@loadable/component@5.16.4(react@18.3.1))(@types/express@4.17.21)(esbuild@0.9.7)(react@18.3.1)(type-fest@4.32.0)(typescript@5.7.3))(@types/express@4.17.21))(lwc@6.5.0(@babel/core@7.24.1)(rollup@2.79.2))
       '@lwrjs/core':
         specifier: ^0.12.2
-        version: 0.12.4(@babel/core@7.24.1)(@lwc/compiler@8.12.4)(@lwc/engine-dom@6.5.0)(@lwc/features@8.12.4)(@lwc/module-resolver@8.12.4)(@lwc/synthetic-shadow@6.5.0)(@salesforce/pwa-kit-runtime@3.7.0(@babel/core@7.24.1)(@salesforce/pwa-kit-dev@3.7.0(@loadable/component@5.16.4(react@18.3.1))(@types/express@4.17.21)(esbuild@0.9.7)(react@18.3.1)(type-fest@4.32.0)(typescript@5.7.3))(@types/express@4.17.21))(lwc@6.5.0(@babel/core@7.24.1)(rollup@2.79.2))(o11y@250.11.0)
+        version: 0.12.4(@babel/core@7.24.1)(@lwc/compiler@8.12.4)(@lwc/engine-dom@6.5.0)(@lwc/features@8.12.6)(@lwc/module-resolver@8.12.4)(@lwc/synthetic-shadow@6.5.0)(@salesforce/pwa-kit-runtime@3.7.0(@babel/core@7.24.1)(@salesforce/pwa-kit-dev@3.7.0(@loadable/component@5.16.4(react@18.3.1))(@types/express@4.17.21)(esbuild@0.9.7)(react@18.3.1)(type-fest@4.32.0)(typescript@5.7.3))(@types/express@4.17.21))(lwc@6.5.0(@babel/core@7.24.1)(rollup@2.79.2))(o11y@250.11.0)
       '@lwrjs/label-module-provider':
         specifier: ^0.12.2
         version: 0.12.2
@@ -70,7 +70,7 @@ importers:
         version: 6.5.0(@babel/core@7.24.1)(rollup@2.79.2)
       lwr:
         specifier: ^0.12.2
-        version: 0.12.4(@babel/core@7.24.1)(@lwc/compiler@8.12.4)(@lwc/engine-dom@6.5.0)(@lwc/features@8.12.4)(@lwc/module-resolver@8.12.4)(@lwc/synthetic-shadow@6.5.0)(@lwrjs/esbuild@0.12.4)(@salesforce/pwa-kit-runtime@3.7.0(@babel/core@7.24.1)(@salesforce/pwa-kit-dev@3.7.0(@loadable/component@5.16.4(react@18.3.1))(@types/express@4.17.21)(esbuild@0.9.7)(react@18.3.1)(type-fest@4.32.0)(typescript@5.7.3))(@types/express@4.17.21))(lwc@6.5.0(@babel/core@7.24.1)(rollup@2.79.2))(o11y@250.11.0)
+        version: 0.12.4(@babel/core@7.24.1)(@lwc/compiler@8.12.4)(@lwc/engine-dom@6.5.0)(@lwc/features@8.12.6)(@lwc/module-resolver@8.12.4)(@lwc/synthetic-shadow@6.5.0)(@lwrjs/esbuild@0.12.4)(@salesforce/pwa-kit-runtime@3.7.0(@babel/core@7.24.1)(@salesforce/pwa-kit-dev@3.7.0(@loadable/component@5.16.4(react@18.3.1))(@types/express@4.17.21)(esbuild@0.9.7)(react@18.3.1)(type-fest@4.32.0)(typescript@5.7.3))(@types/express@4.17.21))(lwc@6.5.0(@babel/core@7.24.1)(rollup@2.79.2))(o11y@250.11.0)
       tsx:
         specifier: ^4.19.2
         version: 4.19.2
@@ -104,7 +104,7 @@ importers:
         version: 0.12.2(@lwc/engine-dom@6.5.0)(@lwc/synthetic-shadow@6.5.0)(@lwrjs/esbuild@0.16.2)(@salesforce/pwa-kit-runtime@3.7.0(@babel/core@7.26.0)(@salesforce/pwa-kit-dev@3.7.0(@loadable/component@5.16.4(react@18.3.1))(@types/express@4.17.21)(react@18.3.1)(type-fest@4.32.0)(typescript@5.7.3))(@types/express@4.17.21))(lwc@6.5.0(@babel/core@7.26.0)(rollup@4.30.1))
       '@lwrjs/core':
         specifier: ^0.12.2
-        version: 0.12.4(@babel/core@7.26.0)(@lwc/compiler@8.12.4)(@lwc/engine-dom@6.5.0)(@lwc/features@8.12.4)(@lwc/module-resolver@8.12.4)(@lwc/synthetic-shadow@6.5.0)(@salesforce/pwa-kit-runtime@3.7.0(@babel/core@7.26.0)(@salesforce/pwa-kit-dev@3.7.0(@loadable/component@5.16.4(react@18.3.1))(@types/express@4.17.21)(react@18.3.1)(type-fest@4.32.0)(typescript@5.7.3))(@types/express@4.17.21))(lwc@6.5.0(@babel/core@7.26.0)(rollup@4.30.1))(o11y@250.11.0)
+        version: 0.12.4(@babel/core@7.26.0)(@lwc/compiler@8.12.4)(@lwc/engine-dom@6.5.0)(@lwc/features@8.12.6)(@lwc/module-resolver@8.12.4)(@lwc/synthetic-shadow@6.5.0)(@salesforce/pwa-kit-runtime@3.7.0(@babel/core@7.26.0)(@salesforce/pwa-kit-dev@3.7.0(@loadable/component@5.16.4(react@18.3.1))(@types/express@4.17.21)(react@18.3.1)(type-fest@4.32.0)(typescript@5.7.3))(@types/express@4.17.21))(lwc@6.5.0(@babel/core@7.26.0)(rollup@4.30.1))(o11y@250.11.0)
       '@lwrjs/label-module-provider':
         specifier: ^0.12.2
         version: 0.12.2
@@ -128,7 +128,7 @@ importers:
         version: 6.5.0(@babel/core@7.26.0)(rollup@4.30.1)
       lwr:
         specifier: ^0.12.2
-        version: 0.12.4(@babel/core@7.26.0)(@lwc/compiler@8.12.4)(@lwc/engine-dom@6.5.0)(@lwc/features@8.12.4)(@lwc/module-resolver@8.12.4)(@lwc/synthetic-shadow@6.5.0)(@lwrjs/esbuild@0.16.2)(@salesforce/pwa-kit-runtime@3.7.0(@babel/core@7.26.0)(@salesforce/pwa-kit-dev@3.7.0(@loadable/component@5.16.4(react@18.3.1))(@types/express@4.17.21)(react@18.3.1)(type-fest@4.32.0)(typescript@5.7.3))(@types/express@4.17.21))(lwc@6.5.0(@babel/core@7.26.0)(rollup@4.30.1))(o11y@250.11.0)
+        version: 0.12.4(@babel/core@7.26.0)(@lwc/compiler@8.12.4)(@lwc/engine-dom@6.5.0)(@lwc/features@8.12.6)(@lwc/module-resolver@8.12.4)(@lwc/synthetic-shadow@6.5.0)(@lwrjs/esbuild@0.16.2)(@salesforce/pwa-kit-runtime@3.7.0(@babel/core@7.26.0)(@salesforce/pwa-kit-dev@3.7.0(@loadable/component@5.16.4(react@18.3.1))(@types/express@4.17.21)(react@18.3.1)(type-fest@4.32.0)(typescript@5.7.3))(@types/express@4.17.21))(lwc@6.5.0(@babel/core@7.26.0)(rollup@4.30.1))(o11y@250.11.0)
       tsx:
         specifier: ^4.19.2
         version: 4.19.2
@@ -165,7 +165,7 @@ importers:
         version: 0.12.2(@lwc/engine-dom@6.5.0)(@lwc/synthetic-shadow@6.5.0)(@lwrjs/esbuild@0.16.2)(@salesforce/pwa-kit-runtime@3.7.0(@babel/core@7.26.0)(@salesforce/pwa-kit-dev@3.7.0(@loadable/component@5.16.4(react@18.3.1))(@types/express@4.17.21)(react@18.3.1)(type-fest@4.32.0)(typescript@5.7.3))(@types/express@4.17.21))(lwc@6.5.0(@babel/core@7.26.0)(rollup@4.30.1))
       '@lwrjs/core':
         specifier: ^0.12.2
-        version: 0.12.4(@babel/core@7.26.0)(@lwc/compiler@8.12.4)(@lwc/engine-dom@6.5.0)(@lwc/features@8.12.4)(@lwc/module-resolver@8.12.4)(@lwc/synthetic-shadow@6.5.0)(@salesforce/pwa-kit-runtime@3.7.0(@babel/core@7.26.0)(@salesforce/pwa-kit-dev@3.7.0(@loadable/component@5.16.4(react@18.3.1))(@types/express@4.17.21)(react@18.3.1)(type-fest@4.32.0)(typescript@5.7.3))(@types/express@4.17.21))(lwc@6.5.0(@babel/core@7.26.0)(rollup@4.30.1))(o11y@250.11.0)
+        version: 0.12.4(@babel/core@7.26.0)(@lwc/compiler@8.12.4)(@lwc/engine-dom@6.5.0)(@lwc/features@8.12.6)(@lwc/module-resolver@8.12.4)(@lwc/synthetic-shadow@6.5.0)(@salesforce/pwa-kit-runtime@3.7.0(@babel/core@7.26.0)(@salesforce/pwa-kit-dev@3.7.0(@loadable/component@5.16.4(react@18.3.1))(@types/express@4.17.21)(react@18.3.1)(type-fest@4.32.0)(typescript@5.7.3))(@types/express@4.17.21))(lwc@6.5.0(@babel/core@7.26.0)(rollup@4.30.1))(o11y@250.11.0)
       '@lwrjs/label-module-provider':
         specifier: ^0.12.2
         version: 0.12.2
@@ -195,7 +195,7 @@ importers:
         version: 6.5.0(@babel/core@7.26.0)(rollup@4.30.1)
       lwr:
         specifier: ^0.12.2
-        version: 0.12.4(@babel/core@7.26.0)(@lwc/compiler@8.12.4)(@lwc/engine-dom@6.5.0)(@lwc/features@8.12.4)(@lwc/module-resolver@8.12.4)(@lwc/synthetic-shadow@6.5.0)(@lwrjs/esbuild@0.16.2)(@salesforce/pwa-kit-runtime@3.7.0(@babel/core@7.26.0)(@salesforce/pwa-kit-dev@3.7.0(@loadable/component@5.16.4(react@18.3.1))(@types/express@4.17.21)(react@18.3.1)(type-fest@4.32.0)(typescript@5.7.3))(@types/express@4.17.21))(lwc@6.5.0(@babel/core@7.26.0)(rollup@4.30.1))(o11y@250.11.0)
+        version: 0.12.4(@babel/core@7.26.0)(@lwc/compiler@8.12.4)(@lwc/engine-dom@6.5.0)(@lwc/features@8.12.6)(@lwc/module-resolver@8.12.4)(@lwc/synthetic-shadow@6.5.0)(@lwrjs/esbuild@0.16.2)(@salesforce/pwa-kit-runtime@3.7.0(@babel/core@7.26.0)(@salesforce/pwa-kit-dev@3.7.0(@loadable/component@5.16.4(react@18.3.1))(@types/express@4.17.21)(react@18.3.1)(type-fest@4.32.0)(typescript@5.7.3))(@types/express@4.17.21))(lwc@6.5.0(@babel/core@7.26.0)(rollup@4.30.1))(o11y@250.11.0)
       tsx:
         specifier: ^4.19.2
         version: 4.19.2
@@ -229,7 +229,7 @@ importers:
         version: 0.12.2(@lwc/engine-dom@6.5.0)(@lwc/synthetic-shadow@6.5.0)(@lwrjs/esbuild@0.16.2)(@salesforce/pwa-kit-runtime@3.7.0(@babel/core@7.26.0)(@salesforce/pwa-kit-dev@3.7.0(@loadable/component@5.16.4(react@18.3.1))(@types/express@4.17.21)(react@18.3.1)(type-fest@4.32.0)(typescript@5.7.3))(@types/express@4.17.21))(lwc@6.5.0(@babel/core@7.26.0)(rollup@4.30.1))
       '@lwrjs/core':
         specifier: ^0.12.2
-        version: 0.12.4(@babel/core@7.26.0)(@lwc/compiler@8.12.4)(@lwc/engine-dom@6.5.0)(@lwc/features@8.12.4)(@lwc/module-resolver@8.12.4)(@lwc/synthetic-shadow@6.5.0)(@salesforce/pwa-kit-runtime@3.7.0(@babel/core@7.26.0)(@salesforce/pwa-kit-dev@3.7.0(@loadable/component@5.16.4(react@18.3.1))(@types/express@4.17.21)(react@18.3.1)(type-fest@4.32.0)(typescript@5.7.3))(@types/express@4.17.21))(lwc@6.5.0(@babel/core@7.26.0)(rollup@4.30.1))(o11y@250.11.0)
+        version: 0.12.4(@babel/core@7.26.0)(@lwc/compiler@8.12.4)(@lwc/engine-dom@6.5.0)(@lwc/features@8.12.6)(@lwc/module-resolver@8.12.4)(@lwc/synthetic-shadow@6.5.0)(@salesforce/pwa-kit-runtime@3.7.0(@babel/core@7.26.0)(@salesforce/pwa-kit-dev@3.7.0(@loadable/component@5.16.4(react@18.3.1))(@types/express@4.17.21)(react@18.3.1)(type-fest@4.32.0)(typescript@5.7.3))(@types/express@4.17.21))(lwc@6.5.0(@babel/core@7.26.0)(rollup@4.30.1))(o11y@250.11.0)
       '@lwrjs/label-module-provider':
         specifier: ^0.12.2
         version: 0.12.2
@@ -253,7 +253,7 @@ importers:
         version: 6.5.0(@babel/core@7.26.0)(rollup@4.30.1)
       lwr:
         specifier: ^0.12.2
-        version: 0.12.4(@babel/core@7.26.0)(@lwc/compiler@8.12.4)(@lwc/engine-dom@6.5.0)(@lwc/features@8.12.4)(@lwc/module-resolver@8.12.4)(@lwc/synthetic-shadow@6.5.0)(@lwrjs/esbuild@0.16.2)(@salesforce/pwa-kit-runtime@3.7.0(@babel/core@7.26.0)(@salesforce/pwa-kit-dev@3.7.0(@loadable/component@5.16.4(react@18.3.1))(@types/express@4.17.21)(react@18.3.1)(type-fest@4.32.0)(typescript@5.7.3))(@types/express@4.17.21))(lwc@6.5.0(@babel/core@7.26.0)(rollup@4.30.1))(o11y@250.11.0)
+        version: 0.12.4(@babel/core@7.26.0)(@lwc/compiler@8.12.4)(@lwc/engine-dom@6.5.0)(@lwc/features@8.12.6)(@lwc/module-resolver@8.12.4)(@lwc/synthetic-shadow@6.5.0)(@lwrjs/esbuild@0.16.2)(@salesforce/pwa-kit-runtime@3.7.0(@babel/core@7.26.0)(@salesforce/pwa-kit-dev@3.7.0(@loadable/component@5.16.4(react@18.3.1))(@types/express@4.17.21)(react@18.3.1)(type-fest@4.32.0)(typescript@5.7.3))(@types/express@4.17.21))(lwc@6.5.0(@babel/core@7.26.0)(rollup@4.30.1))(o11y@250.11.0)
       tsx:
         specifier: ^4.19.2
         version: 4.19.2
@@ -287,7 +287,7 @@ importers:
         version: 0.12.2(@lwc/engine-dom@6.5.0)(@lwc/synthetic-shadow@6.5.0)(@lwrjs/esbuild@0.16.2)(@salesforce/pwa-kit-runtime@3.7.0(@babel/core@7.26.0)(@salesforce/pwa-kit-dev@3.7.0(@loadable/component@5.16.4(react@18.3.1))(@types/express@4.17.21)(react@18.3.1)(type-fest@4.32.0)(typescript@5.7.3))(@types/express@4.17.21))(lwc@6.5.0(@babel/core@7.26.0)(rollup@4.30.1))
       '@lwrjs/core':
         specifier: ^0.12.2
-        version: 0.12.4(@babel/core@7.26.0)(@lwc/compiler@8.12.4)(@lwc/engine-dom@6.5.0)(@lwc/features@8.12.4)(@lwc/module-resolver@8.12.4)(@lwc/synthetic-shadow@6.5.0)(@salesforce/pwa-kit-runtime@3.7.0(@babel/core@7.26.0)(@salesforce/pwa-kit-dev@3.7.0(@loadable/component@5.16.4(react@18.3.1))(@types/express@4.17.21)(react@18.3.1)(type-fest@4.32.0)(typescript@5.7.3))(@types/express@4.17.21))(lwc@6.5.0(@babel/core@7.26.0)(rollup@4.30.1))(o11y@250.11.0)
+        version: 0.12.4(@babel/core@7.26.0)(@lwc/compiler@8.12.4)(@lwc/engine-dom@6.5.0)(@lwc/features@8.12.6)(@lwc/module-resolver@8.12.4)(@lwc/synthetic-shadow@6.5.0)(@salesforce/pwa-kit-runtime@3.7.0(@babel/core@7.26.0)(@salesforce/pwa-kit-dev@3.7.0(@loadable/component@5.16.4(react@18.3.1))(@types/express@4.17.21)(react@18.3.1)(type-fest@4.32.0)(typescript@5.7.3))(@types/express@4.17.21))(lwc@6.5.0(@babel/core@7.26.0)(rollup@4.30.1))(o11y@250.11.0)
       '@lwrjs/label-module-provider':
         specifier: ^0.12.2
         version: 0.12.2
@@ -311,7 +311,7 @@ importers:
         version: 6.5.0(@babel/core@7.26.0)(rollup@4.30.1)
       lwr:
         specifier: ^0.12.2
-        version: 0.12.4(@babel/core@7.26.0)(@lwc/compiler@8.12.4)(@lwc/engine-dom@6.5.0)(@lwc/features@8.12.4)(@lwc/module-resolver@8.12.4)(@lwc/synthetic-shadow@6.5.0)(@lwrjs/esbuild@0.16.2)(@salesforce/pwa-kit-runtime@3.7.0(@babel/core@7.26.0)(@salesforce/pwa-kit-dev@3.7.0(@loadable/component@5.16.4(react@18.3.1))(@types/express@4.17.21)(react@18.3.1)(type-fest@4.32.0)(typescript@5.7.3))(@types/express@4.17.21))(lwc@6.5.0(@babel/core@7.26.0)(rollup@4.30.1))(o11y@250.11.0)
+        version: 0.12.4(@babel/core@7.26.0)(@lwc/compiler@8.12.4)(@lwc/engine-dom@6.5.0)(@lwc/features@8.12.6)(@lwc/module-resolver@8.12.4)(@lwc/synthetic-shadow@6.5.0)(@lwrjs/esbuild@0.16.2)(@salesforce/pwa-kit-runtime@3.7.0(@babel/core@7.26.0)(@salesforce/pwa-kit-dev@3.7.0(@loadable/component@5.16.4(react@18.3.1))(@types/express@4.17.21)(react@18.3.1)(type-fest@4.32.0)(typescript@5.7.3))(@types/express@4.17.21))(lwc@6.5.0(@babel/core@7.26.0)(rollup@4.30.1))(o11y@250.11.0)
     devDependencies:
       eslint:
         specifier: ^8.57.0
@@ -345,7 +345,7 @@ importers:
         version: 0.12.2(@lwc/engine-dom@6.5.0)(@lwc/synthetic-shadow@6.5.0)(@lwrjs/esbuild@0.16.2)(@salesforce/pwa-kit-runtime@3.7.0(@babel/core@7.26.0)(@salesforce/pwa-kit-dev@3.7.0(@loadable/component@5.16.4(react@18.3.1))(@types/express@4.17.21)(react@18.3.1)(type-fest@4.32.0)(typescript@5.7.3))(@types/express@4.17.21))(lwc@6.5.0(@babel/core@7.26.0)(rollup@4.30.1))
       '@lwrjs/core':
         specifier: ^0.12.2
-        version: 0.12.4(@babel/core@7.26.0)(@lwc/compiler@8.12.4)(@lwc/engine-dom@6.5.0)(@lwc/features@8.12.4)(@lwc/module-resolver@8.12.4)(@lwc/synthetic-shadow@6.5.0)(@salesforce/pwa-kit-runtime@3.7.0(@babel/core@7.26.0)(@salesforce/pwa-kit-dev@3.7.0(@loadable/component@5.16.4(react@18.3.1))(@types/express@4.17.21)(react@18.3.1)(type-fest@4.32.0)(typescript@5.7.3))(@types/express@4.17.21))(lwc@6.5.0(@babel/core@7.26.0)(rollup@4.30.1))(o11y@250.11.0)
+        version: 0.12.4(@babel/core@7.26.0)(@lwc/compiler@8.12.4)(@lwc/engine-dom@6.5.0)(@lwc/features@8.12.6)(@lwc/module-resolver@8.12.4)(@lwc/synthetic-shadow@6.5.0)(@salesforce/pwa-kit-runtime@3.7.0(@babel/core@7.26.0)(@salesforce/pwa-kit-dev@3.7.0(@loadable/component@5.16.4(react@18.3.1))(@types/express@4.17.21)(react@18.3.1)(type-fest@4.32.0)(typescript@5.7.3))(@types/express@4.17.21))(lwc@6.5.0(@babel/core@7.26.0)(rollup@4.30.1))(o11y@250.11.0)
       '@lwrjs/label-module-provider':
         specifier: ^0.12.2
         version: 0.12.2
@@ -369,7 +369,7 @@ importers:
         version: 6.5.0(@babel/core@7.26.0)(rollup@4.30.1)
       lwr:
         specifier: ^0.12.2
-        version: 0.12.4(@babel/core@7.26.0)(@lwc/compiler@8.12.4)(@lwc/engine-dom@6.5.0)(@lwc/features@8.12.4)(@lwc/module-resolver@8.12.4)(@lwc/synthetic-shadow@6.5.0)(@lwrjs/esbuild@0.16.2)(@salesforce/pwa-kit-runtime@3.7.0(@babel/core@7.26.0)(@salesforce/pwa-kit-dev@3.7.0(@loadable/component@5.16.4(react@18.3.1))(@types/express@4.17.21)(react@18.3.1)(type-fest@4.32.0)(typescript@5.7.3))(@types/express@4.17.21))(lwc@6.5.0(@babel/core@7.26.0)(rollup@4.30.1))(o11y@250.11.0)
+        version: 0.12.4(@babel/core@7.26.0)(@lwc/compiler@8.12.4)(@lwc/engine-dom@6.5.0)(@lwc/features@8.12.6)(@lwc/module-resolver@8.12.4)(@lwc/synthetic-shadow@6.5.0)(@lwrjs/esbuild@0.16.2)(@salesforce/pwa-kit-runtime@3.7.0(@babel/core@7.26.0)(@salesforce/pwa-kit-dev@3.7.0(@loadable/component@5.16.4(react@18.3.1))(@types/express@4.17.21)(react@18.3.1)(type-fest@4.32.0)(typescript@5.7.3))(@types/express@4.17.21))(lwc@6.5.0(@babel/core@7.26.0)(rollup@4.30.1))(o11y@250.11.0)
       tsx:
         specifier: ^4.19.2
         version: 4.19.2
@@ -403,7 +403,7 @@ importers:
         version: 0.12.2(@lwc/engine-dom@6.5.0)(@lwc/synthetic-shadow@6.5.0)(@lwrjs/esbuild@0.16.2)(@salesforce/pwa-kit-runtime@3.7.0(@babel/core@7.26.0)(@salesforce/pwa-kit-dev@3.7.0(@loadable/component@5.16.4(react@18.3.1))(@types/express@4.17.21)(react@18.3.1)(type-fest@4.32.0)(typescript@5.7.3))(@types/express@4.17.21))(lwc@6.5.0(@babel/core@7.26.0)(rollup@4.30.1))
       '@lwrjs/core':
         specifier: ^0.12.2
-        version: 0.12.4(@babel/core@7.26.0)(@lwc/compiler@8.12.4)(@lwc/engine-dom@6.5.0)(@lwc/features@8.12.4)(@lwc/module-resolver@8.12.4)(@lwc/synthetic-shadow@6.5.0)(@salesforce/pwa-kit-runtime@3.7.0(@babel/core@7.26.0)(@salesforce/pwa-kit-dev@3.7.0(@loadable/component@5.16.4(react@18.3.1))(@types/express@4.17.21)(react@18.3.1)(type-fest@4.32.0)(typescript@5.7.3))(@types/express@4.17.21))(lwc@6.5.0(@babel/core@7.26.0)(rollup@4.30.1))(o11y@250.11.0)
+        version: 0.12.4(@babel/core@7.26.0)(@lwc/compiler@8.12.4)(@lwc/engine-dom@6.5.0)(@lwc/features@8.12.6)(@lwc/module-resolver@8.12.4)(@lwc/synthetic-shadow@6.5.0)(@salesforce/pwa-kit-runtime@3.7.0(@babel/core@7.26.0)(@salesforce/pwa-kit-dev@3.7.0(@loadable/component@5.16.4(react@18.3.1))(@types/express@4.17.21)(react@18.3.1)(type-fest@4.32.0)(typescript@5.7.3))(@types/express@4.17.21))(lwc@6.5.0(@babel/core@7.26.0)(rollup@4.30.1))(o11y@250.11.0)
       '@lwrjs/label-module-provider':
         specifier: ^0.12.2
         version: 0.12.2
@@ -427,7 +427,7 @@ importers:
         version: 6.5.0(@babel/core@7.26.0)(rollup@4.30.1)
       lwr:
         specifier: ^0.12.2
-        version: 0.12.4(@babel/core@7.26.0)(@lwc/compiler@8.12.4)(@lwc/engine-dom@6.5.0)(@lwc/features@8.12.4)(@lwc/module-resolver@8.12.4)(@lwc/synthetic-shadow@6.5.0)(@lwrjs/esbuild@0.16.2)(@salesforce/pwa-kit-runtime@3.7.0(@babel/core@7.26.0)(@salesforce/pwa-kit-dev@3.7.0(@loadable/component@5.16.4(react@18.3.1))(@types/express@4.17.21)(react@18.3.1)(type-fest@4.32.0)(typescript@5.7.3))(@types/express@4.17.21))(lwc@6.5.0(@babel/core@7.26.0)(rollup@4.30.1))(o11y@250.11.0)
+        version: 0.12.4(@babel/core@7.26.0)(@lwc/compiler@8.12.4)(@lwc/engine-dom@6.5.0)(@lwc/features@8.12.6)(@lwc/module-resolver@8.12.4)(@lwc/synthetic-shadow@6.5.0)(@lwrjs/esbuild@0.16.2)(@salesforce/pwa-kit-runtime@3.7.0(@babel/core@7.26.0)(@salesforce/pwa-kit-dev@3.7.0(@loadable/component@5.16.4(react@18.3.1))(@types/express@4.17.21)(react@18.3.1)(type-fest@4.32.0)(typescript@5.7.3))(@types/express@4.17.21))(lwc@6.5.0(@babel/core@7.26.0)(rollup@4.30.1))(o11y@250.11.0)
       tsx:
         specifier: ^4.19.2
         version: 4.19.2
@@ -461,7 +461,7 @@ importers:
         version: 0.12.2(@lwc/engine-dom@6.5.0)(@lwc/synthetic-shadow@6.5.0)(@lwrjs/esbuild@0.16.2)(@salesforce/pwa-kit-runtime@3.7.0(@babel/core@7.26.0)(@salesforce/pwa-kit-dev@3.7.0(@loadable/component@5.16.4(react@18.3.1))(@types/express@4.17.21)(react@18.3.1)(type-fest@4.32.0)(typescript@5.7.3))(@types/express@4.17.21))(lwc@6.5.0(@babel/core@7.26.0)(rollup@4.30.1))
       '@lwrjs/core':
         specifier: ^0.12.2
-        version: 0.12.4(@babel/core@7.26.0)(@lwc/compiler@8.12.4)(@lwc/engine-dom@6.5.0)(@lwc/features@8.12.4)(@lwc/module-resolver@8.12.4)(@lwc/synthetic-shadow@6.5.0)(@salesforce/pwa-kit-runtime@3.7.0(@babel/core@7.26.0)(@salesforce/pwa-kit-dev@3.7.0(@loadable/component@5.16.4(react@18.3.1))(@types/express@4.17.21)(react@18.3.1)(type-fest@4.32.0)(typescript@5.7.3))(@types/express@4.17.21))(lwc@6.5.0(@babel/core@7.26.0)(rollup@4.30.1))(o11y@250.11.0)
+        version: 0.12.4(@babel/core@7.26.0)(@lwc/compiler@8.12.4)(@lwc/engine-dom@6.5.0)(@lwc/features@8.12.6)(@lwc/module-resolver@8.12.4)(@lwc/synthetic-shadow@6.5.0)(@salesforce/pwa-kit-runtime@3.7.0(@babel/core@7.26.0)(@salesforce/pwa-kit-dev@3.7.0(@loadable/component@5.16.4(react@18.3.1))(@types/express@4.17.21)(react@18.3.1)(type-fest@4.32.0)(typescript@5.7.3))(@types/express@4.17.21))(lwc@6.5.0(@babel/core@7.26.0)(rollup@4.30.1))(o11y@250.11.0)
       '@lwrjs/label-module-provider':
         specifier: ^0.12.2
         version: 0.12.2
@@ -485,7 +485,7 @@ importers:
         version: 6.5.0(@babel/core@7.26.0)(rollup@4.30.1)
       lwr:
         specifier: ^0.12.2
-        version: 0.12.4(@babel/core@7.26.0)(@lwc/compiler@8.12.4)(@lwc/engine-dom@6.5.0)(@lwc/features@8.12.4)(@lwc/module-resolver@8.12.4)(@lwc/synthetic-shadow@6.5.0)(@lwrjs/esbuild@0.16.2)(@salesforce/pwa-kit-runtime@3.7.0(@babel/core@7.26.0)(@salesforce/pwa-kit-dev@3.7.0(@loadable/component@5.16.4(react@18.3.1))(@types/express@4.17.21)(react@18.3.1)(type-fest@4.32.0)(typescript@5.7.3))(@types/express@4.17.21))(lwc@6.5.0(@babel/core@7.26.0)(rollup@4.30.1))(o11y@250.11.0)
+        version: 0.12.4(@babel/core@7.26.0)(@lwc/compiler@8.12.4)(@lwc/engine-dom@6.5.0)(@lwc/features@8.12.6)(@lwc/module-resolver@8.12.4)(@lwc/synthetic-shadow@6.5.0)(@lwrjs/esbuild@0.16.2)(@salesforce/pwa-kit-runtime@3.7.0(@babel/core@7.26.0)(@salesforce/pwa-kit-dev@3.7.0(@loadable/component@5.16.4(react@18.3.1))(@types/express@4.17.21)(react@18.3.1)(type-fest@4.32.0)(typescript@5.7.3))(@types/express@4.17.21))(lwc@6.5.0(@babel/core@7.26.0)(rollup@4.30.1))(o11y@250.11.0)
       tsx:
         specifier: ^4.19.2
         version: 4.19.2
@@ -578,6 +578,76 @@ importers:
       prettier:
         specifier: ^3.4.2
         version: 3.4.2
+
+  packages/utils:
+    dependencies:
+      '@lwc/engine-core':
+        specifier: ^8.12.6
+        version: 8.12.6
+      '@lwc/types':
+        specifier: ^8.12.6
+        version: 8.12.6
+      '@lwc/wire-service':
+        specifier: ^8.12.6
+        version: 8.12.6
+      '@lwrjs/client-modules':
+        specifier: '>= 0.16.x'
+        version: 0.16.2
+      '@lwrjs/config':
+        specifier: '>= 0.16.x'
+        version: 0.16.2(@lwc/engine-dom@8.12.4)(@lwc/synthetic-shadow@8.12.4)(@lwrjs/esbuild@0.16.2)(@salesforce/pwa-kit-runtime@3.7.0(@babel/core@7.26.0)(@salesforce/pwa-kit-dev@3.7.0(@loadable/component@5.16.4(react@18.3.1))(@types/express@4.17.21)(react@18.3.1)(type-fest@4.32.0)(typescript@5.7.3))(@types/express@4.17.21))(lwc@8.12.4(@babel/core@7.26.0)(rollup@4.30.1))
+      '@lwrjs/core':
+        specifier: '>= 0.16.x'
+        version: 0.16.2(@babel/core@7.26.0)(@lwc/compiler@8.12.4)(@lwc/engine-dom@8.12.4)(@lwc/module-resolver@8.12.4)(@lwc/synthetic-shadow@8.12.4)(@salesforce/pwa-kit-runtime@3.7.0(@babel/core@7.26.0)(@salesforce/pwa-kit-dev@3.7.0(@loadable/component@5.16.4(react@18.3.1))(@types/express@4.17.21)(react@18.3.1)(type-fest@4.32.0)(typescript@5.7.3))(@types/express@4.17.21))(lwc@8.12.4(@babel/core@7.26.0)(rollup@4.30.1))(o11y@250.11.0)
+      '@lwrjs/label-module-provider':
+        specifier: '>= 0.16.x'
+        version: 0.16.2
+      '@lwrjs/loader':
+        specifier: '>= 0.16.x'
+        version: 0.16.2
+      '@lwrjs/lwc-module-provider':
+        specifier: ^0.16.2
+        version: 0.16.2(@babel/core@7.26.0)(@lwc/compiler@8.12.4)(@lwc/module-resolver@8.12.4)
+      '@lwrjs/o11y':
+        specifier: '>= 0.16.x'
+        version: 0.16.2(o11y@250.11.0)
+      '@lwrjs/router':
+        specifier: '>= 0.16.x'
+        version: 0.16.2(lwc@8.12.4(@babel/core@7.26.0)(rollup@4.30.1))
+      '@lwrjs/types':
+        specifier: '>=0.16.x'
+        version: 0.16.2
+      '@salesforce-ux/design-system':
+        specifier: '>= 2.23.0'
+        version: 2.25.6(postcss@8.5.1)
+      lwc:
+        specifier: '>= 8.x'
+        version: 8.12.4(@babel/core@7.26.0)(rollup@4.30.1)
+      lwr:
+        specifier: '>= 0.16.x'
+        version: 0.16.2(@babel/core@7.26.0)(@loadable/component@5.16.4(react@18.3.1))(@lwc/compiler@8.12.4)(@lwc/engine-dom@8.12.4)(@lwc/module-resolver@8.12.4)(@lwc/synthetic-shadow@8.12.4)(@lwrjs/esbuild@0.16.2)(@salesforce/pwa-kit-runtime@3.7.0(@babel/core@7.26.0)(@salesforce/pwa-kit-dev@3.7.0(@loadable/component@5.16.4(react@18.3.1))(@types/express@4.17.21)(react@18.3.1)(type-fest@4.32.0)(typescript@5.7.3))(@types/express@4.17.21))(@types/express@4.17.21)(lwc@8.12.4(@babel/core@7.26.0)(rollup@4.30.1))(o11y@250.11.0)(react@18.3.1)(type-fest@4.32.0)(typescript@5.7.3)
+      tsx:
+        specifier: '>= 4.x'
+        version: 4.19.2
+    devDependencies:
+      '@lwrjs/shared-utils':
+        specifier: ^0.16.2
+        version: 0.16.2
+      chalk:
+        specifier: ^5.4.1
+        version: 5.4.1
+      chokidar:
+        specifier: ^4.0.3
+        version: 4.0.3
+      minimatch:
+        specifier: ^10.0.1
+        version: 10.0.1
+      prettier:
+        specifier: ^3.4.2
+        version: 3.4.2
+      typescript:
+        specifier: ^5.7.3
+        version: 5.7.3
 
   packages/web:
     dependencies:
@@ -2267,6 +2337,9 @@ packages:
   '@lwc/engine-core@8.12.4':
     resolution: {integrity: sha512-p8qhuMOCt0I3RuPgFciXJSv1R30BU6NOrm6Kvq7Ii0RwThrdqPIdRbORAyUvkOv3WJc3uv+t6pCez3TXNozF0A==}
 
+  '@lwc/engine-core@8.12.6':
+    resolution: {integrity: sha512-JyA0RCDVGOM75Tu3lVaZA+sgjf/CTkVttElyQA63WDctoZQjd2GjAbnXbZLVUaNs+eL8hBSE3Hz2TP8T7GqjEQ==}
+
   '@lwc/engine-dom@6.5.0':
     resolution: {integrity: sha512-BnW69DPT/Ct74G0ATAEyEE5Y1JxHnAfFQBEvE0ILdGENWJ+Uc25q+e0OiIIoAgWUlp2pAxXb9C2LgYXde3kpIg==}
 
@@ -2291,6 +2364,9 @@ packages:
   '@lwc/features@8.12.4':
     resolution: {integrity: sha512-dHxrj4ekQj5r7iAvp8Cs1ib2qGUSqYxvHHR51b0TAmiYSNJ5YOrrI/Oibiky83T5Xy6bQsIrlut81ZkSFMr31A==}
 
+  '@lwc/features@8.12.6':
+    resolution: {integrity: sha512-1YxSZDJaj4kxOtldGrgOdEWvswTJ8swHu+GncstZAeNyfU0YacFHjjvfrqPAYZzNgo70TiEWAH6q+sI0wf9fuA==}
+
   '@lwc/module-resolver@6.5.0':
     resolution: {integrity: sha512-bgxCdRygdDQjM9q9r43U5O+qDnod7XiNye8KmAItfogsOE8j278A3BobF6a3sgG9qifpE0IhAQeNw1mejBPXsg==}
 
@@ -2313,11 +2389,17 @@ packages:
   '@lwc/shared@8.12.4':
     resolution: {integrity: sha512-1A1iAnr2XzyUq5nq+YMOycMcj203oQbjFJuoZSc6bUccEaJ+p23LR7MP27DbhbsWsyOE4H9pkQn9HIlmFE/+RQ==}
 
+  '@lwc/shared@8.12.6':
+    resolution: {integrity: sha512-Ei16Eo/aFAyr5g3aQiWm8giJ0xqJ4mtI41DZwv8i9rPEaJg/WMn3GY12s6HbNB4cvskWkgmGPxXVvDjhjadRFQ==}
+
   '@lwc/signals@6.5.0':
     resolution: {integrity: sha512-XjwNX67SEjonp5knv/Yav75Y42TMTttcOVQBVcFmZJ70PfQLpfGqOE+qQNm1fs4Oi/uAJ4sZclqvsxAW+5es+Q==}
 
   '@lwc/signals@8.12.4':
     resolution: {integrity: sha512-YMsrXzFKNib4k9M/GZr3Q64pB8IEZXFFhT5FPvqIU4wpeROhaEg+AdkgOPwstvsHvNAIah6eAkpCobkVvlWiAg==}
+
+  '@lwc/signals@8.12.6':
+    resolution: {integrity: sha512-rdQ8MaQzkvCNg8gQl4yJ96/8XHqdAuVHjLSd7OsI44qrTSdyQQOOzR09L6ymHe6gRLIIpqvFAz5SQyNo+eiLRw==}
 
   '@lwc/ssr-compiler@8.12.4':
     resolution: {integrity: sha512-e0Y4LoEcybF5DeoXOm2Cia2Flw4tRU8HmUsy6FMBpHV+n0wi6+XFRUjok14iQ/zdNV3RunWTHU8yfXZ0OzBWZw==}
@@ -2346,11 +2428,17 @@ packages:
   '@lwc/types@8.12.4':
     resolution: {integrity: sha512-3H2sxwGH8C89wDa4wT6wPUcq+JdU13zeKJthwsplEcNttdY8mJlqlRraIk0VK8g97Hld24DttCR1PROAuESP6Q==}
 
+  '@lwc/types@8.12.6':
+    resolution: {integrity: sha512-ycJgjKm8psDAWCjcqaq0+sli6dqea1zUHiYfa7BesJDOS3vp7P/BpfZkZJa0kJ+/4k2Q1KNI6x7Hla8twLes1g==}
+
   '@lwc/wire-service@6.5.0':
     resolution: {integrity: sha512-mKkqDyR7DRxEqjDX3rl8jEod13CJX7WNf3uOuq6sqacYTZhD6uADypLUOwlalAkucy3b88JuLrQ9IyPluwswUQ==}
 
   '@lwc/wire-service@8.12.4':
     resolution: {integrity: sha512-oehrOD6E0emlLWsTzP+vTuzc53nH0YZPWiR5/g1ikyOBmHgYP3OvFyX2vaIFLfsy6EaRnjZYc0omVI3hKfRW4g==}
+
+  '@lwc/wire-service@8.12.6':
+    resolution: {integrity: sha512-XPOYbqYZ9IEZSjz0U6TiCfThIj80/ZJMkiRNB/b77w879cPnWRrJi2Z3PAXAXcXyaQ7NouItUFWc8IuSskS+bQ==}
 
   '@lwrjs/api@0.16.2':
     resolution: {integrity: sha512-4OTCFxgvkquiyRRlK+Zq9zcamnIs6RfzU1TZchK2fS3zb2zWsLV6yOl0jXo7unmzlvhmud402A2t+wx9u9fXDw==}
@@ -11208,6 +11296,21 @@ snapshots:
       - lwc
       - supports-color
 
+  '@lukethacoder/lwrjs-module-registry@0.16.2(@lwc/engine-dom@8.12.4)(@lwc/synthetic-shadow@8.12.4)(@lwrjs/esbuild@0.16.2)(@salesforce/pwa-kit-runtime@3.7.0(@babel/core@7.26.0)(@salesforce/pwa-kit-dev@3.7.0(@loadable/component@5.16.4(react@18.3.1))(@types/express@4.17.21)(react@18.3.1)(type-fest@4.32.0)(typescript@5.7.3))(@types/express@4.17.21))(lwc@8.12.4(@babel/core@7.26.0)(rollup@4.30.1))':
+    dependencies:
+      '@lwrjs/config': 0.16.2(@lwc/engine-dom@8.12.4)(@lwc/synthetic-shadow@8.12.4)(@lwrjs/esbuild@0.16.2)(@salesforce/pwa-kit-runtime@3.7.0(@babel/core@7.26.0)(@salesforce/pwa-kit-dev@3.7.0(@loadable/component@5.16.4(react@18.3.1))(@types/express@4.17.21)(react@18.3.1)(type-fest@4.32.0)(typescript@5.7.3))(@types/express@4.17.21))(lwc@8.12.4(@babel/core@7.26.0)(rollup@4.30.1))
+      '@lwrjs/diagnostics': 0.16.2
+      '@lwrjs/shared-utils': 0.16.2
+      fs-extra: 11.3.0
+      rollup: 2.79.2
+    transitivePeerDependencies:
+      - '@lwc/engine-dom'
+      - '@lwc/synthetic-shadow'
+      - '@lwrjs/esbuild'
+      - '@salesforce/pwa-kit-runtime'
+      - lwc
+      - supports-color
+
   '@lwc/aria-reflection@6.5.0': {}
 
   '@lwc/aria-reflection@8.12.4': {}
@@ -11283,6 +11386,12 @@ snapshots:
       '@lwc/shared': 8.12.4
       '@lwc/signals': 8.12.4
 
+  '@lwc/engine-core@8.12.6':
+    dependencies:
+      '@lwc/features': 8.12.6
+      '@lwc/shared': 8.12.6
+      '@lwc/signals': 8.12.6
+
   '@lwc/engine-dom@6.5.0': {}
 
   '@lwc/engine-dom@8.12.4': {}
@@ -11302,6 +11411,10 @@ snapshots:
   '@lwc/features@8.12.4':
     dependencies:
       '@lwc/shared': 8.12.4
+
+  '@lwc/features@8.12.6':
+    dependencies:
+      '@lwc/shared': 8.12.6
 
   '@lwc/module-resolver@6.5.0':
     dependencies:
@@ -11339,13 +11452,27 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
+  '@lwc/rollup-plugin@8.12.4(rollup@4.30.1)':
+    dependencies:
+      '@lwc/compiler': 8.12.4
+      '@lwc/module-resolver': 8.12.4
+      '@lwc/shared': 8.12.4
+      '@rollup/pluginutils': 5.1.4(rollup@4.30.1)
+      rollup: 4.30.1
+    transitivePeerDependencies:
+      - supports-color
+
   '@lwc/shared@6.5.0': {}
 
   '@lwc/shared@8.12.4': {}
 
+  '@lwc/shared@8.12.6': {}
+
   '@lwc/signals@6.5.0': {}
 
   '@lwc/signals@8.12.4': {}
+
+  '@lwc/signals@8.12.6': {}
 
   '@lwc/ssr-compiler@8.12.4':
     dependencies:
@@ -11400,9 +11527,15 @@ snapshots:
     dependencies:
       '@lwc/engine-core': 8.12.4
 
+  '@lwc/types@8.12.6':
+    dependencies:
+      '@lwc/engine-core': 8.12.6
+
   '@lwc/wire-service@6.5.0': {}
 
   '@lwc/wire-service@8.12.4': {}
+
+  '@lwc/wire-service@8.12.6': {}
 
   '@lwrjs/api@0.16.2(@babel/core@7.26.0)(@lwc/compiler@8.12.4)(@lwc/engine-dom@8.12.4)(@lwc/module-resolver@8.12.4)(@lwc/synthetic-shadow@8.12.4)(@lwrjs/esbuild@0.16.2)(@salesforce/pwa-kit-runtime@3.7.0(@babel/core@7.26.0)(@salesforce/pwa-kit-dev@3.7.0(@loadable/component@5.16.4(react@18.3.1))(@types/express@4.17.21)(esbuild@0.9.7)(react@18.3.1)(type-fest@4.32.0)(typescript@5.7.3))(@types/express@4.17.21))(@types/express@4.17.21)(lwc@8.12.4(@babel/core@7.26.0)(rollup@2.79.2))(o11y@250.11.0)':
     dependencies:
@@ -11417,6 +11550,36 @@ snapshots:
       chalk: 5.4.1
       fs-extra: 11.3.0
       lwc: 8.12.4(@babel/core@7.26.0)(rollup@2.79.2)
+      semver: 7.6.3
+      tar: 6.2.1
+    transitivePeerDependencies:
+      - '@babel/core'
+      - '@lwc/compiler'
+      - '@lwc/engine-dom'
+      - '@lwc/module-resolver'
+      - '@lwc/synthetic-shadow'
+      - '@lwrjs/esbuild'
+      - '@salesforce/pwa-kit-runtime'
+      - '@types/express'
+      - bufferutil
+      - debug
+      - o11y
+      - supports-color
+      - utf-8-validate
+
+  '@lwrjs/api@0.16.2(@babel/core@7.26.0)(@lwc/compiler@8.12.4)(@lwc/engine-dom@8.12.4)(@lwc/module-resolver@8.12.4)(@lwc/synthetic-shadow@8.12.4)(@lwrjs/esbuild@0.16.2)(@salesforce/pwa-kit-runtime@3.7.0(@babel/core@7.26.0)(@salesforce/pwa-kit-dev@3.7.0(@loadable/component@5.16.4(react@18.3.1))(@types/express@4.17.21)(react@18.3.1)(type-fest@4.32.0)(typescript@5.7.3))(@types/express@4.17.21))(@types/express@4.17.21)(lwc@8.12.4(@babel/core@7.26.0)(rollup@4.30.1))(o11y@250.11.0)':
+    dependencies:
+      '@lwrjs/config': 0.16.2(@lwc/engine-dom@8.12.4)(@lwc/synthetic-shadow@8.12.4)(@lwrjs/esbuild@0.16.2)(@salesforce/pwa-kit-runtime@3.7.0(@babel/core@7.26.0)(@salesforce/pwa-kit-dev@3.7.0(@loadable/component@5.16.4(react@18.3.1))(@types/express@4.17.21)(react@18.3.1)(type-fest@4.32.0)(typescript@5.7.3))(@types/express@4.17.21))(lwc@8.12.4(@babel/core@7.26.0)(rollup@4.30.1))
+      '@lwrjs/core': 0.16.2(@babel/core@7.26.0)(@lwc/compiler@8.12.4)(@lwc/engine-dom@8.12.4)(@lwc/module-resolver@8.12.4)(@lwc/synthetic-shadow@8.12.4)(@salesforce/pwa-kit-runtime@3.7.0(@babel/core@7.26.0)(@salesforce/pwa-kit-dev@3.7.0(@loadable/component@5.16.4(react@18.3.1))(@types/express@4.17.21)(react@18.3.1)(type-fest@4.32.0)(typescript@5.7.3))(@types/express@4.17.21))(lwc@8.12.4(@babel/core@7.26.0)(rollup@4.30.1))(o11y@250.11.0)
+      '@lwrjs/dev-proxy-server': 0.16.2(@types/express@4.17.21)
+      '@lwrjs/diagnostics': 0.16.2
+      '@lwrjs/lwc-module-provider': 0.16.2(@babel/core@7.26.0)(@lwc/compiler@8.12.4)(@lwc/module-resolver@8.12.4)
+      '@lwrjs/shared-utils': 0.16.2
+      '@lwrjs/static': 0.16.2(@salesforce/pwa-kit-runtime@3.7.0(@babel/core@7.26.0)(@salesforce/pwa-kit-dev@3.7.0(@loadable/component@5.16.4(react@18.3.1))(@types/express@4.17.21)(react@18.3.1)(type-fest@4.32.0)(typescript@5.7.3))(@types/express@4.17.21))
+      '@lwrjs/tools': 0.16.2(@babel/core@7.26.0)(@lwc/compiler@8.12.4)(@lwc/engine-dom@8.12.4)(@lwc/module-resolver@8.12.4)(@lwc/synthetic-shadow@8.12.4)(@lwrjs/esbuild@0.16.2)(@salesforce/pwa-kit-runtime@3.7.0(@babel/core@7.26.0)(@salesforce/pwa-kit-dev@3.7.0(@loadable/component@5.16.4(react@18.3.1))(@types/express@4.17.21)(react@18.3.1)(type-fest@4.32.0)(typescript@5.7.3))(@types/express@4.17.21))(lwc@8.12.4(@babel/core@7.26.0)(rollup@4.30.1))(o11y@250.11.0)
+      chalk: 5.4.1
+      fs-extra: 11.3.0
+      lwc: 8.12.4(@babel/core@7.26.0)(rollup@4.30.1)
       semver: 7.6.3
       tar: 6.2.1
     transitivePeerDependencies:
@@ -11628,7 +11791,23 @@ snapshots:
       - '@salesforce/pwa-kit-runtime'
       - supports-color
 
-  '@lwrjs/core@0.12.4(@babel/core@7.24.1)(@lwc/compiler@8.12.4)(@lwc/engine-dom@6.5.0)(@lwc/features@8.12.4)(@lwc/module-resolver@8.12.4)(@lwc/synthetic-shadow@6.5.0)(@salesforce/pwa-kit-runtime@3.7.0(@babel/core@7.24.1)(@salesforce/pwa-kit-dev@3.7.0(@loadable/component@5.16.4(react@18.3.1))(@types/express@4.17.21)(esbuild@0.9.7)(react@18.3.1)(type-fest@4.32.0)(typescript@5.7.3))(@types/express@4.17.21))(lwc@6.5.0(@babel/core@7.24.1)(rollup@2.79.2))(o11y@250.11.0)':
+  '@lwrjs/config@0.16.2(@lwc/engine-dom@8.12.4)(@lwc/synthetic-shadow@8.12.4)(@lwrjs/esbuild@0.16.2)(@salesforce/pwa-kit-runtime@3.7.0(@babel/core@7.26.0)(@salesforce/pwa-kit-dev@3.7.0(@loadable/component@5.16.4(react@18.3.1))(@types/express@4.17.21)(react@18.3.1)(type-fest@4.32.0)(typescript@5.7.3))(@types/express@4.17.21))(lwc@8.12.4(@babel/core@7.26.0)(rollup@4.30.1))':
+    dependencies:
+      '@lwc/engine-dom': 8.12.4
+      '@lwc/synthetic-shadow': 8.12.4
+      '@lwrjs/diagnostics': 0.16.2
+      '@lwrjs/instrumentation': 0.16.2(@salesforce/pwa-kit-runtime@3.7.0(@babel/core@7.26.0)(@salesforce/pwa-kit-dev@3.7.0(@loadable/component@5.16.4(react@18.3.1))(@types/express@4.17.21)(react@18.3.1)(type-fest@4.32.0)(typescript@5.7.3))(@types/express@4.17.21))
+      '@lwrjs/shared-utils': 0.16.2
+      fs-extra: 11.3.0
+      jsonc-parser: 3.3.1
+      lwc: 8.12.4(@babel/core@7.26.0)(rollup@4.30.1)
+    optionalDependencies:
+      '@lwrjs/esbuild': 0.16.2
+    transitivePeerDependencies:
+      - '@salesforce/pwa-kit-runtime'
+      - supports-color
+
+  '@lwrjs/core@0.12.4(@babel/core@7.24.1)(@lwc/compiler@8.12.4)(@lwc/engine-dom@6.5.0)(@lwc/features@8.12.6)(@lwc/module-resolver@8.12.4)(@lwc/synthetic-shadow@6.5.0)(@salesforce/pwa-kit-runtime@3.7.0(@babel/core@7.24.1)(@salesforce/pwa-kit-dev@3.7.0(@loadable/component@5.16.4(react@18.3.1))(@types/express@4.17.21)(esbuild@0.9.7)(react@18.3.1)(type-fest@4.32.0)(typescript@5.7.3))(@types/express@4.17.21))(lwc@6.5.0(@babel/core@7.24.1)(rollup@2.79.2))(o11y@250.11.0)':
     dependencies:
       '@lwrjs/app-service': 0.12.4
       '@lwrjs/asset-registry': 0.12.4
@@ -11647,7 +11826,7 @@ snapshots:
       '@lwrjs/lwc-module-provider': 0.12.4(@babel/core@7.24.1)(@lwc/compiler@8.12.4)(@lwc/module-resolver@8.12.4)
       '@lwrjs/lwc-ssr': 0.12.4(@salesforce/pwa-kit-runtime@3.7.0(@babel/core@7.24.1)(@salesforce/pwa-kit-dev@3.7.0(@loadable/component@5.16.4(react@18.3.1))(@types/express@4.17.21)(esbuild@0.9.7)(react@18.3.1)(type-fest@4.32.0)(typescript@5.7.3))(@types/express@4.17.21))
       '@lwrjs/markdown-view-provider': 0.12.4
-      '@lwrjs/module-bundler': 0.12.4(@lwc/features@8.12.4)(@salesforce/pwa-kit-runtime@3.7.0(@babel/core@7.24.1)(@salesforce/pwa-kit-dev@3.7.0(@loadable/component@5.16.4(react@18.3.1))(@types/express@4.17.21)(esbuild@0.9.7)(react@18.3.1)(type-fest@4.32.0)(typescript@5.7.3))(@types/express@4.17.21))
+      '@lwrjs/module-bundler': 0.12.4(@lwc/features@8.12.6)(@salesforce/pwa-kit-runtime@3.7.0(@babel/core@7.24.1)(@salesforce/pwa-kit-dev@3.7.0(@loadable/component@5.16.4(react@18.3.1))(@types/express@4.17.21)(esbuild@0.9.7)(react@18.3.1)(type-fest@4.32.0)(typescript@5.7.3))(@types/express@4.17.21))
       '@lwrjs/module-registry': '@lukethacoder/lwrjs-module-registry@0.16.2(@lwc/engine-dom@6.5.0)(@lwc/synthetic-shadow@6.5.0)(@lwrjs/esbuild@0.12.4)(@salesforce/pwa-kit-runtime@3.7.0(@babel/core@7.24.1)(@salesforce/pwa-kit-dev@3.7.0(@loadable/component@5.16.4(react@18.3.1))(@types/express@4.17.21)(esbuild@0.9.7)(react@18.3.1)(type-fest@4.32.0)(typescript@5.7.3))(@types/express@4.17.21))(lwc@6.5.0(@babel/core@7.24.1)(rollup@2.79.2))'
       '@lwrjs/npm-module-provider': 0.12.4
       '@lwrjs/nunjucks-view-provider': 0.12.4(chokidar@3.6.0)
@@ -11679,7 +11858,7 @@ snapshots:
       - supports-color
       - utf-8-validate
 
-  '@lwrjs/core@0.12.4(@babel/core@7.26.0)(@lwc/compiler@8.12.4)(@lwc/engine-dom@6.5.0)(@lwc/features@8.12.4)(@lwc/module-resolver@8.12.4)(@lwc/synthetic-shadow@6.5.0)(@salesforce/pwa-kit-runtime@3.7.0(@babel/core@7.26.0)(@salesforce/pwa-kit-dev@3.7.0(@loadable/component@5.16.4(react@18.3.1))(@types/express@4.17.21)(react@18.3.1)(type-fest@4.32.0)(typescript@5.7.3))(@types/express@4.17.21))(lwc@6.5.0(@babel/core@7.26.0)(rollup@4.30.1))(o11y@250.11.0)':
+  '@lwrjs/core@0.12.4(@babel/core@7.26.0)(@lwc/compiler@8.12.4)(@lwc/engine-dom@6.5.0)(@lwc/features@8.12.6)(@lwc/module-resolver@8.12.4)(@lwc/synthetic-shadow@6.5.0)(@salesforce/pwa-kit-runtime@3.7.0(@babel/core@7.26.0)(@salesforce/pwa-kit-dev@3.7.0(@loadable/component@5.16.4(react@18.3.1))(@types/express@4.17.21)(react@18.3.1)(type-fest@4.32.0)(typescript@5.7.3))(@types/express@4.17.21))(lwc@6.5.0(@babel/core@7.26.0)(rollup@4.30.1))(o11y@250.11.0)':
     dependencies:
       '@lwrjs/app-service': 0.12.4
       '@lwrjs/asset-registry': 0.12.4
@@ -11698,7 +11877,7 @@ snapshots:
       '@lwrjs/lwc-module-provider': 0.12.4(@babel/core@7.26.0)(@lwc/compiler@8.12.4)(@lwc/module-resolver@8.12.4)
       '@lwrjs/lwc-ssr': 0.12.4(@salesforce/pwa-kit-runtime@3.7.0(@babel/core@7.26.0)(@salesforce/pwa-kit-dev@3.7.0(@loadable/component@5.16.4(react@18.3.1))(@types/express@4.17.21)(react@18.3.1)(type-fest@4.32.0)(typescript@5.7.3))(@types/express@4.17.21))
       '@lwrjs/markdown-view-provider': 0.12.4
-      '@lwrjs/module-bundler': 0.12.4(@lwc/features@8.12.4)(@salesforce/pwa-kit-runtime@3.7.0(@babel/core@7.26.0)(@salesforce/pwa-kit-dev@3.7.0(@loadable/component@5.16.4(react@18.3.1))(@types/express@4.17.21)(react@18.3.1)(type-fest@4.32.0)(typescript@5.7.3))(@types/express@4.17.21))
+      '@lwrjs/module-bundler': 0.12.4(@lwc/features@8.12.6)(@salesforce/pwa-kit-runtime@3.7.0(@babel/core@7.26.0)(@salesforce/pwa-kit-dev@3.7.0(@loadable/component@5.16.4(react@18.3.1))(@types/express@4.17.21)(react@18.3.1)(type-fest@4.32.0)(typescript@5.7.3))(@types/express@4.17.21))
       '@lwrjs/module-registry': '@lukethacoder/lwrjs-module-registry@0.16.2(@lwc/engine-dom@6.5.0)(@lwc/synthetic-shadow@6.5.0)(@lwrjs/esbuild@0.12.4)(@salesforce/pwa-kit-runtime@3.7.0(@babel/core@7.26.0)(@salesforce/pwa-kit-dev@3.7.0(@loadable/component@5.16.4(react@18.3.1))(@types/express@4.17.21)(react@18.3.1)(type-fest@4.32.0)(typescript@5.7.3))(@types/express@4.17.21))(lwc@6.5.0(@babel/core@7.26.0)(rollup@4.30.1))'
       '@lwrjs/npm-module-provider': 0.12.4
       '@lwrjs/nunjucks-view-provider': 0.12.4(chokidar@3.6.0)
@@ -11764,6 +11943,56 @@ snapshots:
       esbuild: 0.9.7
       fs-extra: 11.3.0
       lwc: 8.12.4(@babel/core@7.26.0)(rollup@2.79.2)
+      path-to-regexp: 6.3.0
+      qs: 6.14.0
+      rollup: 2.79.2
+      ws: 8.18.0
+    transitivePeerDependencies:
+      - '@babel/core'
+      - '@lwc/compiler'
+      - '@lwc/engine-dom'
+      - '@lwc/module-resolver'
+      - '@lwc/synthetic-shadow'
+      - '@salesforce/pwa-kit-runtime'
+      - bufferutil
+      - o11y
+      - supports-color
+      - utf-8-validate
+
+  '@lwrjs/core@0.16.2(@babel/core@7.26.0)(@lwc/compiler@8.12.4)(@lwc/engine-dom@8.12.4)(@lwc/module-resolver@8.12.4)(@lwc/synthetic-shadow@8.12.4)(@salesforce/pwa-kit-runtime@3.7.0(@babel/core@7.26.0)(@salesforce/pwa-kit-dev@3.7.0(@loadable/component@5.16.4(react@18.3.1))(@types/express@4.17.21)(react@18.3.1)(type-fest@4.32.0)(typescript@5.7.3))(@types/express@4.17.21))(lwc@8.12.4(@babel/core@7.26.0)(rollup@4.30.1))(o11y@250.11.0)':
+    dependencies:
+      '@lwrjs/app-service': 0.16.2
+      '@lwrjs/asset-registry': 0.16.2
+      '@lwrjs/asset-transformer': 0.16.2
+      '@lwrjs/base-view-provider': 0.16.2
+      '@lwrjs/base-view-transformer': 0.16.2
+      '@lwrjs/client-modules': 0.16.2
+      '@lwrjs/config': 0.16.2(@lwc/engine-dom@8.12.4)(@lwc/synthetic-shadow@8.12.4)(@lwrjs/esbuild@0.16.2)(@salesforce/pwa-kit-runtime@3.7.0(@babel/core@7.26.0)(@salesforce/pwa-kit-dev@3.7.0(@loadable/component@5.16.4(react@18.3.1))(@types/express@4.17.21)(react@18.3.1)(type-fest@4.32.0)(typescript@5.7.3))(@types/express@4.17.21))(lwc@8.12.4(@babel/core@7.26.0)(rollup@4.30.1))
+      '@lwrjs/diagnostics': 0.16.2
+      '@lwrjs/esbuild': 0.16.2
+      '@lwrjs/fs-asset-provider': 0.16.2
+      '@lwrjs/fs-watch': 0.16.2
+      '@lwrjs/html-view-provider': 0.16.2
+      '@lwrjs/instrumentation': 0.16.2(@salesforce/pwa-kit-runtime@3.7.0(@babel/core@7.26.0)(@salesforce/pwa-kit-dev@3.7.0(@loadable/component@5.16.4(react@18.3.1))(@types/express@4.17.21)(react@18.3.1)(type-fest@4.32.0)(typescript@5.7.3))(@types/express@4.17.21))
+      '@lwrjs/loader': 0.16.2
+      '@lwrjs/lwc-module-provider': 0.16.2(@babel/core@7.26.0)(@lwc/compiler@8.12.4)(@lwc/module-resolver@8.12.4)
+      '@lwrjs/lwc-ssr': 0.16.2(@lwc/engine-dom@8.12.4)(@lwc/synthetic-shadow@8.12.4)(@lwrjs/esbuild@0.16.2)(@salesforce/pwa-kit-runtime@3.7.0(@babel/core@7.26.0)(@salesforce/pwa-kit-dev@3.7.0(@loadable/component@5.16.4(react@18.3.1))(@types/express@4.17.21)(react@18.3.1)(type-fest@4.32.0)(typescript@5.7.3))(@types/express@4.17.21))(lwc@8.12.4(@babel/core@7.26.0)(rollup@4.30.1))
+      '@lwrjs/markdown-view-provider': 0.16.2
+      '@lwrjs/module-bundler': 0.16.2(@salesforce/pwa-kit-runtime@3.7.0(@babel/core@7.26.0)(@salesforce/pwa-kit-dev@3.7.0(@loadable/component@5.16.4(react@18.3.1))(@types/express@4.17.21)(react@18.3.1)(type-fest@4.32.0)(typescript@5.7.3))(@types/express@4.17.21))
+      '@lwrjs/module-registry': '@lukethacoder/lwrjs-module-registry@0.16.2(@lwc/engine-dom@8.12.4)(@lwc/synthetic-shadow@8.12.4)(@lwrjs/esbuild@0.16.2)(@salesforce/pwa-kit-runtime@3.7.0(@babel/core@7.26.0)(@salesforce/pwa-kit-dev@3.7.0(@loadable/component@5.16.4(react@18.3.1))(@types/express@4.17.21)(react@18.3.1)(type-fest@4.32.0)(typescript@5.7.3))(@types/express@4.17.21))(lwc@8.12.4(@babel/core@7.26.0)(rollup@4.30.1))'
+      '@lwrjs/npm-module-provider': 0.16.2
+      '@lwrjs/nunjucks-view-provider': 0.16.2(chokidar@3.6.0)
+      '@lwrjs/o11y': 0.16.2(o11y@250.11.0)
+      '@lwrjs/resource-registry': 0.16.2
+      '@lwrjs/router': 0.16.2(lwc@8.12.4(@babel/core@7.26.0)(rollup@4.30.1))
+      '@lwrjs/server': 0.16.2(@salesforce/pwa-kit-runtime@3.7.0(@babel/core@7.26.0)(@salesforce/pwa-kit-dev@3.7.0(@loadable/component@5.16.4(react@18.3.1))(@types/express@4.17.21)(react@18.3.1)(type-fest@4.32.0)(typescript@5.7.3))(@types/express@4.17.21))
+      '@lwrjs/shared-utils': 0.16.2
+      '@lwrjs/static': 0.16.2(@salesforce/pwa-kit-runtime@3.7.0(@babel/core@7.26.0)(@salesforce/pwa-kit-dev@3.7.0(@loadable/component@5.16.4(react@18.3.1))(@types/express@4.17.21)(react@18.3.1)(type-fest@4.32.0)(typescript@5.7.3))(@types/express@4.17.21))
+      '@lwrjs/view-registry': 0.16.2(@salesforce/pwa-kit-runtime@3.7.0(@babel/core@7.26.0)(@salesforce/pwa-kit-dev@3.7.0(@loadable/component@5.16.4(react@18.3.1))(@types/express@4.17.21)(react@18.3.1)(type-fest@4.32.0)(typescript@5.7.3))(@types/express@4.17.21))
+      chokidar: 3.6.0
+      esbuild: 0.9.7
+      fs-extra: 11.3.0
+      lwc: 8.12.4(@babel/core@7.26.0)(rollup@4.30.1)
       path-to-regexp: 6.3.0
       qs: 6.14.0
       rollup: 2.79.2
@@ -12013,6 +12242,48 @@ snapshots:
       - webpack-dev-server
       - webpack-plugin-serve
 
+  '@lwrjs/lambda@0.16.2(@babel/core@7.26.0)(@loadable/component@5.16.4(react@18.3.1))(@lwc/compiler@8.12.4)(@lwc/engine-dom@8.12.4)(@lwc/module-resolver@8.12.4)(@lwc/synthetic-shadow@8.12.4)(@types/express@4.17.21)(lwc@8.12.4(@babel/core@7.26.0)(rollup@4.30.1))(o11y@250.11.0)(react@18.3.1)(type-fest@4.32.0)(typescript@5.7.3)':
+    dependencies:
+      '@lwrjs/core': 0.16.2(@babel/core@7.26.0)(@lwc/compiler@8.12.4)(@lwc/engine-dom@8.12.4)(@lwc/module-resolver@8.12.4)(@lwc/synthetic-shadow@8.12.4)(@salesforce/pwa-kit-runtime@3.7.0(@babel/core@7.26.0)(@salesforce/pwa-kit-dev@3.7.0(@loadable/component@5.16.4(react@18.3.1))(@types/express@4.17.21)(react@18.3.1)(type-fest@4.32.0)(typescript@5.7.3))(@types/express@4.17.21))(lwc@8.12.4(@babel/core@7.26.0)(rollup@4.30.1))(o11y@250.11.0)
+      '@lwrjs/diagnostics': 0.16.2
+      '@lwrjs/instrumentation': 0.16.2(@salesforce/pwa-kit-runtime@3.7.0(@babel/core@7.26.0)(@salesforce/pwa-kit-dev@3.7.0(@loadable/component@5.16.4(react@18.3.1))(@types/express@4.17.21)(react@18.3.1)(type-fest@4.32.0)(typescript@5.7.3))(@types/express@4.17.21))
+      '@lwrjs/server': 0.16.2(@salesforce/pwa-kit-runtime@3.7.0(@babel/core@7.26.0)(@salesforce/pwa-kit-dev@3.7.0(@loadable/component@5.16.4(react@18.3.1))(@types/express@4.17.21)(react@18.3.1)(type-fest@4.32.0)(typescript@5.7.3))(@types/express@4.17.21))
+      '@lwrjs/shared-utils': 0.16.2
+      '@lwrjs/static': 0.16.2(@salesforce/pwa-kit-runtime@3.7.0(@babel/core@7.26.0)(@salesforce/pwa-kit-dev@3.7.0(@loadable/component@5.16.4(react@18.3.1))(@types/express@4.17.21)(react@18.3.1)(type-fest@4.32.0)(typescript@5.7.3))(@types/express@4.17.21))
+      '@salesforce/pwa-kit-dev': 3.7.0(@loadable/component@5.16.4(react@18.3.1))(@types/express@4.17.21)(react@18.3.1)(type-fest@4.32.0)(typescript@5.7.3)
+      '@salesforce/pwa-kit-runtime': 3.7.0(@babel/core@7.26.0)(@salesforce/pwa-kit-dev@3.7.0(@loadable/component@5.16.4(react@18.3.1))(@types/express@4.17.21)(react@18.3.1)(type-fest@4.32.0)(typescript@5.7.3))(@types/express@4.17.21)
+      mime-types: 2.1.35
+    transitivePeerDependencies:
+      - '@babel/core'
+      - '@loadable/component'
+      - '@lwc/compiler'
+      - '@lwc/engine-dom'
+      - '@lwc/module-resolver'
+      - '@lwc/synthetic-shadow'
+      - '@swc/core'
+      - '@types/express'
+      - '@types/webpack'
+      - '@webpack-cli/generators'
+      - '@webpack-cli/migrate'
+      - bufferutil
+      - canvas
+      - debug
+      - encoding
+      - esbuild
+      - lwc
+      - o11y
+      - react
+      - sockjs-client
+      - supports-color
+      - ts-jest
+      - ts-node
+      - type-fest
+      - typescript
+      - uglify-js
+      - utf-8-validate
+      - webpack-dev-server
+      - webpack-plugin-serve
+
   '@lwrjs/loader@0.12.4':
     dependencies:
       '@lwrjs/client-modules': 0.12.4
@@ -12102,6 +12373,24 @@ snapshots:
       - lwc
       - supports-color
 
+  '@lwrjs/lwc-ssr@0.16.2(@lwc/engine-dom@8.12.4)(@lwc/synthetic-shadow@8.12.4)(@lwrjs/esbuild@0.16.2)(@salesforce/pwa-kit-runtime@3.7.0(@babel/core@7.26.0)(@salesforce/pwa-kit-dev@3.7.0(@loadable/component@5.16.4(react@18.3.1))(@types/express@4.17.21)(react@18.3.1)(type-fest@4.32.0)(typescript@5.7.3))(@types/express@4.17.21))(lwc@8.12.4(@babel/core@7.26.0)(rollup@4.30.1))':
+    dependencies:
+      '@lwrjs/config': 0.16.2(@lwc/engine-dom@8.12.4)(@lwc/synthetic-shadow@8.12.4)(@lwrjs/esbuild@0.16.2)(@salesforce/pwa-kit-runtime@3.7.0(@babel/core@7.26.0)(@salesforce/pwa-kit-dev@3.7.0(@loadable/component@5.16.4(react@18.3.1))(@types/express@4.17.21)(react@18.3.1)(type-fest@4.32.0)(typescript@5.7.3))(@types/express@4.17.21))(lwc@8.12.4(@babel/core@7.26.0)(rollup@4.30.1))
+      '@lwrjs/diagnostics': 0.16.2
+      '@lwrjs/instrumentation': 0.16.2(@salesforce/pwa-kit-runtime@3.7.0(@babel/core@7.26.0)(@salesforce/pwa-kit-dev@3.7.0(@loadable/component@5.16.4(react@18.3.1))(@types/express@4.17.21)(react@18.3.1)(type-fest@4.32.0)(typescript@5.7.3))(@types/express@4.17.21))
+      '@lwrjs/loader': 0.16.2
+      '@lwrjs/shared-utils': 0.16.2
+      fs-extra: 11.3.0
+      lru-cache: 10.4.3
+      undici: 6.21.1
+    transitivePeerDependencies:
+      - '@lwc/engine-dom'
+      - '@lwc/synthetic-shadow'
+      - '@lwrjs/esbuild'
+      - '@salesforce/pwa-kit-runtime'
+      - lwc
+      - supports-color
+
   '@lwrjs/markdown-view-provider@0.12.4':
     dependencies:
       '@lwrjs/shared-utils': 0.12.4
@@ -12140,9 +12429,9 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@lwrjs/module-bundler@0.12.4(@lwc/features@8.12.4)(@salesforce/pwa-kit-runtime@3.7.0(@babel/core@7.24.1)(@salesforce/pwa-kit-dev@3.7.0(@loadable/component@5.16.4(react@18.3.1))(@types/express@4.17.21)(esbuild@0.9.7)(react@18.3.1)(type-fest@4.32.0)(typescript@5.7.3))(@types/express@4.17.21))':
+  '@lwrjs/module-bundler@0.12.4(@lwc/features@8.12.6)(@salesforce/pwa-kit-runtime@3.7.0(@babel/core@7.24.1)(@salesforce/pwa-kit-dev@3.7.0(@loadable/component@5.16.4(react@18.3.1))(@types/express@4.17.21)(esbuild@0.9.7)(react@18.3.1)(type-fest@4.32.0)(typescript@5.7.3))(@types/express@4.17.21))':
     dependencies:
-      '@lwc/features': 8.12.4
+      '@lwc/features': 8.12.6
       '@lwrjs/diagnostics': 0.12.4
       '@lwrjs/instrumentation': 0.12.4(@salesforce/pwa-kit-runtime@3.7.0(@babel/core@7.24.1)(@salesforce/pwa-kit-dev@3.7.0(@loadable/component@5.16.4(react@18.3.1))(@types/express@4.17.21)(esbuild@0.9.7)(react@18.3.1)(type-fest@4.32.0)(typescript@5.7.3))(@types/express@4.17.21))
       '@lwrjs/shared-utils': 0.12.4
@@ -12154,9 +12443,9 @@ snapshots:
       - '@salesforce/pwa-kit-runtime'
       - supports-color
 
-  '@lwrjs/module-bundler@0.12.4(@lwc/features@8.12.4)(@salesforce/pwa-kit-runtime@3.7.0(@babel/core@7.26.0)(@salesforce/pwa-kit-dev@3.7.0(@loadable/component@5.16.4(react@18.3.1))(@types/express@4.17.21)(react@18.3.1)(type-fest@4.32.0)(typescript@5.7.3))(@types/express@4.17.21))':
+  '@lwrjs/module-bundler@0.12.4(@lwc/features@8.12.6)(@salesforce/pwa-kit-runtime@3.7.0(@babel/core@7.26.0)(@salesforce/pwa-kit-dev@3.7.0(@loadable/component@5.16.4(react@18.3.1))(@types/express@4.17.21)(react@18.3.1)(type-fest@4.32.0)(typescript@5.7.3))(@types/express@4.17.21))':
     dependencies:
-      '@lwc/features': 8.12.4
+      '@lwc/features': 8.12.6
       '@lwrjs/diagnostics': 0.12.4
       '@lwrjs/instrumentation': 0.12.4(@salesforce/pwa-kit-runtime@3.7.0(@babel/core@7.26.0)(@salesforce/pwa-kit-dev@3.7.0(@loadable/component@5.16.4(react@18.3.1))(@types/express@4.17.21)(react@18.3.1)(type-fest@4.32.0)(typescript@5.7.3))(@types/express@4.17.21))
       '@lwrjs/shared-utils': 0.12.4
@@ -12172,6 +12461,20 @@ snapshots:
     dependencies:
       '@lwrjs/diagnostics': 0.16.2
       '@lwrjs/instrumentation': 0.16.2(@salesforce/pwa-kit-runtime@3.7.0(@babel/core@7.26.0)(@salesforce/pwa-kit-dev@3.7.0(@loadable/component@5.16.4(react@18.3.1))(@types/express@4.17.21)(esbuild@0.9.7)(react@18.3.1)(type-fest@4.32.0)(typescript@5.7.3))(@types/express@4.17.21))
+      '@lwrjs/shared-utils': 0.16.2
+      '@rollup/plugin-replace': 5.0.7(rollup@2.79.2)
+      lru-cache: 10.4.3
+      rollup: 2.79.2
+    optionalDependencies:
+      esbuild: 0.9.7
+    transitivePeerDependencies:
+      - '@salesforce/pwa-kit-runtime'
+      - supports-color
+
+  '@lwrjs/module-bundler@0.16.2(@salesforce/pwa-kit-runtime@3.7.0(@babel/core@7.26.0)(@salesforce/pwa-kit-dev@3.7.0(@loadable/component@5.16.4(react@18.3.1))(@types/express@4.17.21)(react@18.3.1)(type-fest@4.32.0)(typescript@5.7.3))(@types/express@4.17.21))':
+    dependencies:
+      '@lwrjs/diagnostics': 0.16.2
+      '@lwrjs/instrumentation': 0.16.2(@salesforce/pwa-kit-runtime@3.7.0(@babel/core@7.26.0)(@salesforce/pwa-kit-dev@3.7.0(@loadable/component@5.16.4(react@18.3.1))(@types/express@4.17.21)(react@18.3.1)(type-fest@4.32.0)(typescript@5.7.3))(@types/express@4.17.21))
       '@lwrjs/shared-utils': 0.16.2
       '@rollup/plugin-replace': 5.0.7(rollup@2.79.2)
       lru-cache: 10.4.3
@@ -12257,6 +12560,14 @@ snapshots:
       ajv: 6.12.6
       lwc: 8.12.4(@babel/core@7.26.0)(rollup@2.79.2)
 
+  '@lwrjs/router@0.16.2(lwc@8.12.4(@babel/core@7.26.0)(rollup@4.30.1))':
+    dependencies:
+      '@lwrjs/client-modules': 0.16.2
+      '@lwrjs/diagnostics': 0.16.2
+      '@lwrjs/shared-utils': 0.16.2
+      ajv: 6.12.6
+      lwc: 8.12.4(@babel/core@7.26.0)(rollup@4.30.1)
+
   '@lwrjs/server@0.12.4(@salesforce/pwa-kit-runtime@3.7.0(@babel/core@7.24.1)(@salesforce/pwa-kit-dev@3.7.0(@loadable/component@5.16.4(react@18.3.1))(@types/express@4.17.21)(esbuild@0.9.7)(react@18.3.1)(type-fest@4.32.0)(typescript@5.7.3))(@types/express@4.17.21))':
     dependencies:
       '@koa/router': 10.1.1
@@ -12292,6 +12603,21 @@ snapshots:
       '@koa/router': 10.1.1
       '@lwrjs/diagnostics': 0.16.2
       '@lwrjs/instrumentation': 0.16.2(@salesforce/pwa-kit-runtime@3.7.0(@babel/core@7.26.0)(@salesforce/pwa-kit-dev@3.7.0(@loadable/component@5.16.4(react@18.3.1))(@types/express@4.17.21)(esbuild@0.9.7)(react@18.3.1)(type-fest@4.32.0)(typescript@5.7.3))(@types/express@4.17.21))
+      '@lwrjs/shared-utils': 0.16.2
+      '@types/express': 4.17.21
+      '@types/koa': 2.15.0
+      express: 4.21.2
+      koa: 2.15.3
+      koa-compose: 4.1.0
+    transitivePeerDependencies:
+      - '@salesforce/pwa-kit-runtime'
+      - supports-color
+
+  '@lwrjs/server@0.16.2(@salesforce/pwa-kit-runtime@3.7.0(@babel/core@7.26.0)(@salesforce/pwa-kit-dev@3.7.0(@loadable/component@5.16.4(react@18.3.1))(@types/express@4.17.21)(react@18.3.1)(type-fest@4.32.0)(typescript@5.7.3))(@types/express@4.17.21))':
+    dependencies:
+      '@koa/router': 10.1.1
+      '@lwrjs/diagnostics': 0.16.2
+      '@lwrjs/instrumentation': 0.16.2(@salesforce/pwa-kit-runtime@3.7.0(@babel/core@7.26.0)(@salesforce/pwa-kit-dev@3.7.0(@loadable/component@5.16.4(react@18.3.1))(@types/express@4.17.21)(react@18.3.1)(type-fest@4.32.0)(typescript@5.7.3))(@types/express@4.17.21))
       '@lwrjs/shared-utils': 0.16.2
       '@types/express': 4.17.21
       '@types/koa': 2.15.0
@@ -12359,10 +12685,20 @@ snapshots:
       - '@salesforce/pwa-kit-runtime'
       - supports-color
 
-  '@lwrjs/tools@0.12.4(@babel/core@7.24.1)(@lwc/compiler@8.12.4)(@lwc/engine-dom@6.5.0)(@lwc/features@8.12.4)(@lwc/module-resolver@8.12.4)(@lwc/synthetic-shadow@6.5.0)(@lwrjs/esbuild@0.12.4)(@salesforce/pwa-kit-runtime@3.7.0(@babel/core@7.24.1)(@salesforce/pwa-kit-dev@3.7.0(@loadable/component@5.16.4(react@18.3.1))(@types/express@4.17.21)(esbuild@0.9.7)(react@18.3.1)(type-fest@4.32.0)(typescript@5.7.3))(@types/express@4.17.21))(lwc@6.5.0(@babel/core@7.24.1)(rollup@2.79.2))(o11y@250.11.0)':
+  '@lwrjs/static@0.16.2(@salesforce/pwa-kit-runtime@3.7.0(@babel/core@7.26.0)(@salesforce/pwa-kit-dev@3.7.0(@loadable/component@5.16.4(react@18.3.1))(@types/express@4.17.21)(react@18.3.1)(type-fest@4.32.0)(typescript@5.7.3))(@types/express@4.17.21))':
+    dependencies:
+      '@lwrjs/diagnostics': 0.16.2
+      '@lwrjs/instrumentation': 0.16.2(@salesforce/pwa-kit-runtime@3.7.0(@babel/core@7.26.0)(@salesforce/pwa-kit-dev@3.7.0(@loadable/component@5.16.4(react@18.3.1))(@types/express@4.17.21)(react@18.3.1)(type-fest@4.32.0)(typescript@5.7.3))(@types/express@4.17.21))
+      '@lwrjs/shared-utils': 0.16.2
+      lru-cache: 10.4.3
+    transitivePeerDependencies:
+      - '@salesforce/pwa-kit-runtime'
+      - supports-color
+
+  '@lwrjs/tools@0.12.4(@babel/core@7.24.1)(@lwc/compiler@8.12.4)(@lwc/engine-dom@6.5.0)(@lwc/features@8.12.6)(@lwc/module-resolver@8.12.4)(@lwc/synthetic-shadow@6.5.0)(@lwrjs/esbuild@0.12.4)(@salesforce/pwa-kit-runtime@3.7.0(@babel/core@7.24.1)(@salesforce/pwa-kit-dev@3.7.0(@loadable/component@5.16.4(react@18.3.1))(@types/express@4.17.21)(esbuild@0.9.7)(react@18.3.1)(type-fest@4.32.0)(typescript@5.7.3))(@types/express@4.17.21))(lwc@6.5.0(@babel/core@7.24.1)(rollup@2.79.2))(o11y@250.11.0)':
     dependencies:
       '@lwrjs/config': 0.12.4(@lwc/engine-dom@6.5.0)(@lwc/synthetic-shadow@6.5.0)(@lwrjs/esbuild@0.12.4)(@salesforce/pwa-kit-runtime@3.7.0(@babel/core@7.24.1)(@salesforce/pwa-kit-dev@3.7.0(@loadable/component@5.16.4(react@18.3.1))(@types/express@4.17.21)(esbuild@0.9.7)(react@18.3.1)(type-fest@4.32.0)(typescript@5.7.3))(@types/express@4.17.21))(lwc@6.5.0(@babel/core@7.24.1)(rollup@2.79.2))
-      '@lwrjs/core': 0.12.4(@babel/core@7.24.1)(@lwc/compiler@8.12.4)(@lwc/engine-dom@6.5.0)(@lwc/features@8.12.4)(@lwc/module-resolver@8.12.4)(@lwc/synthetic-shadow@6.5.0)(@salesforce/pwa-kit-runtime@3.7.0(@babel/core@7.24.1)(@salesforce/pwa-kit-dev@3.7.0(@loadable/component@5.16.4(react@18.3.1))(@types/express@4.17.21)(esbuild@0.9.7)(react@18.3.1)(type-fest@4.32.0)(typescript@5.7.3))(@types/express@4.17.21))(lwc@6.5.0(@babel/core@7.24.1)(rollup@2.79.2))(o11y@250.11.0)
+      '@lwrjs/core': 0.12.4(@babel/core@7.24.1)(@lwc/compiler@8.12.4)(@lwc/engine-dom@6.5.0)(@lwc/features@8.12.6)(@lwc/module-resolver@8.12.4)(@lwc/synthetic-shadow@6.5.0)(@salesforce/pwa-kit-runtime@3.7.0(@babel/core@7.24.1)(@salesforce/pwa-kit-dev@3.7.0(@loadable/component@5.16.4(react@18.3.1))(@types/express@4.17.21)(esbuild@0.9.7)(react@18.3.1)(type-fest@4.32.0)(typescript@5.7.3))(@types/express@4.17.21))(lwc@6.5.0(@babel/core@7.24.1)(rollup@2.79.2))(o11y@250.11.0)
       '@lwrjs/diagnostics': 0.12.4
       '@lwrjs/shared-utils': 0.12.4
       esbuild: 0.17.19
@@ -12382,10 +12718,10 @@ snapshots:
       - supports-color
       - utf-8-validate
 
-  '@lwrjs/tools@0.12.4(@babel/core@7.26.0)(@lwc/compiler@8.12.4)(@lwc/engine-dom@6.5.0)(@lwc/features@8.12.4)(@lwc/module-resolver@8.12.4)(@lwc/synthetic-shadow@6.5.0)(@lwrjs/esbuild@0.16.2)(@salesforce/pwa-kit-runtime@3.7.0(@babel/core@7.26.0)(@salesforce/pwa-kit-dev@3.7.0(@loadable/component@5.16.4(react@18.3.1))(@types/express@4.17.21)(react@18.3.1)(type-fest@4.32.0)(typescript@5.7.3))(@types/express@4.17.21))(lwc@6.5.0(@babel/core@7.26.0)(rollup@4.30.1))(o11y@250.11.0)':
+  '@lwrjs/tools@0.12.4(@babel/core@7.26.0)(@lwc/compiler@8.12.4)(@lwc/engine-dom@6.5.0)(@lwc/features@8.12.6)(@lwc/module-resolver@8.12.4)(@lwc/synthetic-shadow@6.5.0)(@lwrjs/esbuild@0.16.2)(@salesforce/pwa-kit-runtime@3.7.0(@babel/core@7.26.0)(@salesforce/pwa-kit-dev@3.7.0(@loadable/component@5.16.4(react@18.3.1))(@types/express@4.17.21)(react@18.3.1)(type-fest@4.32.0)(typescript@5.7.3))(@types/express@4.17.21))(lwc@6.5.0(@babel/core@7.26.0)(rollup@4.30.1))(o11y@250.11.0)':
     dependencies:
       '@lwrjs/config': 0.12.4(@lwc/engine-dom@6.5.0)(@lwc/synthetic-shadow@6.5.0)(@lwrjs/esbuild@0.16.2)(@salesforce/pwa-kit-runtime@3.7.0(@babel/core@7.26.0)(@salesforce/pwa-kit-dev@3.7.0(@loadable/component@5.16.4(react@18.3.1))(@types/express@4.17.21)(react@18.3.1)(type-fest@4.32.0)(typescript@5.7.3))(@types/express@4.17.21))(lwc@6.5.0(@babel/core@7.26.0)(rollup@4.30.1))
-      '@lwrjs/core': 0.12.4(@babel/core@7.26.0)(@lwc/compiler@8.12.4)(@lwc/engine-dom@6.5.0)(@lwc/features@8.12.4)(@lwc/module-resolver@8.12.4)(@lwc/synthetic-shadow@6.5.0)(@salesforce/pwa-kit-runtime@3.7.0(@babel/core@7.26.0)(@salesforce/pwa-kit-dev@3.7.0(@loadable/component@5.16.4(react@18.3.1))(@types/express@4.17.21)(react@18.3.1)(type-fest@4.32.0)(typescript@5.7.3))(@types/express@4.17.21))(lwc@6.5.0(@babel/core@7.26.0)(rollup@4.30.1))(o11y@250.11.0)
+      '@lwrjs/core': 0.12.4(@babel/core@7.26.0)(@lwc/compiler@8.12.4)(@lwc/engine-dom@6.5.0)(@lwc/features@8.12.6)(@lwc/module-resolver@8.12.4)(@lwc/synthetic-shadow@6.5.0)(@salesforce/pwa-kit-runtime@3.7.0(@babel/core@7.26.0)(@salesforce/pwa-kit-dev@3.7.0(@loadable/component@5.16.4(react@18.3.1))(@types/express@4.17.21)(react@18.3.1)(type-fest@4.32.0)(typescript@5.7.3))(@types/express@4.17.21))(lwc@6.5.0(@babel/core@7.26.0)(rollup@4.30.1))(o11y@250.11.0)
       '@lwrjs/diagnostics': 0.12.4
       '@lwrjs/shared-utils': 0.12.4
       esbuild: 0.17.19
@@ -12415,6 +12751,29 @@ snapshots:
       esbuild: 0.17.19
       fs-extra: 11.3.0
       lwc: 8.12.4(@babel/core@7.26.0)(rollup@2.79.2)
+    transitivePeerDependencies:
+      - '@babel/core'
+      - '@lwc/compiler'
+      - '@lwc/engine-dom'
+      - '@lwc/module-resolver'
+      - '@lwc/synthetic-shadow'
+      - '@lwrjs/esbuild'
+      - '@salesforce/pwa-kit-runtime'
+      - bufferutil
+      - o11y
+      - supports-color
+      - utf-8-validate
+
+  '@lwrjs/tools@0.16.2(@babel/core@7.26.0)(@lwc/compiler@8.12.4)(@lwc/engine-dom@8.12.4)(@lwc/module-resolver@8.12.4)(@lwc/synthetic-shadow@8.12.4)(@lwrjs/esbuild@0.16.2)(@salesforce/pwa-kit-runtime@3.7.0(@babel/core@7.26.0)(@salesforce/pwa-kit-dev@3.7.0(@loadable/component@5.16.4(react@18.3.1))(@types/express@4.17.21)(react@18.3.1)(type-fest@4.32.0)(typescript@5.7.3))(@types/express@4.17.21))(lwc@8.12.4(@babel/core@7.26.0)(rollup@4.30.1))(o11y@250.11.0)':
+    dependencies:
+      '@lwrjs/config': 0.16.2(@lwc/engine-dom@8.12.4)(@lwc/synthetic-shadow@8.12.4)(@lwrjs/esbuild@0.16.2)(@salesforce/pwa-kit-runtime@3.7.0(@babel/core@7.26.0)(@salesforce/pwa-kit-dev@3.7.0(@loadable/component@5.16.4(react@18.3.1))(@types/express@4.17.21)(react@18.3.1)(type-fest@4.32.0)(typescript@5.7.3))(@types/express@4.17.21))(lwc@8.12.4(@babel/core@7.26.0)(rollup@4.30.1))
+      '@lwrjs/core': 0.16.2(@babel/core@7.26.0)(@lwc/compiler@8.12.4)(@lwc/engine-dom@8.12.4)(@lwc/module-resolver@8.12.4)(@lwc/synthetic-shadow@8.12.4)(@salesforce/pwa-kit-runtime@3.7.0(@babel/core@7.26.0)(@salesforce/pwa-kit-dev@3.7.0(@loadable/component@5.16.4(react@18.3.1))(@types/express@4.17.21)(react@18.3.1)(type-fest@4.32.0)(typescript@5.7.3))(@types/express@4.17.21))(lwc@8.12.4(@babel/core@7.26.0)(rollup@4.30.1))(o11y@250.11.0)
+      '@lwrjs/diagnostics': 0.16.2
+      '@lwrjs/shared-utils': 0.16.2
+      '@lwrjs/static': 0.16.2(@salesforce/pwa-kit-runtime@3.7.0(@babel/core@7.26.0)(@salesforce/pwa-kit-dev@3.7.0(@loadable/component@5.16.4(react@18.3.1))(@types/express@4.17.21)(react@18.3.1)(type-fest@4.32.0)(typescript@5.7.3))(@types/express@4.17.21))
+      esbuild: 0.17.19
+      fs-extra: 11.3.0
+      lwc: 8.12.4(@babel/core@7.26.0)(rollup@4.30.1)
     transitivePeerDependencies:
       - '@babel/core'
       - '@lwc/compiler'
@@ -12459,6 +12818,17 @@ snapshots:
       '@lwrjs/app-service': 0.16.2
       '@lwrjs/diagnostics': 0.16.2
       '@lwrjs/instrumentation': 0.16.2(@salesforce/pwa-kit-runtime@3.7.0(@babel/core@7.26.0)(@salesforce/pwa-kit-dev@3.7.0(@loadable/component@5.16.4(react@18.3.1))(@types/express@4.17.21)(esbuild@0.9.7)(react@18.3.1)(type-fest@4.32.0)(typescript@5.7.3))(@types/express@4.17.21))
+      '@lwrjs/shared-utils': 0.16.2
+      lru-cache: 10.4.3
+    transitivePeerDependencies:
+      - '@salesforce/pwa-kit-runtime'
+      - supports-color
+
+  '@lwrjs/view-registry@0.16.2(@salesforce/pwa-kit-runtime@3.7.0(@babel/core@7.26.0)(@salesforce/pwa-kit-dev@3.7.0(@loadable/component@5.16.4(react@18.3.1))(@types/express@4.17.21)(react@18.3.1)(type-fest@4.32.0)(typescript@5.7.3))(@types/express@4.17.21))':
+    dependencies:
+      '@lwrjs/app-service': 0.16.2
+      '@lwrjs/diagnostics': 0.16.2
+      '@lwrjs/instrumentation': 0.16.2(@salesforce/pwa-kit-runtime@3.7.0(@babel/core@7.26.0)(@salesforce/pwa-kit-dev@3.7.0(@loadable/component@5.16.4(react@18.3.1))(@types/express@4.17.21)(react@18.3.1)(type-fest@4.32.0)(typescript@5.7.3))(@types/express@4.17.21))
       '@lwrjs/shared-utils': 0.16.2
       lru-cache: 10.4.3
     transitivePeerDependencies:
@@ -13270,7 +13640,6 @@ snapshots:
       - utf-8-validate
       - webpack-dev-server
       - webpack-plugin-serve
-    optional: true
 
   '@salesforce/pwa-kit-runtime@3.7.0(@babel/core@7.24.1)(@salesforce/pwa-kit-dev@3.7.0(@loadable/component@5.16.4(react@18.3.1))(@types/express@4.17.21)(esbuild@0.9.7)(react@18.3.1)(type-fest@4.32.0)(typescript@5.7.3))(@types/express@4.17.21)':
     dependencies:
@@ -13341,7 +13710,6 @@ snapshots:
       - '@types/express'
       - debug
       - supports-color
-    optional: true
 
   '@shikijs/core@1.27.2':
     dependencies:
@@ -17499,17 +17867,42 @@ snapshots:
       - rollup
       - supports-color
 
-  lwr@0.12.4(@babel/core@7.24.1)(@lwc/compiler@8.12.4)(@lwc/engine-dom@6.5.0)(@lwc/features@8.12.4)(@lwc/module-resolver@8.12.4)(@lwc/synthetic-shadow@6.5.0)(@lwrjs/esbuild@0.12.4)(@salesforce/pwa-kit-runtime@3.7.0(@babel/core@7.24.1)(@salesforce/pwa-kit-dev@3.7.0(@loadable/component@5.16.4(react@18.3.1))(@types/express@4.17.21)(esbuild@0.9.7)(react@18.3.1)(type-fest@4.32.0)(typescript@5.7.3))(@types/express@4.17.21))(lwc@6.5.0(@babel/core@7.24.1)(rollup@2.79.2))(o11y@250.11.0):
+  lwc@8.12.4(@babel/core@7.26.0)(rollup@4.30.1):
+    dependencies:
+      '@lwc/aria-reflection': 8.12.4
+      '@lwc/babel-plugin-component': 8.12.4(@babel/core@7.26.0)
+      '@lwc/compiler': 8.12.4
+      '@lwc/engine-core': 8.12.4
+      '@lwc/engine-dom': 8.12.4
+      '@lwc/engine-server': 8.12.4
+      '@lwc/errors': 8.12.4
+      '@lwc/features': 8.12.4
+      '@lwc/module-resolver': 8.12.4
+      '@lwc/rollup-plugin': 8.12.4(rollup@4.30.1)
+      '@lwc/shared': 8.12.4
+      '@lwc/ssr-compiler': 8.12.4
+      '@lwc/ssr-runtime': 8.12.4
+      '@lwc/style-compiler': 8.12.4
+      '@lwc/synthetic-shadow': 8.12.4
+      '@lwc/template-compiler': 8.12.4
+      '@lwc/types': 8.12.4
+      '@lwc/wire-service': 8.12.4
+    transitivePeerDependencies:
+      - '@babel/core'
+      - rollup
+      - supports-color
+
+  lwr@0.12.4(@babel/core@7.24.1)(@lwc/compiler@8.12.4)(@lwc/engine-dom@6.5.0)(@lwc/features@8.12.6)(@lwc/module-resolver@8.12.4)(@lwc/synthetic-shadow@6.5.0)(@lwrjs/esbuild@0.12.4)(@salesforce/pwa-kit-runtime@3.7.0(@babel/core@7.24.1)(@salesforce/pwa-kit-dev@3.7.0(@loadable/component@5.16.4(react@18.3.1))(@types/express@4.17.21)(esbuild@0.9.7)(react@18.3.1)(type-fest@4.32.0)(typescript@5.7.3))(@types/express@4.17.21))(lwc@6.5.0(@babel/core@7.24.1)(rollup@2.79.2))(o11y@250.11.0):
     dependencies:
       '@lwc/compiler': 8.12.4
       '@lwc/module-resolver': 8.12.4
       '@lwrjs/config': 0.12.4(@lwc/engine-dom@6.5.0)(@lwc/synthetic-shadow@6.5.0)(@lwrjs/esbuild@0.12.4)(@salesforce/pwa-kit-runtime@3.7.0(@babel/core@7.24.1)(@salesforce/pwa-kit-dev@3.7.0(@loadable/component@5.16.4(react@18.3.1))(@types/express@4.17.21)(esbuild@0.9.7)(react@18.3.1)(type-fest@4.32.0)(typescript@5.7.3))(@types/express@4.17.21))(lwc@6.5.0(@babel/core@7.24.1)(rollup@2.79.2))
-      '@lwrjs/core': 0.12.4(@babel/core@7.24.1)(@lwc/compiler@8.12.4)(@lwc/engine-dom@6.5.0)(@lwc/features@8.12.4)(@lwc/module-resolver@8.12.4)(@lwc/synthetic-shadow@6.5.0)(@salesforce/pwa-kit-runtime@3.7.0(@babel/core@7.24.1)(@salesforce/pwa-kit-dev@3.7.0(@loadable/component@5.16.4(react@18.3.1))(@types/express@4.17.21)(esbuild@0.9.7)(react@18.3.1)(type-fest@4.32.0)(typescript@5.7.3))(@types/express@4.17.21))(lwc@6.5.0(@babel/core@7.24.1)(rollup@2.79.2))(o11y@250.11.0)
+      '@lwrjs/core': 0.12.4(@babel/core@7.24.1)(@lwc/compiler@8.12.4)(@lwc/engine-dom@6.5.0)(@lwc/features@8.12.6)(@lwc/module-resolver@8.12.4)(@lwc/synthetic-shadow@6.5.0)(@salesforce/pwa-kit-runtime@3.7.0(@babel/core@7.24.1)(@salesforce/pwa-kit-dev@3.7.0(@loadable/component@5.16.4(react@18.3.1))(@types/express@4.17.21)(esbuild@0.9.7)(react@18.3.1)(type-fest@4.32.0)(typescript@5.7.3))(@types/express@4.17.21))(lwc@6.5.0(@babel/core@7.24.1)(rollup@2.79.2))(o11y@250.11.0)
       '@lwrjs/dev-proxy-server': 0.12.4
       '@lwrjs/diagnostics': 0.12.4
       '@lwrjs/shared-utils': 0.12.4
       '@lwrjs/static': 0.12.4
-      '@lwrjs/tools': 0.12.4(@babel/core@7.24.1)(@lwc/compiler@8.12.4)(@lwc/engine-dom@6.5.0)(@lwc/features@8.12.4)(@lwc/module-resolver@8.12.4)(@lwc/synthetic-shadow@6.5.0)(@lwrjs/esbuild@0.12.4)(@salesforce/pwa-kit-runtime@3.7.0(@babel/core@7.24.1)(@salesforce/pwa-kit-dev@3.7.0(@loadable/component@5.16.4(react@18.3.1))(@types/express@4.17.21)(esbuild@0.9.7)(react@18.3.1)(type-fest@4.32.0)(typescript@5.7.3))(@types/express@4.17.21))(lwc@6.5.0(@babel/core@7.24.1)(rollup@2.79.2))(o11y@250.11.0)
+      '@lwrjs/tools': 0.12.4(@babel/core@7.24.1)(@lwc/compiler@8.12.4)(@lwc/engine-dom@6.5.0)(@lwc/features@8.12.6)(@lwc/module-resolver@8.12.4)(@lwc/synthetic-shadow@6.5.0)(@lwrjs/esbuild@0.12.4)(@salesforce/pwa-kit-runtime@3.7.0(@babel/core@7.24.1)(@salesforce/pwa-kit-dev@3.7.0(@loadable/component@5.16.4(react@18.3.1))(@types/express@4.17.21)(esbuild@0.9.7)(react@18.3.1)(type-fest@4.32.0)(typescript@5.7.3))(@types/express@4.17.21))(lwc@6.5.0(@babel/core@7.24.1)(rollup@2.79.2))(o11y@250.11.0)
       chalk: 5.4.1
       commander: 10.0.1
       fs-extra: 11.3.0
@@ -17529,17 +17922,17 @@ snapshots:
       - supports-color
       - utf-8-validate
 
-  lwr@0.12.4(@babel/core@7.26.0)(@lwc/compiler@8.12.4)(@lwc/engine-dom@6.5.0)(@lwc/features@8.12.4)(@lwc/module-resolver@8.12.4)(@lwc/synthetic-shadow@6.5.0)(@lwrjs/esbuild@0.16.2)(@salesforce/pwa-kit-runtime@3.7.0(@babel/core@7.26.0)(@salesforce/pwa-kit-dev@3.7.0(@loadable/component@5.16.4(react@18.3.1))(@types/express@4.17.21)(react@18.3.1)(type-fest@4.32.0)(typescript@5.7.3))(@types/express@4.17.21))(lwc@6.5.0(@babel/core@7.26.0)(rollup@4.30.1))(o11y@250.11.0):
+  lwr@0.12.4(@babel/core@7.26.0)(@lwc/compiler@8.12.4)(@lwc/engine-dom@6.5.0)(@lwc/features@8.12.6)(@lwc/module-resolver@8.12.4)(@lwc/synthetic-shadow@6.5.0)(@lwrjs/esbuild@0.16.2)(@salesforce/pwa-kit-runtime@3.7.0(@babel/core@7.26.0)(@salesforce/pwa-kit-dev@3.7.0(@loadable/component@5.16.4(react@18.3.1))(@types/express@4.17.21)(react@18.3.1)(type-fest@4.32.0)(typescript@5.7.3))(@types/express@4.17.21))(lwc@6.5.0(@babel/core@7.26.0)(rollup@4.30.1))(o11y@250.11.0):
     dependencies:
       '@lwc/compiler': 8.12.4
       '@lwc/module-resolver': 8.12.4
       '@lwrjs/config': 0.12.4(@lwc/engine-dom@6.5.0)(@lwc/synthetic-shadow@6.5.0)(@lwrjs/esbuild@0.16.2)(@salesforce/pwa-kit-runtime@3.7.0(@babel/core@7.26.0)(@salesforce/pwa-kit-dev@3.7.0(@loadable/component@5.16.4(react@18.3.1))(@types/express@4.17.21)(react@18.3.1)(type-fest@4.32.0)(typescript@5.7.3))(@types/express@4.17.21))(lwc@6.5.0(@babel/core@7.26.0)(rollup@4.30.1))
-      '@lwrjs/core': 0.12.4(@babel/core@7.26.0)(@lwc/compiler@8.12.4)(@lwc/engine-dom@6.5.0)(@lwc/features@8.12.4)(@lwc/module-resolver@8.12.4)(@lwc/synthetic-shadow@6.5.0)(@salesforce/pwa-kit-runtime@3.7.0(@babel/core@7.26.0)(@salesforce/pwa-kit-dev@3.7.0(@loadable/component@5.16.4(react@18.3.1))(@types/express@4.17.21)(react@18.3.1)(type-fest@4.32.0)(typescript@5.7.3))(@types/express@4.17.21))(lwc@6.5.0(@babel/core@7.26.0)(rollup@4.30.1))(o11y@250.11.0)
+      '@lwrjs/core': 0.12.4(@babel/core@7.26.0)(@lwc/compiler@8.12.4)(@lwc/engine-dom@6.5.0)(@lwc/features@8.12.6)(@lwc/module-resolver@8.12.4)(@lwc/synthetic-shadow@6.5.0)(@salesforce/pwa-kit-runtime@3.7.0(@babel/core@7.26.0)(@salesforce/pwa-kit-dev@3.7.0(@loadable/component@5.16.4(react@18.3.1))(@types/express@4.17.21)(react@18.3.1)(type-fest@4.32.0)(typescript@5.7.3))(@types/express@4.17.21))(lwc@6.5.0(@babel/core@7.26.0)(rollup@4.30.1))(o11y@250.11.0)
       '@lwrjs/dev-proxy-server': 0.12.4
       '@lwrjs/diagnostics': 0.12.4
       '@lwrjs/shared-utils': 0.12.4
       '@lwrjs/static': 0.12.4
-      '@lwrjs/tools': 0.12.4(@babel/core@7.26.0)(@lwc/compiler@8.12.4)(@lwc/engine-dom@6.5.0)(@lwc/features@8.12.4)(@lwc/module-resolver@8.12.4)(@lwc/synthetic-shadow@6.5.0)(@lwrjs/esbuild@0.16.2)(@salesforce/pwa-kit-runtime@3.7.0(@babel/core@7.26.0)(@salesforce/pwa-kit-dev@3.7.0(@loadable/component@5.16.4(react@18.3.1))(@types/express@4.17.21)(react@18.3.1)(type-fest@4.32.0)(typescript@5.7.3))(@types/express@4.17.21))(lwc@6.5.0(@babel/core@7.26.0)(rollup@4.30.1))(o11y@250.11.0)
+      '@lwrjs/tools': 0.12.4(@babel/core@7.26.0)(@lwc/compiler@8.12.4)(@lwc/engine-dom@6.5.0)(@lwc/features@8.12.6)(@lwc/module-resolver@8.12.4)(@lwc/synthetic-shadow@6.5.0)(@lwrjs/esbuild@0.16.2)(@salesforce/pwa-kit-runtime@3.7.0(@babel/core@7.26.0)(@salesforce/pwa-kit-dev@3.7.0(@loadable/component@5.16.4(react@18.3.1))(@types/express@4.17.21)(react@18.3.1)(type-fest@4.32.0)(typescript@5.7.3))(@types/express@4.17.21))(lwc@6.5.0(@babel/core@7.26.0)(rollup@4.30.1))(o11y@250.11.0)
       chalk: 5.4.1
       commander: 10.0.1
       fs-extra: 11.3.0
@@ -17572,6 +17965,56 @@ snapshots:
       '@lwrjs/shared-utils': 0.16.2
       '@lwrjs/static': 0.16.2(@salesforce/pwa-kit-runtime@3.7.0(@babel/core@7.26.0)(@salesforce/pwa-kit-dev@3.7.0(@loadable/component@5.16.4(react@18.3.1))(@types/express@4.17.21)(esbuild@0.9.7)(react@18.3.1)(type-fest@4.32.0)(typescript@5.7.3))(@types/express@4.17.21))
       '@lwrjs/tools': 0.16.2(@babel/core@7.26.0)(@lwc/compiler@8.12.4)(@lwc/engine-dom@8.12.4)(@lwc/module-resolver@8.12.4)(@lwc/synthetic-shadow@8.12.4)(@lwrjs/esbuild@0.16.2)(@salesforce/pwa-kit-runtime@3.7.0(@babel/core@7.26.0)(@salesforce/pwa-kit-dev@3.7.0(@loadable/component@5.16.4(react@18.3.1))(@types/express@4.17.21)(esbuild@0.9.7)(react@18.3.1)(type-fest@4.32.0)(typescript@5.7.3))(@types/express@4.17.21))(lwc@8.12.4(@babel/core@7.26.0)(rollup@2.79.2))(o11y@250.11.0)
+      chalk: 5.4.1
+      commander: 10.0.1
+      es-module-lexer: 1.6.0
+      fs-extra: 11.3.0
+      object-treeify: 4.0.1
+      xml2js: 0.6.2
+    transitivePeerDependencies:
+      - '@babel/core'
+      - '@loadable/component'
+      - '@lwc/engine-dom'
+      - '@lwc/synthetic-shadow'
+      - '@lwrjs/esbuild'
+      - '@salesforce/pwa-kit-runtime'
+      - '@swc/core'
+      - '@types/express'
+      - '@types/webpack'
+      - '@webpack-cli/generators'
+      - '@webpack-cli/migrate'
+      - bufferutil
+      - canvas
+      - debug
+      - encoding
+      - esbuild
+      - lwc
+      - o11y
+      - react
+      - sockjs-client
+      - supports-color
+      - ts-jest
+      - ts-node
+      - type-fest
+      - typescript
+      - uglify-js
+      - utf-8-validate
+      - webpack-dev-server
+      - webpack-plugin-serve
+
+  lwr@0.16.2(@babel/core@7.26.0)(@loadable/component@5.16.4(react@18.3.1))(@lwc/compiler@8.12.4)(@lwc/engine-dom@8.12.4)(@lwc/module-resolver@8.12.4)(@lwc/synthetic-shadow@8.12.4)(@lwrjs/esbuild@0.16.2)(@salesforce/pwa-kit-runtime@3.7.0(@babel/core@7.26.0)(@salesforce/pwa-kit-dev@3.7.0(@loadable/component@5.16.4(react@18.3.1))(@types/express@4.17.21)(react@18.3.1)(type-fest@4.32.0)(typescript@5.7.3))(@types/express@4.17.21))(@types/express@4.17.21)(lwc@8.12.4(@babel/core@7.26.0)(rollup@4.30.1))(o11y@250.11.0)(react@18.3.1)(type-fest@4.32.0)(typescript@5.7.3):
+    dependencies:
+      '@lwc/compiler': 8.12.4
+      '@lwc/module-resolver': 8.12.4
+      '@lwrjs/api': 0.16.2(@babel/core@7.26.0)(@lwc/compiler@8.12.4)(@lwc/engine-dom@8.12.4)(@lwc/module-resolver@8.12.4)(@lwc/synthetic-shadow@8.12.4)(@lwrjs/esbuild@0.16.2)(@salesforce/pwa-kit-runtime@3.7.0(@babel/core@7.26.0)(@salesforce/pwa-kit-dev@3.7.0(@loadable/component@5.16.4(react@18.3.1))(@types/express@4.17.21)(react@18.3.1)(type-fest@4.32.0)(typescript@5.7.3))(@types/express@4.17.21))(@types/express@4.17.21)(lwc@8.12.4(@babel/core@7.26.0)(rollup@4.30.1))(o11y@250.11.0)
+      '@lwrjs/config': 0.16.2(@lwc/engine-dom@8.12.4)(@lwc/synthetic-shadow@8.12.4)(@lwrjs/esbuild@0.16.2)(@salesforce/pwa-kit-runtime@3.7.0(@babel/core@7.26.0)(@salesforce/pwa-kit-dev@3.7.0(@loadable/component@5.16.4(react@18.3.1))(@types/express@4.17.21)(react@18.3.1)(type-fest@4.32.0)(typescript@5.7.3))(@types/express@4.17.21))(lwc@8.12.4(@babel/core@7.26.0)(rollup@4.30.1))
+      '@lwrjs/core': 0.16.2(@babel/core@7.26.0)(@lwc/compiler@8.12.4)(@lwc/engine-dom@8.12.4)(@lwc/module-resolver@8.12.4)(@lwc/synthetic-shadow@8.12.4)(@salesforce/pwa-kit-runtime@3.7.0(@babel/core@7.26.0)(@salesforce/pwa-kit-dev@3.7.0(@loadable/component@5.16.4(react@18.3.1))(@types/express@4.17.21)(react@18.3.1)(type-fest@4.32.0)(typescript@5.7.3))(@types/express@4.17.21))(lwc@8.12.4(@babel/core@7.26.0)(rollup@4.30.1))(o11y@250.11.0)
+      '@lwrjs/dev-proxy-server': 0.16.2(@types/express@4.17.21)
+      '@lwrjs/diagnostics': 0.16.2
+      '@lwrjs/lambda': 0.16.2(@babel/core@7.26.0)(@loadable/component@5.16.4(react@18.3.1))(@lwc/compiler@8.12.4)(@lwc/engine-dom@8.12.4)(@lwc/module-resolver@8.12.4)(@lwc/synthetic-shadow@8.12.4)(@types/express@4.17.21)(lwc@8.12.4(@babel/core@7.26.0)(rollup@4.30.1))(o11y@250.11.0)(react@18.3.1)(type-fest@4.32.0)(typescript@5.7.3)
+      '@lwrjs/shared-utils': 0.16.2
+      '@lwrjs/static': 0.16.2(@salesforce/pwa-kit-runtime@3.7.0(@babel/core@7.26.0)(@salesforce/pwa-kit-dev@3.7.0(@loadable/component@5.16.4(react@18.3.1))(@types/express@4.17.21)(react@18.3.1)(type-fest@4.32.0)(typescript@5.7.3))(@types/express@4.17.21))
+      '@lwrjs/tools': 0.16.2(@babel/core@7.26.0)(@lwc/compiler@8.12.4)(@lwc/engine-dom@8.12.4)(@lwc/module-resolver@8.12.4)(@lwc/synthetic-shadow@8.12.4)(@lwrjs/esbuild@0.16.2)(@salesforce/pwa-kit-runtime@3.7.0(@babel/core@7.26.0)(@salesforce/pwa-kit-dev@3.7.0(@loadable/component@5.16.4(react@18.3.1))(@types/express@4.17.21)(react@18.3.1)(type-fest@4.32.0)(typescript@5.7.3))(@types/express@4.17.21))(lwc@8.12.4(@babel/core@7.26.0)(rollup@4.30.1))(o11y@250.11.0)
       chalk: 5.4.1
       commander: 10.0.1
       es-module-lexer: 1.6.0
@@ -20136,7 +20579,6 @@ snapshots:
       serialize-javascript: 6.0.2
       terser: 5.37.0
       webpack: 5.97.1(webpack-cli@4.10.0)
-    optional: true
 
   terser@5.37.0:
     dependencies:
@@ -20900,7 +21342,6 @@ snapshots:
       - '@swc/core'
       - esbuild
       - uglify-js
-    optional: true
 
   whatwg-encoding@1.0.5:
     dependencies:
