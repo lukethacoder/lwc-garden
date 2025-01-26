@@ -1,0 +1,44 @@
+---
+title: 'lightning/* Imports'
+description: LWC Garden mocks for lightning/* based imports
+---
+
+import { Aside } from '@astrojs/starlight/components'
+
+The below is a list of currently supported `lightning/*` based imports that can run locally. This is not an extensive list and only includes utilities, not components. `lightning-*` components may be found [here](/packages/lightning/components).
+
+## Supported Imports
+
+<Aside>
+Some of the imports have further information that can be found further down the page
+</Aside>
+
+- [lightning/platformResourceLoader](https://developer.salesforce.com/docs/component-library/bundle/lightning-platform-resource-loader/documentation)
+
+---
+
+
+### lightning/platformResourceLoader
+
+Both `loadStyle` and `loadScript` will function slightly differently based on if the synthetic shadow is being used or if the native shadow is used.
+
+Native shadow will import resources within the context of the caller (the `LightningElement` the `loadStyle` or `loadScript` method was called from). This will mean any CSS/JS imported will be scoped to that specific component.
+
+```html
+<!-- lwc/myComponent/myComponent.html -->
+<c-my-component>
+  #shadow-root
+  <p>My Component</p>
+  <style type="text/css">@import url('/force-app/main/default/staticresources/testResource/style.css');</style>
+  <script type="text/javascript" src="/force-app/main/default/staticresources/testResource/script.js" async></script>
+</c-my-component>
+```
+
+Synthetic shadow will import resources globally, in the `document.head`, and allow all CSS/JS imports to be accessible by other components. This is currently the default for on-platform Salesforce development.
+
+```html
+<head>
+  <style type="text/css">@import url('/force-app/main/default/staticresources/testResource/style.css');</style>
+  <script type="text/javascript" src="/force-app/main/default/staticresources/testResource/script.js" async></script>
+</head>
+```

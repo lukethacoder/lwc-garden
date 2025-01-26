@@ -1,0 +1,79 @@
+---
+title: 'Custom Labels'
+description: LWC Garden Custom Labels resolving approach using a custom module resolver
+---
+
+import { Aside } from '@astrojs/starlight/components'
+
+This configuration allows you to define multiple Custom Label paths to be resolved locally without having to explicitly map all files in your `lwr.config.json`|`lwc.config.json` file. 
+
+This differs from the official [`@lwrjs/label-module-provider`](https://developer.salesforce.com/docs/platform/lwr/guide/lwr-label-module-provider.html) package which is designed to be used with non-on-platform configurations. This package resolves labels directly form your on-platform `CustomLabels.labels-meta.xml` file(s).
+
+The configuration uses a custom module provider. This can be configured as follows:
+
+```json
+// lwr.config.json
+"moduleProviders": [
+  [
+    "@lwc-garden/utils/resolvers/labels.ts",
+    {
+      "paths": [
+        "force-app/main/default/labels",
+        "force-app/main/more/labels"
+      ]
+    }
+  ]
+]
+```
+
+<Aside>
+You can provide multiple folders as required. It will preference the first folder path in the array if there are duplicate values.
+</Aside>
+
+The resolver searches the `"paths"` folder for any `*.labels-meta.xml` appended files. These are standard on-platform Custom Label XML based files.
+
+Here is an example `CustomLabels.labels-meta.xml`:
+
+```xml
+<!-- CustomLabels.labels-meta.xml -->
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomLabels xmlns="http://soap.sforce.com/2006/04/metadata">
+  <labels>
+    <fullName>Save</fullName>
+    <language>en_US</language>
+    <protected>false</protected>
+    <shortDescription>Save</shortDescription>
+    <value>Save</value>
+  </labels>
+  <labels>
+    <fullName>Exit</fullName>
+    <language>en_US</language>
+    <protected>false</protected>
+    <shortDescription>Exit</shortDescription>
+    <value>Exit</value>
+  </labels>
+</CustomLabels>
+```
+
+This can be used within your LWC files using the standard Custom Label import syntax:
+
+```js
+// lwc/app/app.js
+import LABEL_SAVE from '@salesforce/label/c.Save'
+import LABEL_EXIT from '@salesforce/label/c.Exit'
+
+export default class App extends LightningElement {
+  LABELS = {
+    SAVE: LABEL_SAVE,
+    EXIT: LABEL_EXIT,
+  }
+}
+```
+
+```html
+<!-- lwc/app/app.html -->
+<template>
+  <button>{LABELS.SAVE}</button>
+  <button>{LABELS.EXIT}</button>
+</template>
+```
