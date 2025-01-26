@@ -8,6 +8,10 @@ import { Aside } from '@astrojs/starlight/components'
 
 This configuration allows you to mock apex methods without having to explicitly map all files in your `lwr.config.json`|`lwc.config.json` file.
 
+<Aside type="tip">
+If you wish to call real `@AuraEnabled` methods, checkout [this blog post](https://blog.lukesecomb.digital/article/local-lwc-development-with-aura-enabled-apex?utm_campaign=lwc-garden) on how to configure a Hono Server and connect it to a Salesforce Org.
+</Aside>
+
 There are two approaches to mocking apex classes:
 
 1. Create a single JavaScript file for each Apex Class (e.g. `MyClass.js`)
@@ -17,7 +21,7 @@ There are two approaches to mocking apex classes:
 Only one of the two available approaches should be taken. Using both at the same time may lead to issues
 </Aside>
 
-### Single JavaScript file per Apex Class
+## Single JavaScript file per Apex Class
 
 This is a cleaner approach and keeps your file system cleaner, at the expense of potentially longer JavaScript files.
 
@@ -62,7 +66,7 @@ import apex_anotherMethodHere from '@salesforce/apex/MyClass.anotherMethodHere'
 Wire methods take on a different structure to imperative methods. TODO: link to docs here.
 </Aside> */}
 
-### Single JavaScript file per Apex Method
+## Single JavaScript file per Apex Method
 
 This approach may align more closely with existing mocking approaches and result in smaller JavaScript files at the expense of more files in the file system.
 

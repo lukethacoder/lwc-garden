@@ -137,10 +137,16 @@ npx -p @lwc-garden/core dev
 
 ## Publishing
 
-Only the `@lwc-garden/core` package should be published to npm (for now).
+Publish the `@lwc-garden/core` package:
 
 ```bash
 pnpm publish --filter @lwc-garden/core --access public
+```
+
+Publish the `@lwc-garden/utils` package:
+
+```bash
+pnpm publish --filter @lwc-garden/utils --access public
 ```
 
 <!-- LICENSE -->
