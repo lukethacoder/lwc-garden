@@ -5,9 +5,26 @@ description: LWC Garden mocks for lightning-* based components
 
 import { Aside } from '@astrojs/starlight/components'
 
-The below is a list of currently supported `lightning-*` based components that can run locally. This is not an extensive list and only includes components, not utilities. Utility methods may be found [here](/packages/lightning/imports).
+## Configuration
+
+Add the `@lwc-garden/utils` package to the `modules` config in your `lwr.config.json` file:
+
+```json
+// lwr.config.json
+{
+  "lwc": {
+    "modules": [
+      {
+        "npm": "@lwc-garden/utils"
+      }
+    ]
+  },
+}
+```
 
 ## Supported Components
+
+The below is a list of currently supported `lightning-*` based components that can run locally. This is not an extensive list and only includes components, not utilities. Utility methods may be found [here](/packages/lightning/imports).
 
 Coming soon...
 {/* - [lightning-button](https://developer.salesforce.com/docs/component-library/bundle/lightning-button) */}

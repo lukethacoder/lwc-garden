@@ -5,9 +5,27 @@ description: LWC Garden mocks for lightning/* based imports
 
 import { Aside } from '@astrojs/starlight/components'
 
-The below is a list of currently supported `lightning/*` based imports that can run locally. This is not an extensive list and only includes utilities, not components. `lightning-*` components may be found [here](/packages/lightning/components).
+## Configuration
+
+Add the `@lwc-garden/utils` package to the `modules` config in your `lwr.config.json` file:
+
+```json
+// lwr.config.json
+{
+  "lwc": {
+    "modules": [
+      {
+        "npm": "@lwc-garden/utils"
+      }
+    ]
+  },
+}
+```
+
 
 ## Supported Imports
+
+The below is a list of currently supported `lightning/*` based imports that can run locally. This is not an extensive list and only includes utilities, not components. `lightning-*` components may be found [here](/packages/lightning/components).
 
 <Aside>
 Some of the imports have further information that can be found further down the page
