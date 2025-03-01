@@ -1,0 +1,60 @@
+{
+  "lwc": {
+    "modules": [
+      {
+        "dir": "./.garden/components",
+        "namespace": "garden"
+      },
+      {
+        "npm": "@lwc-garden/utils"
+      },
+      {
+        "dir": "./force-app/main/default/lwc",
+        "namespace": "c"
+      }
+    ]
+  },
+  "moduleProviders": [
+    "@lwrjs/label-module-provider",
+    "@lwrjs/app-service/moduleProvider",
+    "@lukethacoder/lwrjs-lwc-module-provider",
+    "@lwrjs/npm-module-provider",
+    [
+      "@lwc-garden/utils/resolvers/apex.ts",
+      {
+        "paths": ["__mocks__/apex"]
+      }
+    ],
+    [
+      "@lwc-garden/utils/resolvers/staticresources.ts",
+      {
+        "paths": ["force-app/main/default/staticresources"]
+      }
+    ],
+    [
+      "@lwc-garden/utils/resolvers/labels.ts",
+      {
+        "paths": ["force-app/main/default/labels"]
+      }
+    ]
+  ],
+  "hooks": ["@lwc-garden/utils/hooks/staticresources.ts"],
+  "globalData": {
+    "garden": {
+      "staticresources": {
+        "paths": ["force-app/main/default/staticresources"]
+      }
+    }
+  },
+  "routes": [
+    {
+      "id": "app",
+      "path": "/",
+      "rootComponent": "garden/app",
+      "layoutTemplate": "./.garden/layouts/index.html",
+      "bootstrap": {
+        "syntheticShadow": true
+      }
+    }
+  ]
+}
