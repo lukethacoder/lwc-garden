@@ -10,15 +10,15 @@
     "prepare": "husky install",
     "core:dev": "pnpm --filter=@lwc-garden/core dev",
     "web:dev": "pnpm --filter=@lwc-garden/web dev",
-    "examples:custom-theme": "pnpm --filter=@lwc-garden/custom-theme dev",
-    "examples:custom-webpack-config": "pnpm --filter=@lwc-garden/example-custom-webpack-config dev",
-    "examples:faux-showcase": "pnpm --filter=@lwc-garden/example-faux-showcase dev",
-    "examples:minimal-config": "pnpm --filter=@lwc-garden/example-minimal-config dev",
-    "examples:mocking": "pnpm --filter=@lwc-garden/example-mocking dev",
-    "examples:showcase": "pnpm --filter=@lwc-garden/example-showcase dev",
-    "examples:stress-test": "pnpm --filter=@lwc-garden/example-stress-test dev",
-    "examples:stress-test:generate": "pnpm --filter=@lwc-garden/example-stress-test generate",
-    "examples:copy": "node ./examples/copy.js"
+    "example:custom-theme": "pnpm --filter=@lwc-garden/custom-theme dev",
+    "example:custom-webpack-config": "pnpm --filter=@lwc-garden/example-custom-webpack-config dev",
+    "example:faux-showcase": "pnpm --filter=@lwc-garden/example-faux-showcase dev",
+    "example:minimal-config": "pnpm --filter=@lwc-garden/example-minimal-config dev",
+    "example:mocking": "pnpm --filter=@lwc-garden/example-mocking dev",
+    "example:showcase": "pnpm --filter=@lwc-garden/example-showcase dev",
+    "example:stress-test": "pnpm --filter=@lwc-garden/example-stress-test dev",
+    "example:stress-test:generate": "pnpm --filter=@lwc-garden/example-stress-test generate",
+    "example:copy": "node ./examples/copy.js"
   },
   "pnpm": {
     "overrides": {
