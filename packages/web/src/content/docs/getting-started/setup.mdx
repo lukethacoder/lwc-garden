@@ -14,14 +14,38 @@ import InstallSteps from '../../../components/installSteps.mdx'
 
 ## Prerequisites
 
-To follow this guide, it is expected you have [`node`](https://nodejs.org/en), [`pnpm`](https://pnpm.io/) and [`sfdx`](https://developer.salesforce.com/tools/salesforcecli) installed as well as a <a href="https://developer.salesforce.com/docs/atlas.en-us.sfdx_dev.meta/sfdx_dev/sfdx_dev_ws_create_new.htm" target="_blank" rel="nofollow noreferrer">SFDX Project</a> setup with a valid `lwc.config.json` file.
+To follow this guide, it is expected you have [`node`](https://nodejs.org/en), [`pnpm`](https://pnpm.io/) and [`sfdx`](https://developer.salesforce.com/tools/salesforcecli) installed as well as a <a href="https://developer.salesforce.com/docs/atlas.en-us.sfdx_dev.meta/sfdx_dev/sfdx_dev_ws_create_new.htm" target="_blank" rel="nofollow noreferrer">SFDX Project</a> setup with a valid `lwr.config.json` file.
 
 <Aside>
   If you havn't already installed the default LWR specific packages, you will need to install them before continuing.
 
-We also use both [`@lukethacoder/lwc-module-resolver`](https://github.com/lukethacoder/lwc-module-resolver) and [`@lukethacoder/lwrjs-lwc-module-provider`](https://github.com/lukethacoder/lwrjs-lwc-module-provider) under the hood to handle greater customisation of folder configuration. These will need to be installed.
+For convenience, here is a list of packages you'll require if not already installed:
 
-If you are having troubles, checkout the [Minimal Config Example](/examples/minimal-config).
+<Tabs>
+  {/* prettier-ignore */}
+  <TabItem label='pnpm'>
+    ```sh
+    pnpm add -D @lwc/engine-dom @lwc/synthetic-shadow @lwrjs/client-modules @lwrjs/config @lwrjs/core @lwrjs/loader @lwrjs/o11y @lwrjs/router @lwrjs/shared-utils @lwrjs/types
+    ```
+  </TabItem>
+  {/* prettier-ignore */}
+  <TabItem label='npm'>
+    ```sh
+    npm install @lwc/engine-dom @lwc/synthetic-shadow @lwrjs/client-modules @lwrjs/config @lwrjs/core @lwrjs/loader @lwrjs/o11y @lwrjs/router @lwrjs/shared-utils @lwrjs/types
+    ```
+  </TabItem>
+  {/* prettier-ignore */}
+  <TabItem label='yarn'>
+    ```sh
+    yarn add @lwc/engine-dom @lwc/synthetic-shadow @lwrjs/client-modules @lwrjs/config @lwrjs/core @lwrjs/loader @lwrjs/o11y @lwrjs/router @lwrjs/shared-utils @lwrjs/types
+    ```
+  </TabItem>
+</Tabs>
+
+
+We also use both [`@lukethacoder/lwc-module-resolver`](https://github.com/lukethacoder/lwc-module-resolver) and [`@lukethacoder/lwrjs-lwc-module-provider`](https://github.com/lukethacoder/lwrjs-lwc-module-provider) under the hood to handle greater customisation of folder configuration.
+
+If you are having troubles, checkout the [Minimal Config Example](/examples/minimal-config) or the [On Platform Example](/examples/on-platform).
 
 </Aside>
 
