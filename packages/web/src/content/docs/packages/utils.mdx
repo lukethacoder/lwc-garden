@@ -3,8 +3,83 @@ title: '@lwc-garden/utils'
 description: LWC Garden utility package documentation
 ---
 
-import { Aside } from '@astrojs/starlight/components'
+import {
+  Aside,
+  Code,
+  Tabs,
+  TabItem
+} from '@astrojs/starlight/components'
 
 This package may be used standalone and is not dependant on the `@lwc-garden/core` package. You can run a simple `npx lwr dev` site and still take advantage of the following utilities and configuration.
 
 Want to skip the docs and jump straight to a live example? Check it out [here](/examples/lwr-standard-with-utils/).
+
+## Installation
+
+export const gardenAppConfigCode = `{
+  "lwc": {
+    "modules": [
+      {
+        "dir": "./.garden/components",
+        "namespace": "garden"
+      },
+      {
+        "npm": "@lwc-garden/utils",
+      },
+      {
+        "dir": "./force-app/main/default/lwc",
+        "namespace": "c"
+      }
+    ]
+  },
+  "moduleProviders": [
+    "@lwrjs/label-module-provider",
+    "@lwrjs/app-service/moduleProvider",
+    "@lukethacoder/lwrjs-lwc-module-provider",
+    "@lwrjs/npm-module-provider"
+  ],
+  "routes": [
+    {
+      "id": "app",
+      "path": "/",
+      "rootComponent": "garden/app",
+      "layoutTemplate": "./.garden/layouts/index.html",
+      "bootstrap": {
+        "syntheticShadow": true
+      }
+    }
+  ]
+}`
+export const fileName = 'lwr.config.json'
+
+<Tabs>
+  {/* prettier-ignore */}
+  <TabItem label='pnpm'>
+    ```sh
+    pnpm add -D @lwc-garden/utils
+    ```
+  </TabItem>
+  {/* prettier-ignore */}
+  <TabItem label='npm'>
+    ```sh
+    npm install @lwc-garden/utils
+    ```
+  </TabItem>
+  {/* prettier-ignore */}
+  <TabItem label='yarn'>
+    ```sh
+    yarn add @lwc-garden/utils
+    ```
+  </TabItem>
+</Tabs>
+
+Edit your `lwr.config.json` file to add the `@lwc-garden/utils` package to the `"modules"` config:
+
+<Code
+  code={gardenAppConfigCode}
+  lang='json'
+  ins={[
+    8, 9, 10
+  ]}
+  title={fileName}
+/>
