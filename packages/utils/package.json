@@ -1,6 +1,6 @@
 {
   "name": "@lwc-garden/utils",
-  "version": "1.2.1",
+  "version": "1.2.2",
   "description": "🍃 LWC Garden Utilities Package",
   "homepage": "https://lwc.garden",
   "type": "module",
@@ -53,6 +53,16 @@
     ],
     "**/lwc/**/*.js": [
       "eslint --cache --fix"
+    ]
+  },
+  "lwc": {
+    "modules": [
+      {
+        "dir": "components"
+      }
+    ],
+    "expose": [
+      "lightning/platformResourceLoader"
     ]
   }
 }
