@@ -37,6 +37,10 @@ Both `"paths"` value should have the same values.
 
 All files will be recursively available to be directly imported from within LWC via the `lightning/platformResourceLoader` imports, `loadStyle()` and `loadScript()`.
 
+<Aside>
+`lightning/platformResourceLoader` is automatically mocked as part of this package. Make sure you have set your module imports to include `@lwc-garden/utils`. Double check the documentation [here](/packages/lightning/imports/#configuration).
+</Aside>
+
 Example usage:
 
 ```js
