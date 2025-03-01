@@ -1,0 +1,24 @@
+---
+title: On Platform Config
+description: Live example of LWC Garden - On Platform Config
+tableOfContents: false
+head:
+  - tag: style
+    content: ":root:is(:root) { --sl-content-width: 100%; } .container { max-width: 67.5rem; }"
+---
+
+import { Aside } from '@astrojs/starlight/components'
+import StackBlitzEmbed from '../../../components/StackBlitzEmbed.astro'
+
+<div class="container">
+This example aligns with a standard on-platform folder structure (./force-app) and showcases the following using [@lwc-garden/utils](/packages/utils/):
+- [Apex Mocking](/packages/apex/)
+- [Static Resource Resolution](/packages/staticresources/)
+- [Custom Label Resolution](/packages/labels/)
+
+<Aside>
+[@lwc-garden/utils](/packages/utils/) are optional, but come in handy when working on-platform.
+</Aside>
+</div>
+
+<StackBlitzEmbed projectId='lwc-garden-on-platform' />

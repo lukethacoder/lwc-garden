@@ -1,0 +1,22 @@
+---
+title: LWR with @lwc-garden/utils
+description: Live example of LWC Garden Utils used within a standard LWR app context
+tableOfContents: false
+head:
+  - tag: style
+    content: ":root:is(:root) { --sl-content-width: 100%; } .container { max-width: 67.5rem; }"
+---
+
+import { Aside } from '@astrojs/starlight/components'
+import StackBlitzEmbed from '../../../components/StackBlitzEmbed.astro'
+
+<div class="container">
+This example uses a standard LWR app (not LWC Garden) instance with the [@lwc-garden/utils](/packages/utils/) package and a standard on-platform folder structure (./force-app). This example showcases the following using [@lwc-garden/utils](/packages/utils/):
+- [Apex Mocking](/packages/apex/)
+- [Static Resource Resolution](/packages/staticresources/)
+- [Custom Label Resolution](/packages/labels/)
+
+You may wish to use this approach when building and designing out full page experiences (e.g. local Experience Cloud development).
+</div>
+
+<StackBlitzEmbed projectId='lwc-garden-utils-standard-lwr' />

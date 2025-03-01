@@ -6,7 +6,7 @@ description: LWC Garden Apex Mocking approach, custom hooks and resolvers
 import { Aside } from '@astrojs/starlight/components'
 
 
-This configuration allows you to mock apex methods without having to explicitly map all files in your `lwr.config.json`|`lwc.config.json` file.
+This configuration allows you to mock apex methods without having to explicitly map all files in your `lwr.config.json` file.
 
 <Aside type="tip">
 If you wish to call real `@AuraEnabled` methods, checkout [this blog post](https://blog.lukesecomb.digital/article/local-lwc-development-with-aura-enabled-apex?utm_campaign=lwc-garden) on how to configure a Hono Server and connect it to a Salesforce Org.
@@ -25,7 +25,7 @@ Only one of the two available approaches should be taken. Using both at the same
 
 This is a cleaner approach and keeps your file system cleaner, at the expense of potentially longer JavaScript files.
 
-This approach uses a custom module provider, which can be configured in your `lwr.config.json`|`lwc.config.json` file as follows:
+This approach uses a custom module provider, which can be configured in your `lwr.config.json` file as follows:
 
 ```json
 // lwr.config.json
@@ -70,7 +70,7 @@ Wire methods take on a different structure to imperative methods. TODO: link to 
 
 This approach may align more closely with existing mocking approaches and result in smaller JavaScript files at the expense of more files in the file system.
 
-This approach uses a custom hook, which can be configured in your `lwr.config.json`|`lwc.config.json` file as follows:
+This approach uses a custom hook, which can be configured in your `lwr.config.json` file as follows:
 
 ```json
 // lwr.config.json

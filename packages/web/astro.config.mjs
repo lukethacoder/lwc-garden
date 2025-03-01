@@ -87,12 +87,20 @@ export default defineConfig({
               link: '/examples/minimal-config/',
             },
             {
+              label: 'On Platform',
+              link: '/examples/on-platform/',
+            },
+            {
               label: 'Custom Theme',
               link: '/examples/custom-theme/',
             },
             {
               label: 'Lightning Base Components',
               link: '/examples/lightning-base-components/',
+            },
+            {
+              label: 'LWR with @lwc-garden/utils',
+              link: '/examples/lwr-standard-with-utils/',
             },
           ],
         },
