@@ -37,9 +37,21 @@ export const loadStyle = async (
         try {
           for (let i = 0; i < toCheckEl.length; i++) {
             const sheet = toCheckEl[i]
-            if (sheet === style) {
-              resolve()
-              return
+
+            if (isShadow) {
+              if (sheet === style) {
+                resolve()
+                return
+              }
+            } else {
+              // non-shadow
+              if (
+                sheet.cssRules?.[0]?.cssText ===
+                style.sheet?.cssRules?.[0]?.cssText
+              ) {
+                resolve()
+                return
+              }
             }
           }
         } catch (err) {

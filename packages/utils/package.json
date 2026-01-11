@@ -1,6 +1,6 @@
 {
   "name": "@lwc-garden/utils",
-  "version": "1.2.2",
+  "version": "1.2.3",
   "description": "🍃 LWC Garden Utilities Package",
   "homepage": "https://lwc.garden",
   "type": "module",
