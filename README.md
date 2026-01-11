@@ -149,6 +149,9 @@ Publish the `@lwc-garden/utils` package:
 pnpm publish --filter @lwc-garden/utils --access public
 ```
 
+> [!note]
+> you may require running `npm login` if you're having authentication issues
+
 <!-- LICENSE -->
 
 ## License
